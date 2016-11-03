@@ -8,18 +8,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var homeComponent = (function () {
-    function homeComponent() {
+var core_1 = require("@angular/core");
+var VueGlobalComponent = (function () {
+    function VueGlobalComponent() {
     }
-    homeComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: "\n"
-        }), 
-        __metadata('design:paramtypes', [])
-    ], homeComponent);
-    return homeComponent;
-}());
-exports.homeComponent = homeComponent; // € Exportation du component sous la forme du nom de class 
-//# sourceMappingURL=vueGlobale_enseignant.js.map
+    return VueGlobalComponent;
+}()); // € Exportation du component sous la forme du nom de class 
+VueGlobalComponent = __decorate([
+    core_1.Component({
+        selector: 'vue_globale',
+        template: "<vue-globale></vue-globale>\n"
+    }),
+    __metadata("design:paramtypes", [])
+], VueGlobalComponent);
+exports.VueGlobalComponent = VueGlobalComponent;
+//# sourceMappingURL=vueGlobale.js.map

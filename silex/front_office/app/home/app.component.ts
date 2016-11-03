@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Prof } from './prof';
+import { Prof } from '../prof';
 
 const PROFS: Prof[] = [
   {id: 1, name: 'dupont'},
@@ -9,16 +9,7 @@ const PROFS: Prof[] = [
 
 @Component({
   selector: 'my-app',
-  template: `
-  <h1>{{title}}</h1>
-  <ul>
-    <li *ngFor="let prof of profs" (click)="onSelect(prof)"><h5>{{prof.name}}</h5></li>
-  </ul>
-  <div *ngIf="selectedProf">
-    Details : {{selectedProf.id}}
-  </div>
-  <detail [prof]="selectedProf"></detail>
-  `
+  templateUrl: 'app/home/components.html'
 })
 export class AppComponent {
   title = 'Planif YOUR prof';
