@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Prof } from './prof';
+import { Prof } from '../prof';
 
 const PROFS: Prof[] = [
   {id: 1, name: 'dupont'},

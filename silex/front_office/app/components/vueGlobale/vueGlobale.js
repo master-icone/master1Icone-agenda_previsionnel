@@ -9,22 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var forms_1 = require('@angular/forms');
-var app_component_1 = require('./app.component');
-var detail_component_1 = require('./detail.component');
-var AppModule = (function () {
-    function AppModule() {
+var homeComponent = (function () {
+    function homeComponent() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent, detail_component_1.DetailComponent],
-            bootstrap: [app_component_1.AppComponent]
+    homeComponent = __decorate([
+        core_1.Component({
+            selector: 'my-app',
+            template: "\n"
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], homeComponent);
+    return homeComponent;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.homeComponent = homeComponent; // € Exportation du component sous la forme du nom de class 
+//# sourceMappingURL=vueGlobale.js.map
