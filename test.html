@@ -1,14 +1,8 @@
 <html>
-	<head>
-		<script type="text/javascript" src="page.js"></script>
-	</head>
-	
 	<body>
 		<h2>Connexion</h2>
+		<!-- Un test simple de post avec un nom et un mot de passe -->
 		<form action="silex/web/index.php/feedback" method="POST">
-			<!-- JS will delete this form ONCLICK and change it with something else
-			if ID and password are correct, it will create another form
-			depending on who is the person connected.-->
 			
 			<label for="name"> Entrez votre nom</label>
 			<input id ="name" name ="name" type="text"></input>
@@ -18,5 +12,28 @@
 			
 			<input type="submit" value="Submit">
 		</form>
+		
+		<!-- ajout d'une personne dans le personnel-->
+		<form action="silex/web/index.php/addPersonnel" method="POST">
+			
+			<label for="name"> Entrez votre login</label>
+			<input id ="login" name ="login" type="text"></input>
+			<br/>
+			
+			<label for="pw"> Entrez votre mot de passe</label>
+			<input id ="pw" name ="pw" type="text"></input>
+			<br/>
+			
+			<label for="pw"> Entrez votre nom</label>
+			<input id ="name" name ="name" type="text"></input>
+			<br/>
+			
+			<label for="pw"> Entrez votre prénom</label>
+			<input id ="firstname" name ="firstname" type="text"></input>
+			<br/>
+			
+			<input type="submit" value="Ajouter Personnel">
+		</form>
+		
 	</body>
 </html>
