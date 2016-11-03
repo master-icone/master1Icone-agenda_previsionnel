@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 @Component({
-  selector: 'my-app',
-  template: `
+  selector: 'vue_globale',
+  template: `<vue-globale></vue-globale>
 `
 })
 
-export class homeComponent { }    // € Exportation du component sous la forme du nom de class 
+export class VueGlobalComponent { }    // € Exportation du component sous la forme du nom de class 
