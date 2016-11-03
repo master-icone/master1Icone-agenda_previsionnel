@@ -19,7 +19,6 @@ $app->get('/', function () {
 $app->get('/hello', function () {
     return 'Hello!';
 });
-
 #exemple lien nécessaire http://localhost/projetPrevisionnel/silex/web/index.php/hello/Simon
 $app->get('/hello/{name}', function ($name) use ($app) {
     return 'Hello ' . $app->escape($name);
