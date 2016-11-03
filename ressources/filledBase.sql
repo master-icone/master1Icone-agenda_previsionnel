@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 03 Novembre 2016 à 10:47
+-- Généré le :  Jeu 03 Novembre 2016 à 14:01
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.19
 
@@ -184,7 +184,7 @@ CREATE TABLE `interventions` (
 --
 
 INSERT INTO `interventions` (`idUE`, `idEnseignant`, `nbHeures`) VALUES
-(109, 1057, 15),
+(109, 1057, 500),
 (114, 1070, 5),
 (115, 1088, 7),
 (103, 1054, 5),
@@ -207,7 +207,7 @@ INSERT INTO `interventions` (`idUE`, `idEnseignant`, `nbHeures`) VALUES
 (120, 1093, 20),
 (102, 1082, 6),
 (107, 1081, 8),
-(110, 1070, 8),
+(110, 1070, 25200),
 (134, 1083, 5),
 (104, 1098, 7),
 (100, 1061, 15),
@@ -486,7 +486,9 @@ CREATE TABLE `statuts` (
 INSERT INTO `statuts` (`id`, `label`, `nbHeures`, `autorisation`) VALUES
 (1, 'Enseignant', 192, NULL),
 (2, 'enseignant-chercheur', 192, NULL),
-(3, 'doctorant', 96, NULL);
+(3, 'doctorant', 96, NULL),
+(4, 'thésard', 20, NULL),
+(0, 'consultant', 12, NULL);
 
 -- --------------------------------------------------------
 
