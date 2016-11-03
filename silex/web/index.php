@@ -1,8 +1,19 @@
 <?php
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
 $app = new Silex\Application();
+
+#il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
+$app->post('/addPersonnel', function (Request $request) {
+    // $request->get("login") permet d'accéder au champ avec la valeur login de ce qui est envoyé en post
+	echo 'Insert into Personnel values (\'' . $request->get('login') . '\', \'' . $request->get('pw') . '\', \'' . $request->get('name') . '\', \'' . $request->get('firstname') . '\')';
+    echo "<br/><br>";
+    return 'Insertion réussi';
+});
+
 
 $app->get('/test', function () {
 	try
@@ -62,3 +73,4 @@ $app->get('/listeEnseignants', function() {
 });
 
 $app->run();
+
