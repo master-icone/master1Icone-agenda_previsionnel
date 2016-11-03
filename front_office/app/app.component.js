@@ -9,13 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var PROFS = [
+    { id: 1, name: 'dupont' },
+    { id: 2, name: 'durant' },
+    { id: 3, name: 'sagnier' }
+];
 var AppComponent = (function () {
     function AppComponent() {
+        this.title = 'Planif YOUR prof';
+        this.profs = PROFS;
     }
+    AppComponent.prototype.onSelect = function (prof) {
+        this.selectedProf = prof;
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<h1>My First Angular App</h1>'
+            template: "\n  <h1>{{title}}</h1>\n  <ul>\n    <li *ngFor=\"let prof of profs\" (click)=\"onSelect(prof)\"><h5>{{prof.name}}</h5></li>\n  </ul>\n  <div *ngIf=\"selectedProf\">\n    Details : {{selectedProf.id}}\n  </div>\n  <detail [prof]=\"selectedProf\"></detail>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
