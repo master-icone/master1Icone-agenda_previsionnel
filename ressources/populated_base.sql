@@ -38,6 +38,7 @@ INSERT INTO personnel VALUES(1026,'sodales','THF65KWD7XU','Randolph','Gemma','an
 INSERT INTO personnel VALUES(1027,'ac','KXR23KIX1BM','Roy','Colorado','Curae.Donec.tincidunt@lobortis.net');
 INSERT INTO personnel VALUES(1028,'libero','SVK04HJW1FR','Smith','Nathan','Aenean.gravida.nunc@Aliquamerat.ca');
 INSERT INTO personnel VALUES(1029,'dolor.','CZY11LMC5SN','Estes','Stone','a.ultricies.adipiscing@dolortempusnon.org');
+INSERT INTO personnel VALUES(1030,'non','ATE49UMZ9IJ','Baker','Jada','in@mauris.edu');
 INSERT INTO personnel VALUES(1031,'nisl.','TQV00AAO5JR','Hooper','Hayfa','Nam@aliquetmagnaa.net');
 INSERT INTO personnel VALUES(1032,'orci','CXH78MMD8GC','Anthony','Nathan','lorem.ut.aliquam@Integer.co.uk');
 INSERT INTO personnel VALUES(1033,'lorem,','OMU93OXB7XR','Coffey','Karina','primis.in.faucibus@Aliquameratvolutpat.ca');
