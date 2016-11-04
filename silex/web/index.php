@@ -5,7 +5,14 @@ use Symfony\Component\HttpFoundation\Response;
 require_once __DIR__.'/../vendor/autoload.php';
 
 $app = new Silex\Application();
-
+try
+{
+	$bdd = new PDO('mysql:host=localhost;dbname=projet_m1;charset=utf8', 'root', '');
+}
+catch (Exception $e)
+{
+		die('Erreur : ' . $e->getMessage());
+}
 #il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
 $app->post('/addPersonnel', function (Request $request) {
     // $request->get("login") permet d'accéder au champ avec la valeur login de ce qui est envoyé en post
@@ -15,18 +22,11 @@ $app->post('/addPersonnel', function (Request $request) {
 });
 
 
-$app->get('/test', function () use($app) {
-	try
-	{
-		$bdd = new PDO('mysql:host=localhost;dbname=projet_m1;charset=utf8', 'root', '');
-	}
-	catch (Exception $e)
-	{
-			die('Erreur : ' . $e->getMessage());
-	}
-	
+$app->get('/test', function () use($app,$bdd) {
+		
 	$req = $bdd->query("SELECT * FROM personnel");
-	echo $app->json($req->fetchAll(PDO::FETCH_ASSOC));
+	echo $app->json($req->fetchAll(PDO::FETCH_ASSOC));	
+		
 		
 	$log = 'Tran';
 	$pass = 'ESA35IAV4GR';
@@ -56,16 +56,7 @@ $app->get('/test', function () use($app) {
 	return '';
 });
 
-$app->get('/listeEnseignants', function() {
-	try
-	{
-		$bdd = new PDO('mysql:host=localhost;dbname=projet_m1;charset=utf8', 'root', '');
-	}
-	catch (Exception $e)
-	{
-			die('Erreur : ' . $e->getMessage());
-	}
-	
+$app->get('/listeEnseignants', function() {	
 	$req = $bdd->query("SELECT p.nom, p.prenom FROM personnel p, personnelenseignant pe  WHERE p.id = pe.id");
 	$nombre = 0;
 	while ($donnees = $req->fetch())
