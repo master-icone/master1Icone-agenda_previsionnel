@@ -56,5 +56,25 @@ $app->get('/test', function () use($app) {
 	return '';
 });
 
+$app->get('/listeEnseignants', function() {
+	try
+	{
+		$bdd = new PDO('mysql:host=localhost;dbname=projet_m1;charset=utf8', 'root', '');
+	}
+	catch (Exception $e)
+	{
+			die('Erreur : ' . $e->getMessage());
+	}
+	
+	$req = $bdd->query("SELECT p.nom, p.prenom FROM personnel p, personnelenseignant pe  WHERE p.id = pe.id");
+	$nombre = 0;
+	while ($donnees = $req->fetch())
+	{
+		$nombre = $nombre + 1;
+		?>
+		<p><?php echo $nombre; ?> : <?php echo $donnees['nom']; ?> <?php echo $donnees['prenom']?></p><br /><?php
+	}
+});
+
 $app->run();
 
