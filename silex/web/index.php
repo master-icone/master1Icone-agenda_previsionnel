@@ -15,7 +15,7 @@ $app->post('/addPersonnel', function (Request $request) {
 });
 
 
-$app->get('/test', function () {
+$app->get('/test', function () use($app) {
 	try
 	{
 		$bdd = new PDO('mysql:host=localhost;dbname=projet_m1;charset=utf8', 'root', '');
@@ -25,12 +25,16 @@ $app->get('/test', function () {
 			die('Erreur : ' . $e->getMessage());
 	}
 	
+	$req = $bdd->query("SELECT * FROM personnel");
+	echo $app->json($req->fetchAll(PDO::FETCH_ASSOC));
+		
 	$log = 'Tran';
 	$pass = 'ESA35IAV4GR';
 	$hash = password_hash($pass,PASSWORD_BCRYPT,['cost' => 13]);
 	$sql = $bdd->query("UPDATE personnel SET password='".$hash."' WHERE login='".$log."'");
 	
 	$req = $bdd->query("SELECT * FROM personnel WHERE login='".$log."'");
+	
 	while ($donnees = $req->fetch())
 	{
 	?>
