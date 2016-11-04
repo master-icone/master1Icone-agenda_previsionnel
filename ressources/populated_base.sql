@@ -168,11 +168,11 @@ autorisation integer,
 FOREIGN KEY(autorisation) REFERENCES autorisations(id)
 );
 
-INSERT INTO statuts VALUES(0,'consultant',12,NULL);
-INSERT INTO statuts VALUES(1,'Enseignant',192,NULL);
-INSERT INTO statuts VALUES(2,'enseignant-chercheur',192,NULL);
-INSERT INTO statuts VALUES(3,'doctorant',96,NULL);
-INSERT INTO statuts VALUES(4,'thésard',20,NULL);
+INSERT INTO statuts VALUES(1,'consultant',12,NULL);
+INSERT INTO statuts VALUES(2,'Enseignant',192,NULL);
+INSERT INTO statuts VALUES(3,'enseignant-chercheur',192,NULL);
+INSERT INTO statuts VALUES(4,'doctorant',96,NULL);
+INSERT INTO statuts VALUES(5,'thésard',20,NULL);
 
 CREATE TABLE personnelEnseignant(
 id integer not null primary key auto_increment,
