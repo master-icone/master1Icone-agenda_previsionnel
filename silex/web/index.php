@@ -1,5 +1,4 @@
 <?php
-session_start();
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -29,8 +28,9 @@ $app->get('/test', function () use($app,$bdd) {
 	echo $app->json($req->fetchAll(PDO::FETCH_ASSOC));	
 		
 		
-	$log = 'Tran';
-	$pass = 'ESA35IAV4GR';
+	$log = 'non,';
+	$pass = 'FGX85BGF4IO';
+	//Hash le mot de passe de l'utilisateur pour ensuite mettre seulement le hash dans la BDD
 	$hash = password_hash($pass,PASSWORD_BCRYPT,['cost' => 13]);
 	$sql = $bdd->query("UPDATE personnel SET password='".$hash."' WHERE login='".$log."'");
 	
@@ -49,9 +49,9 @@ $app->get('/test', function () use($app,$bdd) {
 	$hashPassDef = $bdd->query("SELECT password FROM personnel WHERE login='".$log."'");
 	$donnees = $hashPassDef->fetch();
 	if(password_verify($pass, $donnees['password'])) {
-		echo 'OK 1er';
+		echo 'OK';
 	} else {
-		echo 'ERREUR 1er';
+		echo 'ERREUR';
 	}
 	$req->closeCursor();
 	return '';
@@ -66,6 +66,20 @@ $app->get('/listeEnseignants', function() {
 		?>
 		<p><?php echo $nombre; ?> : <?php echo $donnees['nom']; ?> <?php echo $donnees['prenom']?></p><br /><?php
 	}
+});
+
+$app->get('/autorisation', function() use($app,$bdd) {
+	$log = 'Suspendisse';
+	//Requetes pour les autorisations à tester quand les autorisations seront mises en place
+	//$req = $bdd->query("SELECT peutModifier, peutAcceder FROM autorisation a, statuts s, personnel p, personnelenseignant pe WHERE p.login = '".$log."' AND p.id = pe.id AND p.statut = s.id AND s.autorisation = a.id");
+	//while ($donnees = $req->fetch()) {
+	//	echo $donnees['peutModifier'];
+	//	echo $donnees['peutAcceder'];
+	//}
+	$req = $bdd->query("SELECT statut FROM personnel p, personnelenseignant pe WHERE p.login = '".$log."' AND p.id = pe.id");
+	$rep = $req->fetch();
+	echo $rep['statut'];
+	return '';
 });
 
 $app->run();
