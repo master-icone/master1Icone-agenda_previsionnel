@@ -7,6 +7,7 @@ nom text,
 prenom text,
 mail text
 );
+
 INSERT INTO personnel VALUES(1000,'non,','FGX85BGF4IO','Palmer','Hyatt','porttitor.interdum.Sed@vulputate.net');
 INSERT INTO personnel VALUES(1001,'In','HCI43MEY4QR','Everett','Miranda','Aenean.eget.magna@lobortistellus.ca');
 INSERT INTO personnel VALUES(1002,'urna.','MLD60KHF1RK','Kidd','Bianca','quis@risusDonecnibh.com');
@@ -106,12 +107,80 @@ INSERT INTO personnel VALUES(1096,'Donec','TVI18LEV6YZ','Fuentes','Wynter','lect
 INSERT INTO personnel VALUES(1097,'orci','ENY95HWY7JI','Hunter','Derek','Nunc.mauris@neccursusa.org');
 INSERT INTO personnel VALUES(1098,'feugiat','YLE25VUZ9LK','Simon','Leonard','pellentesque.massa@euismod.co.uk');
 INSERT INTO personnel VALUES(1099,'at,','ZXO03VHX8GL','Campos','Sylvester','elit.pharetra.ut@Sedeunibh.edu');
+
+CREATE TABLE autorisations(
+id integer not null primary key auto_increment,
+label text,
+peutModifier integer, /*à considérer comme des booléens*/
+peutAcceder integer
+);
+INSERT INTO autorisations VALUES(1,'erat neque non quam. Pellentesque',0,0);
+INSERT INTO autorisations VALUES(6,'enim',0,1);
+INSERT INTO autorisations VALUES(11,'dolor dapibus gravida.',1,0);
+INSERT INTO autorisations VALUES(16,'quis, pede. Praesent',1,0);
+INSERT INTO autorisations VALUES(21,'Cras dolor dolor,',1,0);
+INSERT INTO autorisations VALUES(26,'Aliquam',0,1);
+INSERT INTO autorisations VALUES(31,'Aliquam',1,1);
+INSERT INTO autorisations VALUES(36,'commodo at, libero. Morbi accumsan',1,0);
+INSERT INTO autorisations VALUES(41,'sit amet, dapibus id, blandit',0,0);
+INSERT INTO autorisations VALUES(46,'Proin dolor. Nulla semper',0,0);
+INSERT INTO autorisations VALUES(51,'ut cursus luctus, ipsum',0,1);
+INSERT INTO autorisations VALUES(56,'senectus et netus et',1,1);
+INSERT INTO autorisations VALUES(61,'arcu.',1,0);
+INSERT INTO autorisations VALUES(66,'quis,',0,1);
+INSERT INTO autorisations VALUES(71,'hendrerit id,',0,0);
+INSERT INTO autorisations VALUES(76,'at, iaculis quis, pede.',1,1);
+INSERT INTO autorisations VALUES(81,'iaculis, lacus pede sagittis augue,',0,0);
+INSERT INTO autorisations VALUES(86,'risus varius orci,',1,1);
+INSERT INTO autorisations VALUES(91,'ligula. Aenean',1,0);
+INSERT INTO autorisations VALUES(96,'ipsum sodales purus,',0,0);
+INSERT INTO autorisations VALUES(101,'lectus rutrum urna,',1,0);
+INSERT INTO autorisations VALUES(106,'aliquet magna a',1,0);
+INSERT INTO autorisations VALUES(111,'Integer mollis. Integer tincidunt',0,1);
+INSERT INTO autorisations VALUES(116,'dui, nec',1,0);
+INSERT INTO autorisations VALUES(121,'ad litora torquent',0,0);
+INSERT INTO autorisations VALUES(126,'in consequat',1,0);
+INSERT INTO autorisations VALUES(131,'consectetuer adipiscing elit. Curabitur sed',0,0);
+INSERT INTO autorisations VALUES(136,'felis.',0,1);
+INSERT INTO autorisations VALUES(141,'In',1,1);
+INSERT INTO autorisations VALUES(146,'sit amet',1,1);
+INSERT INTO autorisations VALUES(151,'dapibus rutrum,',1,0);
+INSERT INTO autorisations VALUES(156,'Cum sociis',1,0);
+INSERT INTO autorisations VALUES(161,'Curabitur massa.',1,1);
+INSERT INTO autorisations VALUES(166,'aliquam',1,0);
+INSERT INTO autorisations VALUES(171,'sapien, cursus',1,1);
+INSERT INTO autorisations VALUES(176,'Nunc pulvinar arcu',1,0);
+INSERT INTO autorisations VALUES(181,'bibendum ullamcorper.',1,0);
+INSERT INTO autorisations VALUES(186,'mi felis, adipiscing fringilla, porttitor',0,0);
+INSERT INTO autorisations VALUES(191,'habitant morbi tristique senectus et',1,1);
+INSERT INTO autorisations VALUES(196,'odio',1,1);
+INSERT INTO autorisations VALUES(201,'ligula. Aenean euismod',1,1);
+INSERT INTO autorisations VALUES(206,'vulputate ullamcorper magna.',0,1);
+INSERT INTO autorisations VALUES(211,'pede. Nunc sed orci',1,0);
+INSERT INTO autorisations VALUES(216,'faucibus. Morbi vehicula. Pellentesque',0,1);
+INSERT INTO autorisations VALUES(221,'et,',1,0);
+
+CREATE TABLE statuts(
+id integer not null primary key auto_increment,
+label text,
+nbHeures integer,
+autorisation integer,
+FOREIGN KEY(autorisation) REFERENCES autorisations(id)
+);
+
+INSERT INTO statuts VALUES(0,'consultant',12,NULL);
+INSERT INTO statuts VALUES(1,'Enseignant',192,NULL);
+INSERT INTO statuts VALUES(2,'enseignant-chercheur',192,NULL);
+INSERT INTO statuts VALUES(3,'doctorant',96,NULL);
+INSERT INTO statuts VALUES(4,'thésard',20,NULL);
+
 CREATE TABLE personnelEnseignant(
 id integer not null primary key auto_increment,
 statut integer,
 foreign key (id) references PERSONNEL(id),
 foreign key (statut) references STATUTS(id)
 );
+
 INSERT INTO personnelEnseignant VALUES(1050,4);
 INSERT INTO personnelEnseignant VALUES(1051,1);
 INSERT INTO personnelEnseignant VALUES(1052,3);
@@ -162,10 +231,12 @@ INSERT INTO personnelEnseignant VALUES(1096,1);
 INSERT INTO personnelEnseignant VALUES(1097,2);
 INSERT INTO personnelEnseignant VALUES(1098,1);
 INSERT INTO personnelEnseignant VALUES(1099,1);
+
 CREATE TABLE personnelAdministratif(
 id integer not null primary key auto_increment,
 foreign key (id) references PERSONNEL(id)
 );
+
 INSERT INTO personnelAdministratif VALUES(1000);
 INSERT INTO personnelAdministratif VALUES(1001);
 INSERT INTO personnelAdministratif VALUES(1002);
@@ -253,73 +324,15 @@ INSERT INTO decharges VALUES(1037,1085,'volutpat. Nulla dignissim. Maecenas orna
 INSERT INTO decharges VALUES(1038,1056,'cursus et, magna. Praesent interdum ligula eu enim. Etiam imperdiet dictum magna. Ut tincidunt orci quis lectus. Nullam suscipit, est');
 INSERT INTO decharges VALUES(1039,1092,'ultrices posuere cubilia Curae; Donec');
 INSERT INTO decharges VALUES(1040,1093,'molestie in, tempus');
+
 CREATE TABLE typesEnseignements(
 id integer not null primary key auto_increment,
 label text
 );
-CREATE TABLE autorisations(
-id integer not null primary key auto_increment,
-label text,
-peutModifier integer, /*à considérer comme des booléens*/
-peutAcceder integer
-);
-INSERT INTO autorisations VALUES(1,'erat neque non quam. Pellentesque',0,0);
-INSERT INTO autorisations VALUES(6,'enim',0,1);
-INSERT INTO autorisations VALUES(11,'dolor dapibus gravida.',1,0);
-INSERT INTO autorisations VALUES(16,'quis, pede. Praesent',1,0);
-INSERT INTO autorisations VALUES(21,'Cras dolor dolor,',1,0);
-INSERT INTO autorisations VALUES(26,'Aliquam',0,1);
-INSERT INTO autorisations VALUES(31,'Aliquam',1,1);
-INSERT INTO autorisations VALUES(36,'commodo at, libero. Morbi accumsan',1,0);
-INSERT INTO autorisations VALUES(41,'sit amet, dapibus id, blandit',0,0);
-INSERT INTO autorisations VALUES(46,'Proin dolor. Nulla semper',0,0);
-INSERT INTO autorisations VALUES(51,'ut cursus luctus, ipsum',0,1);
-INSERT INTO autorisations VALUES(56,'senectus et netus et',1,1);
-INSERT INTO autorisations VALUES(61,'arcu.',1,0);
-INSERT INTO autorisations VALUES(66,'quis,',0,1);
-INSERT INTO autorisations VALUES(71,'hendrerit id,',0,0);
-INSERT INTO autorisations VALUES(76,'at, iaculis quis, pede.',1,1);
-INSERT INTO autorisations VALUES(81,'iaculis, lacus pede sagittis augue,',0,0);
-INSERT INTO autorisations VALUES(86,'risus varius orci,',1,1);
-INSERT INTO autorisations VALUES(91,'ligula. Aenean',1,0);
-INSERT INTO autorisations VALUES(96,'ipsum sodales purus,',0,0);
-INSERT INTO autorisations VALUES(101,'lectus rutrum urna,',1,0);
-INSERT INTO autorisations VALUES(106,'aliquet magna a',1,0);
-INSERT INTO autorisations VALUES(111,'Integer mollis. Integer tincidunt',0,1);
-INSERT INTO autorisations VALUES(116,'dui, nec',1,0);
-INSERT INTO autorisations VALUES(121,'ad litora torquent',0,0);
-INSERT INTO autorisations VALUES(126,'in consequat',1,0);
-INSERT INTO autorisations VALUES(131,'consectetuer adipiscing elit. Curabitur sed',0,0);
-INSERT INTO autorisations VALUES(136,'felis.',0,1);
-INSERT INTO autorisations VALUES(141,'In',1,1);
-INSERT INTO autorisations VALUES(146,'sit amet',1,1);
-INSERT INTO autorisations VALUES(151,'dapibus rutrum,',1,0);
-INSERT INTO autorisations VALUES(156,'Cum sociis',1,0);
-INSERT INTO autorisations VALUES(161,'Curabitur massa.',1,1);
-INSERT INTO autorisations VALUES(166,'aliquam',1,0);
-INSERT INTO autorisations VALUES(171,'sapien, cursus',1,1);
-INSERT INTO autorisations VALUES(176,'Nunc pulvinar arcu',1,0);
-INSERT INTO autorisations VALUES(181,'bibendum ullamcorper.',1,0);
-INSERT INTO autorisations VALUES(186,'mi felis, adipiscing fringilla, porttitor',0,0);
-INSERT INTO autorisations VALUES(191,'habitant morbi tristique senectus et',1,1);
-INSERT INTO autorisations VALUES(196,'odio',1,1);
-INSERT INTO autorisations VALUES(201,'ligula. Aenean euismod',1,1);
-INSERT INTO autorisations VALUES(206,'vulputate ullamcorper magna.',0,1);
-INSERT INTO autorisations VALUES(211,'pede. Nunc sed orci',1,0);
-INSERT INTO autorisations VALUES(216,'faucibus. Morbi vehicula. Pellentesque',0,1);
-INSERT INTO autorisations VALUES(221,'et,',1,0);
-CREATE TABLE statuts(
-id integer not null primary key auto_increment,
-label text,
-nbHeures integer,
-autorisation integer,
-FOREIGN KEY(autorisation) REFERENCES autorisations(id)
-);
-INSERT INTO statuts VALUES(0,'consultant',12,NULL);
-INSERT INTO statuts VALUES(1,'Enseignant',192,NULL);
-INSERT INTO statuts VALUES(2,'enseignant-chercheur',192,NULL);
-INSERT INTO statuts VALUES(3,'doctorant',96,NULL);
-INSERT INTO statuts VALUES(4,'thésard',20,NULL);
+INSERT INTO typesEnseignements VALUES(1, 'CM');
+INSERT INTO typesEnseignements VALUES(2, 'TD');
+INSERT INTO typesEnseignements VALUES(3, 'TP');
+
 CREATE TABLE coefficients(
 idTypeEnseignement integer not null,
 idStatut integer,
@@ -327,6 +340,7 @@ FOREIGN KEY(idTypeEnseignement) REFERENCES TYPESENSEIGNEMENTS(id),
 FOREIGN KEY(idStatut) REFERENCES STATUTS(id),
 PRIMARY KEY(idTypeEnseignement, idStatut)
 );
+
 INSERT INTO coefficients VALUES(1,2);
 INSERT INTO coefficients VALUES(1,3);
 INSERT INTO coefficients VALUES(2,1);
@@ -334,16 +348,7 @@ INSERT INTO coefficients VALUES(2,2);
 INSERT INTO coefficients VALUES(2,3);
 INSERT INTO coefficients VALUES(3,2);
 INSERT INTO coefficients VALUES(3,3);
-CREATE TABLE interventions(
-id integer primary key auto_increment not null,
-idUE integer not null,
-idEnseignant integer not null,
-idTypeEnseignement integer NOT NULL,
-nbHeures real,
-foreign key (idUE) references UE(id),
-foreign key (idEnseignant) references personnelEnseignant(id),
-foreign key (idTypeEnseignement) references typesEnseignement(id)
-);
+
 CREATE TABLE UE(
 id integer not null primary key auto_increment,
 label text,
@@ -351,6 +356,7 @@ responsable integer,
 nb_heures real,
 foreign key(responsable) references personnelEnseignant(id)
 );
+
 INSERT INTO UE VALUES(100,'Curabitur dictum. Phasellus in felis.',1069,50.0);
 INSERT INTO UE VALUES(101,'porttitor eros nec tellus. Nunc',1069,18.0);
 INSERT INTO UE VALUES(102,'quis, pede. Suspendisse dui.',1075,49.0);
@@ -397,3 +403,27 @@ INSERT INTO UE VALUES(142,'non dui nec',1085,37.0);
 INSERT INTO UE VALUES(143,'aliquet. Phasellus fermentum convallis',1072,50.0);
 INSERT INTO UE VALUES(144,'elit elit fermentum risus, at',1093,27.0);
 INSERT INTO UE VALUES(145,'Phasellus',1058,47.0);
+
+
+CREATE TABLE interventions(
+id integer primary key auto_increment not null,
+idUE integer not null,
+idEnseignant integer not null,
+idTypeEnseignement integer NOT NULL,
+nbHeures real,
+foreign key (idUE) references UE(id),
+foreign key (idEnseignant) references personnelEnseignant(id),
+foreign key (idTypeEnseignement) references typesEnseignement(id)
+);
+
+INSERT INTO interventions (`id`,`idUE`,`idEnseignant`,`idTypeEnseignement`,`nbHeures`) VALUES (1000,133,1052,3,26),(1001,101,1060,2,14),(1002,123,1056,2,20),(1003,133,1065,3,29),(1004,130,1096,2,27),(1005,137,1060,2,26),(1006,130,1083,2,24),(1007,134,1067,2,13),(1008,101,1091,2,26),(1009,141,1064,1,13);
+INSERT INTO interventions (`id`,`idUE`,`idEnseignant`,`idTypeEnseignement`,`nbHeures`) VALUES (1010,133,1052,1,13),(1011,133,1087,3,22),(1012,107,1059,3,22),(1013,127,1071,3,18),(1014,110,1060,2,17),(1015,108,1057,1,12),(1016,120,1090,1,22),(1017,125,1097,3,26),(1018,130,1089,1,16),(1019,135,1064,1,30);
+INSERT INTO interventions (`id`,`idUE`,`idEnseignant`,`idTypeEnseignement`,`nbHeures`) VALUES (1020,104,1067,1,12),(1021,135,1094,3,20),(1022,122,1071,3,28),(1023,112,1084,2,23),(1024,108,1091,3,27),(1025,101,1077,3,12),(1026,121,1062,3,13),(1027,107,1093,2,24),(1028,104,1072,3,30),(1029,142,1077,3,26);
+INSERT INTO interventions (`id`,`idUE`,`idEnseignant`,`idTypeEnseignement`,`nbHeures`) VALUES (1030,137,1077,2,21),(1031,116,1051,3,27),(1032,100,1060,3,30),(1033,134,1076,2,24),(1034,103,1081,1,15),(1035,119,1066,1,12),(1036,130,1093,3,27),(1037,132,1077,2,27),(1038,129,1080,3,18),(1039,136,1082,2,12);
+INSERT INTO interventions (`id`,`idUE`,`idEnseignant`,`idTypeEnseignement`,`nbHeures`) VALUES (1040,110,1097,1,12),(1041,108,1091,1,17),(1042,130,1061,2,20),(1043,123,1097,3,23),(1044,105,1076,2,30),(1045,113,1052,2,14),(1046,123,1088,1,29),(1047,124,1057,2,27),(1048,126,1057,3,18),(1049,127,1098,3,26);
+INSERT INTO interventions (`id`,`idUE`,`idEnseignant`,`idTypeEnseignement`,`nbHeures`) VALUES (1050,131,1087,2,20),(1051,113,1074,1,20),(1052,123,1076,2,23),(1053,106,1055,1,19),(1054,125,1082,2,12),(1055,140,1083,2,21),(1056,126,1083,2,24),(1057,128,1086,2,12),(1058,117,1089,2,13),(1059,105,1059,3,24);
+INSERT INTO interventions (`id`,`idUE`,`idEnseignant`,`idTypeEnseignement`,`nbHeures`) VALUES (1060,115,1081,2,23),(1061,132,1096,3,26),(1062,122,1095,3,16),(1063,138,1067,3,29),(1064,118,1076,3,20),(1065,100,1085,3,29),(1066,115,1092,3,24),(1067,123,1099,1,13),(1068,144,1072,3,25),(1069,104,1062,3,13);
+INSERT INTO interventions (`id`,`idUE`,`idEnseignant`,`idTypeEnseignement`,`nbHeures`) VALUES (1070,102,1072,3,21),(1071,114,1076,1,29),(1072,143,1071,1,16),(1073,100,1077,3,26),(1074,138,1094,3,22),(1075,113,1067,1,27),(1076,145,1088,2,21),(1077,116,1060,2,17),(1078,100,1062,1,26),(1079,119,1052,3,19);
+INSERT INTO interventions (`id`,`idUE`,`idEnseignant`,`idTypeEnseignement`,`nbHeures`) VALUES (1080,131,1091,2,29),(1081,145,1069,3,26),(1082,133,1095,1,27),(1083,131,1095,1,27),(1084,110,1070,3,30),(1085,128,1058,1,20),(1086,109,1058,1,18),(1087,122,1088,1,30),(1088,108,1092,1,12),(1089,113,1058,3,20);
+INSERT INTO interventions (`id`,`idUE`,`idEnseignant`,`idTypeEnseignement`,`nbHeures`) VALUES (1090,143,1074,1,28),(1091,118,1089,2,26),(1092,136,1088,1,23),(1093,125,1076,1,14),(1094,123,1056,1,13),(1095,109,1098,2,18),(1096,130,1092,3,24),(1097,135,1091,1,25),(1098,106,1063,1,22),(1099,115,1076,2,25);
+
