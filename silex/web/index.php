@@ -14,12 +14,27 @@ catch (Exception $e)
 {
 		die('Erreur : ' . $e->getMessage());
 }
+
+
 #il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
 $app->post('/addPersonnel', function (Request $request) {
-    // $request->get("login") permet d'accéder au champ avec la valeur login de ce qui est envoyé en post
-	echo 'Insert into Personnel values (\'' . $request->get('login') . '\', \'' . $request->get('pw') . '\', \'' . $request->get('name') . '\', \'' . $request->get('firstname') . '\')';
-    echo "<br/><br>";
-    return 'Insertion réussi';
+	try
+	{
+		$bdd = new PDO('mysql:host=localhost;dbname=projet_m1;charset=utf8', 'root', '');
+		$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);								#Signaler l'insertion de nouvelles données
+		#permet d'accéder au champ avec la valeur pw (ici)) de ce qui est envoyé en post
+		$pass = $request->get('pw');
+		$hash = password_hash($pass,PASSWORD_BCRYPT,['cost' => 13]);								#Hacher le mot de passe
+		
+		#Requete SQL permettant l'insertion du nouveau personnel
+		$sql = $bdd->query("INSERT INTO personnel (login, password, nom, prenom, mail) VALUES ('". $request->get('login') . "', '" . $hash . "', '" . $request->get('name') . "', '" . $request->get('firstname') . "', '" . $request->get('mail') ."')");
+		$bdd->exec($sql);					#Sert à executer l'insertion d'un nouveau personnel  (Provoque une erreur, mais s'execute correctement)
+		return "Insertion REUSSIE";
+	}
+	catch (Exception $e)
+	{
+		die('Erreur : ' . $e->getMessage());
+	}
 });
 
 
