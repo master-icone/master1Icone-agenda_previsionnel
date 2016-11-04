@@ -38,7 +38,6 @@ INSERT INTO personnel VALUES(1026,'sodales','THF65KWD7XU','Randolph','Gemma','an
 INSERT INTO personnel VALUES(1027,'ac','KXR23KIX1BM','Roy','Colorado','Curae.Donec.tincidunt@lobortis.net');
 INSERT INTO personnel VALUES(1028,'libero','SVK04HJW1FR','Smith','Nathan','Aenean.gravida.nunc@Aliquamerat.ca');
 INSERT INTO personnel VALUES(1029,'dolor.','CZY11LMC5SN','Estes','Stone','a.ultricies.adipiscing@dolortempusnon.org');
-INSERT INTO personnel VALUES(1030,'non','ATE49UMZ9IJ','Baker','Jada','in@mauris.edu');
 INSERT INTO personnel VALUES(1031,'nisl.','TQV00AAO5JR','Hooper','Hayfa','Nam@aliquetmagnaa.net');
 INSERT INTO personnel VALUES(1032,'orci','CXH78MMD8GC','Anthony','Nathan','lorem.ut.aliquam@Integer.co.uk');
 INSERT INTO personnel VALUES(1033,'lorem,','OMU93OXB7XR','Coffey','Karina','primis.in.faucibus@Aliquameratvolutpat.ca');
@@ -169,11 +168,11 @@ autorisation integer,
 FOREIGN KEY(autorisation) REFERENCES autorisations(id)
 );
 
-INSERT INTO statuts VALUES(1,'consultant',12,NULL);
-INSERT INTO statuts VALUES(2,'Enseignant',192,NULL);
-INSERT INTO statuts VALUES(3,'enseignant-chercheur',192,NULL);
-INSERT INTO statuts VALUES(4,'doctorant',96,NULL);
-INSERT INTO statuts VALUES(5,'thésard',20,NULL);
+INSERT INTO statuts VALUES(0,'consultant',12,NULL);
+INSERT INTO statuts VALUES(1,'Enseignant',192,NULL);
+INSERT INTO statuts VALUES(2,'enseignant-chercheur',192,NULL);
+INSERT INTO statuts VALUES(3,'doctorant',96,NULL);
+INSERT INTO statuts VALUES(4,'thésard',20,NULL);
 
 CREATE TABLE personnelEnseignant(
 id integer not null primary key auto_increment,
@@ -193,27 +192,27 @@ INSERT INTO personnelEnseignant VALUES(1057,2);
 INSERT INTO personnelEnseignant VALUES(1058,1);
 INSERT INTO personnelEnseignant VALUES(1059,2);
 INSERT INTO personnelEnseignant VALUES(1060,1);
-INSERT INTO personnelEnseignant VALUES(1061,5);
+INSERT INTO personnelEnseignant VALUES(1061,0);
 INSERT INTO personnelEnseignant VALUES(1062,2);
 INSERT INTO personnelEnseignant VALUES(1063,1);
-INSERT INTO personnelEnseignant VALUES(1064,5);
+INSERT INTO personnelEnseignant VALUES(1064,0);
 INSERT INTO personnelEnseignant VALUES(1065,2);
-INSERT INTO personnelEnseignant VALUES(1066,5);
+INSERT INTO personnelEnseignant VALUES(1066,0);
 INSERT INTO personnelEnseignant VALUES(1067,1);
 INSERT INTO personnelEnseignant VALUES(1068,1);
 INSERT INTO personnelEnseignant VALUES(1069,1);
 INSERT INTO personnelEnseignant VALUES(1070,3);
 INSERT INTO personnelEnseignant VALUES(1071,3);
 INSERT INTO personnelEnseignant VALUES(1072,2);
-INSERT INTO personnelEnseignant VALUES(1073,5);
+INSERT INTO personnelEnseignant VALUES(1073,0);
 INSERT INTO personnelEnseignant VALUES(1074,4);
 INSERT INTO personnelEnseignant VALUES(1075,2);
 INSERT INTO personnelEnseignant VALUES(1076,3);
 INSERT INTO personnelEnseignant VALUES(1077,4);
-INSERT INTO personnelEnseignant VALUES(1078,5);
+INSERT INTO personnelEnseignant VALUES(1078,0);
 INSERT INTO personnelEnseignant VALUES(1079,4);
-INSERT INTO personnelEnseignant VALUES(1080,5);
-INSERT INTO personnelEnseignant VALUES(1081,5);
+INSERT INTO personnelEnseignant VALUES(1080,0);
+INSERT INTO personnelEnseignant VALUES(1081,0);
 INSERT INTO personnelEnseignant VALUES(1082,3);
 INSERT INTO personnelEnseignant VALUES(1083,1);
 INSERT INTO personnelEnseignant VALUES(1084,4);
@@ -227,7 +226,7 @@ INSERT INTO personnelEnseignant VALUES(1091,1);
 INSERT INTO personnelEnseignant VALUES(1092,1);
 INSERT INTO personnelEnseignant VALUES(1093,4);
 INSERT INTO personnelEnseignant VALUES(1094,4);
-INSERT INTO personnelEnseignant VALUES(1095,5);
+INSERT INTO personnelEnseignant VALUES(1095,0);
 INSERT INTO personnelEnseignant VALUES(1096,1);
 INSERT INTO personnelEnseignant VALUES(1097,2);
 INSERT INTO personnelEnseignant VALUES(1098,1);
@@ -268,7 +267,6 @@ INSERT INTO personnelAdministratif VALUES(1026);
 INSERT INTO personnelAdministratif VALUES(1027);
 INSERT INTO personnelAdministratif VALUES(1028);
 INSERT INTO personnelAdministratif VALUES(1029);
-INSERT INTO personnelAdministratif VALUES(1030);
 INSERT INTO personnelAdministratif VALUES(1031);
 INSERT INTO personnelAdministratif VALUES(1032);
 INSERT INTO personnelAdministratif VALUES(1033);
@@ -412,9 +410,9 @@ idUE integer not null,
 idEnseignant integer not null,
 idTypeEnseignement integer NOT NULL,
 nbHeures real,
-foreign key (idUE) references UE(id),
-foreign key (idEnseignant) references personnelEnseignant(id),
-foreign key (idTypeEnseignement) references typesEnseignement(id)
+foreign key(idUE) references ue(id),
+foreign key(idEnseignant) references personnelEnseignant(id),
+foreign key(idTypeEnseignement) references typesEnseignements(id)
 );
 
 INSERT INTO interventions (`id`,`idUE`,`idEnseignant`,`idTypeEnseignement`,`nbHeures`) VALUES (1000,133,1052,3,26),(1001,101,1060,2,14),(1002,123,1056,2,20),(1003,133,1065,3,29),(1004,130,1096,2,27),(1005,137,1060,2,26),(1006,130,1083,2,24),(1007,134,1067,2,13),(1008,101,1091,2,26),(1009,141,1064,1,13);
