@@ -8,18 +8,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var VueGlobalComponent = (function () {
     function VueGlobalComponent() {
     }
+    VueGlobalComponent = __decorate([
+        core_1.Component({
+            selector: 'vue_globale',
+            template: "<vue-globale></vue-globale>\n"
+        }), 
+        __metadata('design:paramtypes', [])
+    ], VueGlobalComponent);
     return VueGlobalComponent;
-}()); // € Exportation du component sous la forme du nom de class 
-VueGlobalComponent = __decorate([
-    core_1.Component({
-        selector: 'vue_globale',
-        template: "<vue-globale></vue-globale>\n"
-    }),
-    __metadata("design:paramtypes", [])
-], VueGlobalComponent);
-exports.VueGlobalComponent = VueGlobalComponent;
+}());
+exports.VueGlobalComponent = VueGlobalComponent; // € Exportation du component sous la forme du nom de class 
 //# sourceMappingURL=vueGlobale.js.map
