@@ -16,8 +16,17 @@ nav a {
   text-decoration: none;
   vertical-align: middle;
   cursor: pointer;
+
+}
+
+
+.surligne:hover {
+  color: black;
+  border-color: orange;
+
 }
 
 nav a.router-link-active {
   color: #106cc8;
 }
+
