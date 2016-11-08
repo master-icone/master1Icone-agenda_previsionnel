@@ -21,5 +21,5 @@ var DescriptionProfComponent = (function () {
     ], DescriptionProfComponent);
     return DescriptionProfComponent;
 }());
-exports.DescriptionProfComponent = DescriptionProfComponent; // € Exportation du component sous la forme du nom de class
+exports.DescriptionProfComponent = DescriptionProfComponent;
 //# sourceMappingURL=descriptionProf.component.js.map
