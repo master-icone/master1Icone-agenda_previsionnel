@@ -1,12 +1,12 @@
-﻿CREATE TABLE personnel(
+CREATE TABLE personnel(
 id integer primary key autoincrement,
 login text unique,
 motDePasse text,
 nom text,
 prenom text,
 mail text,
-autorisation integer,
-FOREIGN KEY(autorisation) REFERENCES autorisations(id)
+idAutorisation integer,
+FOREIGN KEY(idAutorisation) REFERENCES autorisations(id)
 );
 
 
@@ -20,7 +20,7 @@ peutAccorderDroits integer
 
 
 CREATE TABLE statuts(
-id integer not null primary key autoincrement,
+id integer primary key autoincrement,
 label text,
 nbHeures integer,
 annee integer
