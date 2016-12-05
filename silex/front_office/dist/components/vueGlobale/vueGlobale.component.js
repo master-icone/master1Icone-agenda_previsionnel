@@ -15,7 +15,8 @@ var VueGlobaleComponent = (function () {
     VueGlobaleComponent = __decorate([
         core_1.Component({
             selector: 'vueGlobale',
-            templateUrl: '../../../app/components/vueGlobale/vueGlobale.html'
+            templateUrl: '../../../app/components/vueGlobale/vueGlobale.html',
+            styleUrls: ['../../../app/components/vueGlobale/vueGlobale.css']
         }), 
         __metadata('design:paramtypes', [])
     ], VueGlobaleComponent);
