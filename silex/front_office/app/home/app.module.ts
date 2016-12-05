@@ -12,10 +12,13 @@ import { ListeHeureAffecterComponent } from '../components/listeHeureAffecter/li
 import { PlanningProfComponent } from '../components/planningProf/planningProf.component';
 import { VueGlobaleComponent } from '../components/vueGlobale/vueGlobale.component';
 
+import {CalendarModule} from 'primeng/primeng';
+
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
+    CalendarModule,
     RouterModule.forRoot([
       { path: '', redirectTo: '/vueGlobale', pathMatch:'full' },
       { path: 'affecterHeure', component: AffecterHeureComponent },
