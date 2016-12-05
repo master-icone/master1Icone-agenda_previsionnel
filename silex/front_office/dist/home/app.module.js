@@ -20,6 +20,7 @@ var descriptionProf_component_1 = require('../components/descriptionProf/descrip
 var listeHeureAffecter_component_1 = require('../components/listeHeureAffecter/listeHeureAffecter.component');
 var planningProf_component_1 = require('../components/planningProf/planningProf.component');
 var vueGlobale_component_1 = require('../components/vueGlobale/vueGlobale.component');
+var http_1 = require('@angular/http');
 var primeng_1 = require('primeng/primeng');
 var AppModule = (function () {
     function AppModule() {
@@ -29,6 +30,7 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
+                http_1.HttpModule,
                 primeng_1.CalendarModule,
                 router_1.RouterModule.forRoot([
                     { path: '', redirectTo: '/vueGlobale', pathMatch: 'full' },

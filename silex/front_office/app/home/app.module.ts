@@ -11,6 +11,7 @@ import { DescriptionProfComponent } from '../components/descriptionProf/descript
 import { ListeHeureAffecterComponent } from '../components/listeHeureAffecter/listeHeureAffecter.component';
 import { PlanningProfComponent } from '../components/planningProf/planningProf.component';
 import { VueGlobaleComponent } from '../components/vueGlobale/vueGlobale.component';
+import { HttpModule } from '@angular/http';
 
 import {CalendarModule} from 'primeng/primeng';
 
@@ -18,6 +19,7 @@ import {CalendarModule} from 'primeng/primeng';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     CalendarModule,
     RouterModule.forRoot([
       { path: '', redirectTo: '/vueGlobale', pathMatch:'full' },
