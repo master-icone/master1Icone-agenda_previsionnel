@@ -1,0 +1,76 @@
+create table personnel(
+id integer not null primary key autoincrement,
+login text,
+password text,
+nom text,
+prenom text,
+mail text
+);
+
+create table personnelEnseignant(
+id integer not null primary key autoincrement,
+statut integer,
+foreign key (id) references PERSONNEL(id),
+foreign key (statut) references STATUTS(id)
+);
+
+create table personnelAdministratif(
+id integer not null primary key autoincrement,
+foreign key (id) references PERSONNEL(id)
+);
+
+create table decharges(
+id integer not null primary key autoincrement,
+enseignant integer,
+raison text,
+foreign key (enseignant) references personnel(id)
+);
+
+create table typesEnseignements(
+id integer not null primary key autoincrement,
+label text
+);
+
+/*gère les droits d'accès à la BDD, voir s'il faut définir plus d'accès */
+create table autorisations(
+id integer not null primary key autoincrement,
+label text,
+peutModifier integer, /*à considérer comme des booléens*/
+peutAcceder integer
+);
+
+create table statuts(
+id integer not null primary key autoincrement,
+label text,
+nbHeures integer,
+autorisation integer,
+FOREIGN KEY(autorisation) REFERENCES autorisations(id)
+);
+
+create table coefficients(
+    idTypeEnseignement integer not null,
+    idStatut integer,
+int valeur,
+    FOREIGN KEY(idTypeEnseignement) REFERENCES TYPESENSEIGNEMENTS(id),
+    FOREIGN KEY(idStatut) REFERENCES STATUTS(id),
+    PRIMARY KEY(idTypeEnseignement, idStatut)
+);
+
+create table UE(
+id integer not null primary key autoincrement,
+    label text,
+    responsable integer,
+    nb_heures real,
+    foreign key(responsable) references personnelEnseignant(id)
+);
+
+create table interventions(
+    id integer primary key autoincrement not null,
+    idUE integer not null,
+    idEnseignant integer not null,
+    idTypeEnseignement integer NOT NULL,
+    nbHeures real,
+    foreign key (idUE) references UE(id),
+    foreign key (idEnseignant) references personnelEnseignant(id),
+foreign key (idTypeEnseignement) references typesEnseignement(id)
+);
