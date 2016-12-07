@@ -54,7 +54,7 @@ CREATE TABLE decharges(
 );
 
 
-CREATE TABLE typesEnseignements(
+CREATE TABLE typesEnseignement(
 	id integer primary key autoincrement,
 	label text
 );
@@ -71,6 +71,8 @@ CREATE TABLE coefficients(
 	idStatut integer,
 	idModeEnseignement integer,
 	priorite integer,
+	valeurNormale integer,
+	valeurHeureSup integer,
 	FOREIGN KEY(idTypeEnseignement) REFERENCES TYPESENSEIGNEMENTS(id),
 	FOREIGN KEY(idStatut) REFERENCES STATUTS(id),
 	FOREIGN KEY(idModeEnseignement) REFERENCES modesEnseignements(id),
@@ -90,7 +92,7 @@ CREATE TABLE Ues(
 	nbMaxApprentis integer,
 	foreign key(idResponsable) references personnelEnseignant(id),
 	foreign key(idDepartement) references departements(id),
-	UNIQUE(label, anne)
+	UNIQUE(label, annee)
 );
 
 
@@ -108,7 +110,7 @@ CREATE TABLE interventions(
 );
 
 
-CREATE TABLE Administrateur(
+CREATE TABLE Administrateurs(
 	id integer primary key,
 	foreign key (id) references PERSONNEL(id)
 );
