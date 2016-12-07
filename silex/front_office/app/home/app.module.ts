@@ -10,7 +10,7 @@ import { AffecterHeureComponent } from '../components/affecterHeure/affecterHeur
 import { DescriptionProfComponent } from '../components/descriptionProf/descriptionProf.component';
 import { ListeHeureAffecterComponent } from '../components/listeHeureAffecter/listeHeureAffecter.component';
 import { PlanningProfComponent } from '../components/planningProf/planningProf.component';
-import { VueGlobaleComponent } from '../components/vueGlobale/vueGlobale.component';
+import { AccueilComponent } from '../components/accueil/accueil.component';
 import { HttpModule } from '@angular/http';
 
 import {CalendarModule} from 'primeng/primeng';
@@ -25,17 +25,17 @@ import {InputTextModule} from 'primeng/primeng';
     CalendarModule,
     InputTextModule,
     RouterModule.forRoot([
-      { path: '', redirectTo: '/vueGlobale', pathMatch:'full' },
+      { path: '', redirectTo: '/accueil', pathMatch:'full' },
       { path: 'affecterHeure', component: AffecterHeureComponent },
       { path: 'description', component: DescriptionProfComponent },
       { path: 'listeHeureAffecter', component: ListeHeureAffecterComponent },
       { path: 'planningProf', component: PlanningProfComponent },
-      { path: 'vueGlobale', component: VueGlobaleComponent }
+      { path: 'accueil', component: AccueilComponent }
     ])
   ],
   declarations: [ AppComponent, ToolbarComponent, NavbarComponent,
   DescriptionProfComponent, AffecterHeureComponent,
-  ListeHeureAffecterComponent, PlanningProfComponent, VueGlobaleComponent ],
+  ListeHeureAffecterComponent, PlanningProfComponent, AccueilComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

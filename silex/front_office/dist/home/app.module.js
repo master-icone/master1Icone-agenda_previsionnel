@@ -19,7 +19,7 @@ var affecterHeure_component_1 = require('../components/affecterHeure/affecterHeu
 var descriptionProf_component_1 = require('../components/descriptionProf/descriptionProf.component');
 var listeHeureAffecter_component_1 = require('../components/listeHeureAffecter/listeHeureAffecter.component');
 var planningProf_component_1 = require('../components/planningProf/planningProf.component');
-var vueGlobale_component_1 = require('../components/vueGlobale/vueGlobale.component');
+var accueil_component_1 = require('../components/accueil/accueil.component');
 var http_1 = require('@angular/http');
 var primeng_1 = require('primeng/primeng');
 var primeng_2 = require('primeng/primeng');
@@ -35,17 +35,17 @@ var AppModule = (function () {
                 primeng_1.CalendarModule,
                 primeng_2.InputTextModule,
                 router_1.RouterModule.forRoot([
-                    { path: '', redirectTo: '/vueGlobale', pathMatch: 'full' },
+                    { path: '', redirectTo: '/accueil', pathMatch: 'full' },
                     { path: 'affecterHeure', component: affecterHeure_component_1.AffecterHeureComponent },
                     { path: 'description', component: descriptionProf_component_1.DescriptionProfComponent },
                     { path: 'listeHeureAffecter', component: listeHeureAffecter_component_1.ListeHeureAffecterComponent },
                     { path: 'planningProf', component: planningProf_component_1.PlanningProfComponent },
-                    { path: 'vueGlobale', component: vueGlobale_component_1.VueGlobaleComponent }
+                    { path: 'accueil', component: accueil_component_1.AccueilComponent }
                 ])
             ],
             declarations: [app_component_1.AppComponent, toolbar_component_1.ToolbarComponent, navbar_component_1.NavbarComponent,
                 descriptionProf_component_1.DescriptionProfComponent, affecterHeure_component_1.AffecterHeureComponent,
-                listeHeureAffecter_component_1.ListeHeureAffecterComponent, planningProf_component_1.PlanningProfComponent, vueGlobale_component_1.VueGlobaleComponent],
+                listeHeureAffecter_component_1.ListeHeureAffecterComponent, planningProf_component_1.PlanningProfComponent, accueil_component_1.AccueilComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
