@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS attributions, interventions, AutorisationsSurUes, NombreHeures, Ues, departements, decharges, personnelEnseignant, Administrateur, personnelAdministratif, coefficients, PERSONNEL, modesEnseignement, typesEnseignement, Statuts, Autorisations;
+
 CREATE TABLE personnel(
 	id integer primary key autoincrement,
 	login text unique,
@@ -54,7 +56,7 @@ CREATE TABLE decharges(
 );
 
 
-CREATE TABLE typesEnseignements(
+CREATE TABLE typesEnseignement(
 	id integer primary key autoincrement,
 	label text
 );
@@ -71,7 +73,7 @@ CREATE TABLE coefficients(
 	idStatut integer,
 	idModeEnseignement integer,
 	priorite integer,
-	FOREIGN KEY(idTypeEnseignement) REFERENCES TYPESENSEIGNEMENTS(id),
+	FOREIGN KEY(idTypeEnseignement) REFERENCES typesEnseignement(id),
 	FOREIGN KEY(idStatut) REFERENCES STATUTS(id),
 	FOREIGN KEY(idModeEnseignement) REFERENCES modesEnseignements(id),
 	PRIMARY KEY(idTypeEnseignement, idStatut, idModeEnseignement)
@@ -103,12 +105,12 @@ CREATE TABLE interventions(
 	primary key(idUE, idEnseignant, idTypeEnseignement, idModeEnseignement),
 	foreign key(idUE) references ue(id),
 	foreign key(idEnseignant) references personnelEnseignant(id),
-	foreign key(idTypeEnseignement) references typesEnseignements(id),
+	foreign key(idTypeEnseignement) references typesEnseignement(id),
 	foreign key(idModeEnseignement) references modeEnseignements(id)
 );
 
 
-CREATE TABLE Administrateur(
+CREATE TABLE Administrateurs(
 	id integer primary key,
 	foreign key (id) references PERSONNEL(id)
 );
@@ -138,7 +140,7 @@ CREATE TABLE NombreHeures(
 	quantite real,
 	PRIMARY KEY(idUe, idTypeEnseignement),
 	foreign key(idUe) references Ues(id),
-	foreign key(idTypeEnseignement) references typesEnseignements(id)
+	foreign key(idTypeEnseignement) references typesEnseignement(id)
 );
 
 CREATE TABLE AutorisationsSurUes(

@@ -258,9 +258,9 @@ INSERT INTO 'decharges' ('idEnseignant','raison','duree','annee') VALUES (87,"co
 INSERT INTO 'decharges' ('idEnseignant','raison','duree','annee') VALUES (63,"est.",26,1996);
 INSERT INTO 'decharges' ('idEnseignant','raison','duree','annee') VALUES (62,"nec,",3,1993);
 
-INSERT INTO 'typesEnseignements' ('label') VALUES('CM');
-INSERT INTO 'typesEnseignements' ('label') VALUES('TD');
-INSERT INTO 'typesEnseignements' ('label') VALUES('TP');
+INSERT INTO 'typesEnseignement' ('label') VALUES('CM');
+INSERT INTO 'typesEnseignement' ('label') VALUES('TD');
+INSERT INTO 'typesEnseignement' ('label') VALUES('TP');
 
 
 INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("a",65,20,27,1,1999,3);
