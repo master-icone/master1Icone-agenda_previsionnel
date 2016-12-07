@@ -1,4 +1,49 @@
-DROP TABLE IF EXISTS attributions, interventions, AutorisationsSurUes, NombreHeures, Ues, departements, decharges, personnelEnseignant, Administrateur, personnelAdministratif, coefficients, PERSONNEL, modesEnseignement, typesEnseignement, Statuts, Autorisations;
+DROP TABLE IF EXISTS attributions;
+DROP TABLE IF EXISTS interventions;
+DROP TABLE IF EXISTS AutorisationsSurUes;
+DROP TABLE IF EXISTS NombreHeures;
+DROP TABLE IF EXISTS Ues;
+DROP TABLE IF EXISTS departements;
+DROP TABLE IF EXISTS decharges;
+DROP TABLE IF EXISTS personnelEnseignant;
+DROP TABLE IF EXISTS Administrateur;
+DROP TABLE IF EXISTS personnelAdministratif;
+DROP TABLE IF EXISTS coefficients;
+DROP TABLE IF EXISTS personnel;
+DROP TABLE IF EXISTS typesEnseignement;
+DROP TABLE IF EXISTS modesEnseignement;
+DROP TABLE IF EXISTS statuts;
+DROP TABLE IF EXISTS autorisations;
+
+CREATE TABLE typesEnseignement(
+	id integer primary key autoincrement,
+	label text
+);
+
+
+CREATE TABLE modesEnseignement(
+	id integer primary key,
+	label text
+);
+
+
+CREATE TABLE statuts(
+	id integer primary key autoincrement,
+	label text,
+	nbHeures integer,
+	annee integer,
+	UNIQUE(label, annee)
+);
+
+CREATE TABLE autorisations(
+	id integer primary key autoincrement,
+	label text UNIQUE,
+	peutAccorderDroits integer,
+	peutLireTout integer,
+	peutAccorderDecharges integer,
+	peutGererComptes integer,
+	peutGererUe integer
+);
 
 CREATE TABLE personnel(
 	id integer primary key autoincrement,
@@ -12,24 +57,19 @@ CREATE TABLE personnel(
 );
 
 
-CREATE TABLE autorisations(
-	id integer primary key autoincrement,
-	label text UNIQUE,
-	peutAccorderDroits integer,
-	peutLireTout integer,
-	peutAccorderDecharges integer,
-	peutGererComptes integer,
-	peutGererUe integer
+CREATE TABLE coefficients(
+	idTypeEnseignement integer,
+	idStatut integer,
+	idModeEnseignement integer,
+	priorite integer,
+	valeurNormale integer,
+	valeurHeureSup integer,
+	FOREIGN KEY(idTypeEnseignement) REFERENCES typesEnseignement(id),
+	FOREIGN KEY(idStatut) REFERENCES STATUTS(id),
+	FOREIGN KEY(idModeEnseignement) REFERENCES modesEnseignements(id),
+	PRIMARY KEY(idTypeEnseignement, idStatut, idModeEnseignement)
 );
 
-
-CREATE TABLE statuts(
-	id integer primary key autoincrement,
-	label text,
-	nbHeures integer,
-	annee integer,
-	UNIQUE(label, annee)
-);
 
 
 CREATE TABLE personnelEnseignant(
@@ -46,6 +86,11 @@ CREATE TABLE personnelAdministratif(
 );
 
 
+CREATE TABLE Administrateurs(
+	id integer primary key,
+	foreign key (id) references PERSONNEL(id)
+);
+
 CREATE TABLE decharges(
 	id integer primary key autoincrement,
 	idEnseignant integer,
@@ -56,34 +101,13 @@ CREATE TABLE decharges(
 );
 
 
-CREATE TABLE typesEnseignement(
-	id integer primary key autoincrement,
-	label text
-);
-
-
-CREATE TABLE modesEnseignement(
+CREATE TABLE departements(
 	id integer primary key,
-	label text
+	idDirecteur integer,
+	label text unique,
+	foreign key(idDirecteur) references personnelEnseignant(id)
 );
 
-
-CREATE TABLE coefficients(
-	idTypeEnseignement integer,
-	idStatut integer,
-	idModeEnseignement integer,
-	priorite integer,
-<<<<<<< HEAD
-	FOREIGN KEY(idTypeEnseignement) REFERENCES typesEnseignement(id),
-=======
-	valeurNormale integer,
-	valeurHeureSup integer,
-	FOREIGN KEY(idTypeEnseignement) REFERENCES TYPESENSEIGNEMENTS(id),
->>>>>>> 8d92bbe1b7df7365a086eb9f3d026bd4abecec12
-	FOREIGN KEY(idStatut) REFERENCES STATUTS(id),
-	FOREIGN KEY(idModeEnseignement) REFERENCES modesEnseignements(id),
-	PRIMARY KEY(idTypeEnseignement, idStatut, idModeEnseignement)
-);
 
 
 CREATE TABLE Ues(
@@ -91,14 +115,10 @@ CREATE TABLE Ues(
 	label text,
 	idResponsable integer,
 	idDepartement integer,
-	nbHeuresCm real,
-	nbHeuresTd real,
-	nbHeuresTp real,
 	annee integer,
 	nbMaxApprentis integer,
 	foreign key(idResponsable) references personnelEnseignant(id),
 	foreign key(idDepartement) references departements(id),
-	UNIQUE(label, anne)
 	UNIQUE(label, annee)
 );
 
@@ -117,30 +137,6 @@ CREATE TABLE interventions(
 );
 
 
-CREATE TABLE Administrateurs(
-	id integer primary key,
-	foreign key (id) references PERSONNEL(id)
-);
-
-
-CREATE TABLE departements(
-	id integer primary key,
-	idDirecteur integer,
-	label text unique,
-	foreign key(idDirecteur) references personnelEnseignant(id)
-);
-
-
-CREATE TABLE attributions(
-	id integer primary key,
-	idPersonnel integer,
-	idIntervention integer,
-	dateEtHeure integer,
-	commentaire text,
-	foreign key(idPersonnel) references personnel(id),
-	foreign key(idIntervention) references interventions(id)
-);
-
 CREATE TABLE NombreHeures(
 	idUe integer,
 	idTypeEnseignement integer,
@@ -158,4 +154,14 @@ CREATE TABLE AutorisationsSurUes(
 	primary key(idPersonnel, idUe),
 	foreign key(idPersonnel) references personnel(id),
 	foreign key(idUe) references Ues(id)
+);
+
+CREATE TABLE attributions(
+	id integer primary key,
+	idPersonnel integer,
+	idIntervention integer,
+	dateEtHeure integer,
+	commentaire text,
+	foreign key(idPersonnel) references personnel(id),
+	foreign key(idIntervention) references interventions(id)
 );

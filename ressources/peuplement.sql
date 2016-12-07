@@ -21,6 +21,38 @@ INSERT INTO 'statuts'('label', 'nbHeures', 'annee') VALUES('doctorant',96, 2016)
 INSERT INTO 'statuts'('label', 'nbHeures', 'annee') VALUES('thésard',20, 2016);
 
 
+INSERT INTO 'typesEnseignement' ('label') VALUES('CM');
+INSERT INTO 'typesEnseignement' ('label') VALUES('TD');
+INSERT INTO 'typesEnseignement' ('label') VALUES('TP');
+
+
+INSERT INTO 'modesEnseignement' ('label') VALUES ("Presentiel");
+INSERT INTO 'modesEnseignement' ('label') VALUES ("non Presentiel");
+INSERT INTO 'modesEnseignement' ('label') VALUES ("MOOC");
+INSERT INTO 'modesEnseignement' ('label') VALUES ("Mauris molestie pharetra");
+INSERT INTO 'modesEnseignement' ('label') VALUES ("nunc, ullamcorper eu,");
+
+
+INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (2,2,3,10,5,7);
+INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (2,3,3,8,3,14);
+INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (3,3,3,9,2,19);
+INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (1,5,2,6,3,5);
+INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (2,1,3,5,6,7);
+INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (2,2,1,3,7,16);
+INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (1,5,1,8,1,14);
+INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (1,4,3,2,6,15);
+INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (3,1,2,10,9,7);
+INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (2,3,1,5,4,13);
+INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (3,1,3,5,4,11);
+INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (1,4,1,9,5,20);
+INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (3,5,3,7,7,15);
+INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (2,5,2,5,8,6);
+INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (1,3,1,2,2,19);
+INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (2,4,1,10,5,13);
+INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (1,3,3,5,8,4);
+INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (3,4,2,4,5,13);
+
+
 INSERT INTO 'personnel' ('login','motDePasse','nom','prenom','mail','idAutorisation') VALUES ("nec,","EEW46JOH3ZJ","Colon","Caleb","neque@Nullam.ca",3);
 INSERT INTO 'personnel' ('login','motDePasse','nom','prenom','mail','idAutorisation') VALUES ("egestas","TFC93CVL3XR","Kerr","Ebony","ante.bibendum.ullamcorper@iaculis.net",1);
 INSERT INTO 'personnel' ('login','motDePasse','nom','prenom','mail','idAutorisation') VALUES ("dis","QGY00CST2FD","Greene","Carter","Nunc.laoreet.lectus@veliteusem.com",4);
@@ -213,6 +245,10 @@ INSERT INTO 'personnelAdministratif' VALUES(37);
 INSERT INTO 'personnelAdministratif' VALUES(38);
 INSERT INTO 'personnelAdministratif' VALUES(39);
 
+
+INSERT INTO 'administrateurs' ('id') VALUES (1);
+
+
 INSERT INTO 'decharges' ('idEnseignant','raison','duree','annee') VALUES (92,"vitae sodales nisi magna sed dui. Fusce aliquam, enim",23,1994);
 INSERT INTO 'decharges' ('idEnseignant','raison','duree','annee') VALUES (61,"vehicula aliquet libero. Integer in magna. Phasellus dolor elit, pellentesque",13,1990);
 INSERT INTO 'decharges' ('idEnseignant','raison','duree','annee') VALUES (76,"Nam ac nulla. In tincidunt congue turpis. In condimentum.",26,2012);
@@ -258,60 +294,44 @@ INSERT INTO 'decharges' ('idEnseignant','raison','duree','annee') VALUES (87,"co
 INSERT INTO 'decharges' ('idEnseignant','raison','duree','annee') VALUES (63,"est.",26,1996);
 INSERT INTO 'decharges' ('idEnseignant','raison','duree','annee') VALUES (62,"nec,",3,1993);
 
-INSERT INTO 'typesEnseignement' ('label') VALUES('CM');
-INSERT INTO 'typesEnseignement' ('label') VALUES('TD');
-INSERT INTO 'typesEnseignement' ('label') VALUES('TP');
+
+INSERT INTO 'departements' ('idDirecteur') VALUES (67);
+INSERT INTO 'departements' ('idDirecteur') VALUES (65);
+INSERT INTO 'departements' ('idDirecteur') VALUES (52);
+INSERT INTO 'departements' ('idDirecteur') VALUES (93);
+INSERT INTO 'departements' ('idDirecteur') VALUES (95);
+INSERT INTO 'departements' ('idDirecteur') VALUES (87);
+INSERT INTO 'departements' ('idDirecteur') VALUES (72);
+INSERT INTO 'departements' ('idDirecteur') VALUES (50);
+INSERT INTO 'departements' ('idDirecteur') VALUES (73);
 
 
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("a",65,20,27,1,1999,3);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("Pellentesque tincidunt tempus",32,9,22,5,1992,4);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("vulputate, risus a ultricies adipiscing,",89,18,18,30,2011,4);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("lacus. Cras interdum.",21,36,4,19,1996,3);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("neque.",4,7,16,17,1997,2);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("ultricies adipiscing, enim",55,2,3,32,2002,3);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("et netus",2,10,29,11,1994,3);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("quam, elementum at,",73,2,17,33,1993,2);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("Pellentesque tincidunt tempus",62,18,16,8,2014,1);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("sed pede",11,6,17,15,2009,1);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("adipiscing elit. Etiam laoreet,",24,9,2,9,1993,5);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("nec, eleifend",84,14,24,14,2008,2);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("justo",8,33,26,26,2004,1);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("Fusce aliquet magna a neque.",70,17,36,34,1996,3);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("risus. Donec egestas. Duis",81,23,9,22,2011,1);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("velit",11,7,2,12,1997,2);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("congue turpis.",10,35,35,4,1999,4);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("eu,",87,32,34,11,2016,3);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("facilisis vitae,",49,19,27,23,2005,5);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("nonummy ut,",96,20,8,7,2011,3);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("est ac mattis semper, dui",24,1,1,36,2013,4);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("euismod urna.",97,35,10,5,2005,5);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("ac mattis ornare, lectus ante",13,36,16,23,1999,3);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("orci quis lectus. Nullam suscipit,",15,14,31,30,1991,1);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("turpis non enim.",91,9,33,8,1994,4);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("montes, nascetur ridiculus",71,31,2,7,1996,5);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("viverra. Donec tempus,",96,7,21,14,2012,1);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("risus varius",45,36,19,29,2000,1);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("tincidunt orci",86,26,14,34,2016,4);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("nunc id",82,6,30,10,1994,5);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("luctus felis",28,18,11,1,1999,5);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("pede, nonummy ut,",14,8,24,23,2012,3);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("Phasellus ornare. Fusce",53,18,24,10,2013,5);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("Sed diam",86,25,22,28,1994,5);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("Phasellus nulla. Integer",96,3,7,21,2012,3);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("eu tellus.",54,18,16,1,1991,3);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("auctor. Mauris vel turpis.",83,3,10,12,2014,4);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("et, euismod et, commodo at,",1,29,25,13,1995,2);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("aliquam, enim",16,20,30,36,1990,3);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("ultrices. Duis volutpat nunc",44,15,36,25,2010,2);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("arcu.",77,11,26,4,2007,4);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("tempor",25,24,1,16,1997,2);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis') VALUES ("ipsum. Curabitur",88,15,17,2,2005,4);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("sapien. Cras dolor dolor, tempus",84,1996,1,8);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("dolor. Nulla",50,2011,4,6);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("vitae risus. Duis a",58,1994,3,4);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("nec",94,1997,4,4);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("suscipit, est ac",74,2010,2,8);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("Maecenas libero",87,2003,2,5);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("Integer vulputate, risus a",71,1999,5,7);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("Nam nulla",73,2015,2,4);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("vestibulum. Mauris magna. Duis",89,2013,4,6);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("malesuada. Integer id magna",90,1996,3,7);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("mollis. Duis sit",88,2009,5,7);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("ornare, lectus ante dictum mi,",65,2008,6,2);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("erat semper rutrum.",75,2006,2,7);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("magna.",70,1992,2,5);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("congue, elit sed consequat",50,2006,4,1);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("Cras vulputate",95,2012,2,2);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("sit",75,1993,1,5);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("tincidunt aliquam",80,2002,4,8);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("mollis non, cursus non,",91,1995,5,7);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("ut",72,2009,6,6);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("faucibus orci luctus et",62,1998,3,7);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("Donec egestas. Aliquam",98,1993,3,9);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("lorem.",51,1996,4,6);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("molestie orci",96,2006,1,6);
+INSERT INTO 'Ues' ('label','idResponsable','annee','nbMaxApprentis','idDepartement') VALUES ("fames ac",91,1995,6,4);
 
-INSERT INTO 'modesEnseignement' ('label') VALUES ("Presentiel");
-INSERT INTO 'modesEnseignement' ('label') VALUES ("non Presentiel");
-INSERT INTO 'modesEnseignement' ('label') VALUES ("MOOC");
-INSERT INTO 'modesEnseignement' ('label') VALUES ("Mauris molestie pharetra");
-INSERT INTO 'modesEnseignement' ('label') VALUES ("nunc, ullamcorper eu,");
 
 INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (12,52,3,1,3);
 INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (8,94,1,1,3);
@@ -340,108 +360,6 @@ INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeE
 INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (12,71,2,2,27);
 INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (14,52,3,1,9);
 INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (17,60,3,3,11);
-
-
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (2,2,3,10,5,7);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (2,3,3,8,3,14);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (3,3,3,9,2,19);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (1,5,2,6,3,5);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (2,1,3,5,6,7);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (2,2,1,3,7,16);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (1,5,1,8,1,14);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (1,4,3,2,6,15);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (3,1,2,10,9,7);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (2,3,1,5,4,13);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (3,1,3,5,4,11);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (1,4,1,9,5,20);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (3,5,3,7,7,15);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (2,5,2,5,8,6);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (1,3,1,2,2,19);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (2,4,1,10,5,13);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (1,3,3,5,8,4);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (3,4,2,4,5,13);
-
-
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("ut nisi",68,1,8,21,2009,4,7);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("felis purus ac tellus. Suspendisse",91,1,6,5,2007,4,7);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("pede, ultrices a, auctor",75,1,7,3,1991,3,1);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("Vivamus nisi. Mauris",90,1,12,29,1992,1,7);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("Duis volutpat nunc",96,12,12,2,2012,4,1);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("vitae",93,10,11,10,2005,5,1);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("eget metus. In",83,12,5,2,1993,5,7);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("nec tempus scelerisque,",86,9,5,3,1991,5,8);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("ligula eu enim.",92,8,4,19,2011,2,5);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("non, dapibus rutrum, justo.",54,11,2,23,2013,5,3);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("lacinia orci, consectetuer euismod est",98,12,8,16,1994,2,2);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("mollis. Duis",72,12,12,19,2003,4,7);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("semper erat,",88,5,5,13,2015,5,9);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("placerat eget,",57,4,5,5,2016,3,5);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("vel",61,2,2,20,2013,4,6);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("Cras eu tellus",63,1,2,15,2015,2,1);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("ut",75,7,5,23,2010,1,5);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("non, hendrerit id, ante. Nunc",91,4,5,7,1993,5,5);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("dui,",60,3,7,29,2008,1,7);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("Mauris eu",86,7,6,33,2000,3,4);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("porttitor vulputate,",86,4,4,34,2003,4,1);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("natoque",57,11,7,11,2013,4,4);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("aptent taciti sociosqu ad litora",55,4,12,12,1993,1,5);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("tellus. Aenean egestas hendrerit neque.",92,4,11,22,2001,3,9);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("sem",93,11,8,32,2014,1,1);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("ac urna. Ut tincidunt vehicula",63,3,2,14,2001,1,7);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("velit egestas lacinia. Sed congue,",77,12,1,26,2003,1,2);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("dignissim magna",77,1,2,16,2015,2,5);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("eget metus",93,2,9,7,1992,5,6);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("consectetuer",62,5,11,15,2003,2,4);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("nisi a odio semper",60,10,8,1,2000,1,9);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("eget",71,11,9,4,2012,5,2);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("mauris ut mi. Duis risus",56,9,5,2,2005,3,8);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("egestas nunc",74,6,1,8,2015,3,5);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("pede nec ante blandit viverra.",53,2,2,8,1999,2,8);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("est. Nunc laoreet",96,2,12,1,2009,4,7);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("luctus lobortis.",65,7,3,36,2013,5,2);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("ut cursus luctus, ipsum leo",66,4,10,18,2005,5,7);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("Nullam suscipit, est ac",86,7,6,29,1995,1,1);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("mollis.",68,5,5,8,2008,2,1);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("Nullam vitae diam. Proin",91,10,5,33,2002,2,8);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("nibh. Phasellus nulla. Integer",65,6,7,8,1996,1,9);
-INSERT INTO 'Ues' ('label','idResponsable','nbHeuresCm','nbHeuresTd','nbHeuresTp','annee','nbMaxApprentis','idDepartement') VALUES ("tempor, est ac mattis semper,",91,3,9,3,1995,3,7);
-
-
-INSERT INTO 'departements' ('idDirecteur') VALUES (67);
-INSERT INTO 'departements' ('idDirecteur') VALUES (65);
-INSERT INTO 'departements' ('idDirecteur') VALUES (52);
-INSERT INTO 'departements' ('idDirecteur') VALUES (93);
-INSERT INTO 'departements' ('idDirecteur') VALUES (95);
-INSERT INTO 'departements' ('idDirecteur') VALUES (87);
-INSERT INTO 'departements' ('idDirecteur') VALUES (72);
-INSERT INTO 'departements' ('idDirecteur') VALUES (50);
-INSERT INTO 'departements' ('idDirecteur') VALUES (73);
-
-
-INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (94,15,"2016-05-27 ","aliquet, metus urna");
-INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (56,5,"2017-07-03 ","blandit mattis. Cras");
-INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (75,9,"2017-07-04 ","neque. Morbi quis urna. Nunc");
-INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (87,20,"2017-03-08 ","orci tincidunt adipiscing.");
-INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (27,13,"2016-08-09 ","dolor, nonummy ac, feugiat non,");
-INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (31,12,"2017-11-16 ","arcu. Sed eu nibh vulputate");
-INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (44,20,"2017-04-19 ","Proin");
-INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (59,19,"2017-02-26 ","a tortor.");
-INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (94,17,"2016-12-08 ","adipiscing. Mauris molestie pharetra nibh.");
-INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (42,2,"2017-03-27 ","sit amet");
-INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (44,17,"2017-10-10 ","Quisque");
-INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (98,1,"2016-05-09 ","id, libero. Donec consectetuer mauris");
-INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (46,7,"2017-06-14 ","Suspendisse dui. Fusce");
-INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (31,8,"2017-06-14 ","augue scelerisque mollis.");
-INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (64,18,"2016-08-11 ","mauris sit amet lorem semper");
-INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (92,11,"2017-10-13 ","Donec dignissim magna");
-INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (97,4,"2016-10-31 ","vitae, sodales at, velit.");
-INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (98,15,"2017-10-21 ","arcu");
-INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (96,6,"2016-01-30 ","turpis egestas. Aliquam fringilla cursus");
-INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (9,11,"2016-07-30 ","est ac");
-INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (50,10,"2017-09-05 ","ac,");
-
-
-INSERT INTO 'administrateurs' ('id') VALUES (1);
 
 
 INSERT INTO 'nombreHeures' ('idUE','idTypeEnseignement','quantite') VALUES (17,2,17);
@@ -543,3 +461,27 @@ INSERT INTO 'autorisationsSurUes' ('idPersonnel','idUe','peutModifierAttribution
 INSERT INTO 'autorisationsSurUes' ('idPersonnel','idUe','peutModifierAttributions','peutLireUe') VALUES (74,30,0,0);
 INSERT INTO 'autorisationsSurUes' ('idPersonnel','idUe','peutModifierAttributions','peutLireUe') VALUES (30,2,1,1);
 INSERT INTO 'autorisationsSurUes' ('idPersonnel','idUe','peutModifierAttributions','peutLireUe') VALUES (54,35,0,1);
+
+
+INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (94,15,"2016-05-27 ","aliquet, metus urna");
+INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (56,5,"2017-07-03 ","blandit mattis. Cras");
+INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (75,9,"2017-07-04 ","neque. Morbi quis urna. Nunc");
+INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (87,20,"2017-03-08 ","orci tincidunt adipiscing.");
+INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (27,13,"2016-08-09 ","dolor, nonummy ac, feugiat non,");
+INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (31,12,"2017-11-16 ","arcu. Sed eu nibh vulputate");
+INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (44,20,"2017-04-19 ","Proin");
+INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (59,19,"2017-02-26 ","a tortor.");
+INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (94,17,"2016-12-08 ","adipiscing. Mauris molestie pharetra nibh.");
+INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (42,2,"2017-03-27 ","sit amet");
+INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (44,17,"2017-10-10 ","Quisque");
+INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (98,1,"2016-05-09 ","id, libero. Donec consectetuer mauris");
+INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (46,7,"2017-06-14 ","Suspendisse dui. Fusce");
+INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (31,8,"2017-06-14 ","augue scelerisque mollis.");
+INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (64,18,"2016-08-11 ","mauris sit amet lorem semper");
+INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (92,11,"2017-10-13 ","Donec dignissim magna");
+INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (97,4,"2016-10-31 ","vitae, sodales at, velit.");
+INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (98,15,"2017-10-21 ","arcu");
+INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (96,6,"2016-01-30 ","turpis egestas. Aliquam fringilla cursus");
+INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (9,11,"2016-07-30 ","est ac");
+INSERT INTO 'attributions' ('idPersonnel','idIntervention','dateEtHeure','commentaire') VALUES (50,10,"2017-09-05 ","ac,");
+
