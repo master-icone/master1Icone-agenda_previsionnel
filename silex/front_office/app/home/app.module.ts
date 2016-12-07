@@ -14,6 +14,8 @@ import { VueGlobaleComponent } from '../components/vueGlobale/vueGlobale.compone
 import { HttpModule } from '@angular/http';
 
 import {CalendarModule} from 'primeng/primeng';
+import {InputTextModule} from 'primeng/primeng';
+
 
 @NgModule({
   imports: [
@@ -21,6 +23,7 @@ import {CalendarModule} from 'primeng/primeng';
     FormsModule,
     HttpModule,
     CalendarModule,
+    InputTextModule,
     RouterModule.forRoot([
       { path: '', redirectTo: '/vueGlobale', pathMatch:'full' },
       { path: 'affecterHeure', component: AffecterHeureComponent },

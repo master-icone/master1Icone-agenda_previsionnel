@@ -9,23 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var descriptionProf_service_1 = require('./descriptionProf.service');
+var http_service_1 = require('../../services/http.service');
 var DescriptionProfComponent = (function () {
     function DescriptionProfComponent(_httpService) {
         this._httpService = _httpService;
+        this.text = 'http://ip.jsontest.com/';
     }
     DescriptionProfComponent.prototype.onTestGet = function () {
         var _this = this;
-        this._httpService.getDate()
+        this._httpService.getDate(this.text)
             .subscribe(function (data) { return _this.getData = JSON.stringify(data); }, function (error) { return alert(error); }, function () { return console.log("Finished"); });
     };
     DescriptionProfComponent = __decorate([
         core_1.Component({
             selector: 'descriptionProf',
-            template: "\n    <button (click)=\"onTestGet()\">Test</button><br />\n    <p>Output: {{getData}}</p>\n  ",
-            providers: [descriptionProf_service_1.DescriptionProfService]
+            templateUrl: '../../../app/components/descriptionProf/descriptionProf.html',
+            providers: [http_service_1.HttpService]
         }), 
-        __metadata('design:paramtypes', [descriptionProf_service_1.DescriptionProfService])
+        __metadata('design:paramtypes', [http_service_1.HttpService])
     ], DescriptionProfComponent);
     return DescriptionProfComponent;
 }());

@@ -1,22 +1,20 @@
 import { Component } from '@angular/core';
-import { DescriptionProfService } from './descriptionProf.service';
+import { HttpService } from '../../services/http.service';
 
 @Component({
   selector: 'descriptionProf',
-  template: `
-    <button (click)="onTestGet()">Test</button><br />
-    <p>Output: {{getData}}</p>
-  `,
-  providers: [DescriptionProfService]
+  templateUrl: '../../../app/components/descriptionProf/descriptionProf.html',
+  providers: [HttpService]
 })
 
 export class DescriptionProfComponent {
   getData: string;
+  text = 'http://ip.jsontest.com/';
 
+  constructor (private _httpService: HttpService) { }
 
-  constructor (private _httpService: DescriptionProfService) { }
   onTestGet() {
-    this._httpService.getDate()
+    this._httpService.getDate(this.text)
         .subscribe(
           data => this.getData = JSON.stringify(data),
           error => alert(error),

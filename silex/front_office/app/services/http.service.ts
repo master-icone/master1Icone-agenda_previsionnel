@@ -3,12 +3,11 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class DescriptionProfService {
+export class HttpService {
   constructor(private _http: Http) {}
 
-  getDate() {
-    return this._http.get('http://date.jsontest.com')
+  getDate(link: string) {
+    return this._http.get(link)
         .map(res => res.json());
   }
-
 }
