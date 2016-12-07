@@ -73,7 +73,13 @@ CREATE TABLE coefficients(
 	idStatut integer,
 	idModeEnseignement integer,
 	priorite integer,
+<<<<<<< HEAD
 	FOREIGN KEY(idTypeEnseignement) REFERENCES typesEnseignement(id),
+=======
+	valeurNormale integer,
+	valeurHeureSup integer,
+	FOREIGN KEY(idTypeEnseignement) REFERENCES TYPESENSEIGNEMENTS(id),
+>>>>>>> 8d92bbe1b7df7365a086eb9f3d026bd4abecec12
 	FOREIGN KEY(idStatut) REFERENCES STATUTS(id),
 	FOREIGN KEY(idModeEnseignement) REFERENCES modesEnseignements(id),
 	PRIMARY KEY(idTypeEnseignement, idStatut, idModeEnseignement)
@@ -93,6 +99,7 @@ CREATE TABLE Ues(
 	foreign key(idResponsable) references personnelEnseignant(id),
 	foreign key(idDepartement) references departements(id),
 	UNIQUE(label, anne)
+	UNIQUE(label, annee)
 );
 
 
