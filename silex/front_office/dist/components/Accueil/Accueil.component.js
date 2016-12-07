@@ -23,4 +23,4 @@ var AccueilComponent = (function () {
     return AccueilComponent;
 }());
 exports.AccueilComponent = AccueilComponent; // € Exportation du component sous la forme du nom de class
-//# sourceMappingURL=Accueil.component.js.map
+//# sourceMappingURL=accueil.component.js.map

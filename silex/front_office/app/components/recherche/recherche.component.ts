@@ -3,11 +3,11 @@ import { HttpService } from '../../services/http.service';
 
 @Component({
   selector: 'descriptionProf',
-  templateUrl: '../../../app/components/descriptionProf/descriptionProf.html',
+  templateUrl: '../../../app/components/recherche/recherche.html',
   providers: [HttpService]
 })
 
-export class DescriptionProfComponent {
+export class RchercheComponent {
   getData: string;
   text = 'http://ip.jsontest.com/';
 
