@@ -13,8 +13,8 @@ import { PlanningProfComponent } from '../components/planningProf/planningProf.c
 import { AccueilComponent } from '../components/accueil/accueil.component';
 import { HttpModule } from '@angular/http';
 
-import {CalendarModule} from 'primeng/primeng';
 import {InputTextModule} from 'primeng/primeng';
+import {DataTableModule,SharedModule} from 'primeng/primeng';
 
 
 @NgModule({
@@ -22,8 +22,9 @@ import {InputTextModule} from 'primeng/primeng';
     BrowserModule,
     FormsModule,
     HttpModule,
-    CalendarModule,
     InputTextModule,
+    DataTableModule,
+    SharedModule,
     RouterModule.forRoot([
       { path: '', redirectTo: '/accueil', pathMatch:'full' },
       { path: 'affecterHeure', component: AffecterHeureComponent },

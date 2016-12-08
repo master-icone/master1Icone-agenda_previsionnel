@@ -4,6 +4,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class HttpService {
+
   constructor(private _http: Http) {}
 
   getDate(link: string) {

@@ -32,8 +32,9 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 http_1.HttpModule,
-                primeng_1.CalendarModule,
-                primeng_2.InputTextModule,
+                primeng_1.InputTextModule,
+                primeng_2.DataTableModule,
+                primeng_2.SharedModule,
                 router_1.RouterModule.forRoot([
                     { path: '', redirectTo: '/accueil', pathMatch: 'full' },
                     { path: 'affecterHeure', component: affecterHeure_component_1.AffecterHeureComponent },

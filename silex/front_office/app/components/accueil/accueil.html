@@ -1,54 +1,11 @@
 <h1>Accueil</h1>
-<div class="col-md-12 col-md-offset-3">
-  <div class="col-sm-3">
-    Liste des heures :
-  		<ul class="list-group">
-  			<li class="list-group-item">
-    			 <span class="tag tag-default tag-pill float-xs-right">14</span>
-    			Cras justo odio
- 			 </li>
-  			<li class="list-group-item">
-   				 <span class="tag tag-default tag-pill float-xs-right">2</span>
-  			    Dapibus ac facilisis in
-			</li>
- 		    <li class="list-group-item">
-    			<span class="tag tag-default tag-pill float-xs-right">1</span>
-    			Morbi leo risus
-  			</li>
-  			 <li class="list-group-item">
-    			<span class="tag tag-default tag-pill float-xs-right">1</span>
-    			Morbi leo risus
-  			</li>
-  			 <li class="list-group-item">
-    			<span class="tag tag-default tag-pill float-xs-right">1</span>
-    			Morbi leo risus
-  			</li>
-		</ul>
-  </div>
-
-  <div class="col-sm-3 ">
-    Heure affecté :
-    <ul class="list-group">
-  			<li class="list-group-item">
-    			 <span class="tag tag-default tag-pill float-xs-right">14</span>
-    			Cras justo odio
- 			 </li>
-  			<li class="list-group-item">
-   				 <span class="tag tag-default tag-pill float-xs-right">2</span>
-  			    Dapibus ac facilisis in
-			</li>
- 		    <li class="list-group-item">
-    			<span class="tag tag-default tag-pill float-xs-right">1</span>
-    			Morbi leo risus
-  			</li>
-  			 <li class="list-group-item">
-    			<span class="tag tag-default tag-pill float-xs-right">1</span>
-    			Morbi leo risus
-  			</li>
-  			 <li class="list-group-item">
-    			<span class="tag tag-default tag-pill float-xs-right">1</span>
-    			Morbi leo risus
-  			</li>
-		</ul>
-  </div>
-</div>
+<!--
+<input id="input" type="text" size="30" pInputText [(ngModel)]="text" />
+<button (click)="onTestGet()">Test</button><br />
+<p>Output: {{getData}}</p>-->
+<p-dataTable [value]="cars">
+    <p-column field="vin" header="Vin"></p-column>
+    <p-column field="year" header="Year"></p-column>
+    <p-column field="brand" header="Brand"></p-column>
+    <p-column field="color" header="Color"></p-column>
+</p-dataTable>
