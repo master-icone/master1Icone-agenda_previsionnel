@@ -30,7 +30,7 @@ CREATE TABLE modesEnseignement(
 CREATE TABLE statuts(
 	id integer primary key autoincrement,
 	label text,
-	nbHeures integer,
+	nbHeures real,
 	annee integer,
 	UNIQUE(label, annee)
 );
@@ -97,7 +97,7 @@ CREATE TABLE decharges(
 	raison text,
 	duree real,
 	annee integer,
-	foreign key (idEnseignant) references personnel(id)
+	foreign key (idEnseignant) references personnelEnseignant(id)
 );
 
 
@@ -112,14 +112,14 @@ CREATE TABLE departements(
 
 CREATE TABLE Ues(
 	id integer primary key autoincrement,
+	code text,
 	label text,
 	idResponsable integer,
 	idDepartement integer,
 	annee integer,
 	nbMaxApprentis integer,
 	foreign key(idResponsable) references personnelEnseignant(id),
-	foreign key(idDepartement) references departements(id),
-	UNIQUE(label, annee)
+	foreign key(idDepartement) references departements(id)
 );
 
 
