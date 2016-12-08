@@ -15,11 +15,12 @@ var router_1 = require('@angular/router');
 var toolbar_component_1 = require('../shared/toolbar/toolbar.component');
 var navbar_component_1 = require('../shared/navbar/navbar.component');
 var app_component_1 = require('./app.component');
-var affecterHeure_component_1 = require('../components/affecterHeure/affecterHeure.component');
-var descriptionProf_component_1 = require('../components/descriptionProf/descriptionProf.component');
-var listeHeureAffecter_component_1 = require('../components/listeHeureAffecter/listeHeureAffecter.component');
-var planningProf_component_1 = require('../components/planningProf/planningProf.component');
+var decharges_component_1 = require('../components/decharges/decharges.component');
+var recherche_component_1 = require('../components/recherche/recherche.component');
+var responsableUE_component_1 = require('../components/responsableUE/responsableUE.component');
+var interventions_component_1 = require('../components/interventions/interventions.component');
 var accueil_component_1 = require('../components/accueil/accueil.component');
+var listeDesUE_component_1 = require('../components/listeDesUE/listeDesUE.component');
 var http_1 = require('@angular/http');
 var primeng_1 = require('primeng/primeng');
 var primeng_2 = require('primeng/primeng');
@@ -37,16 +38,17 @@ var AppModule = (function () {
                 primeng_2.SharedModule,
                 router_1.RouterModule.forRoot([
                     { path: '', redirectTo: '/accueil', pathMatch: 'full' },
-                    { path: 'affecterHeure', component: affecterHeure_component_1.AffecterHeureComponent },
-                    { path: 'description', component: descriptionProf_component_1.DescriptionProfComponent },
-                    { path: 'listeHeureAffecter', component: listeHeureAffecter_component_1.ListeHeureAffecterComponent },
-                    { path: 'planningProf', component: planningProf_component_1.PlanningProfComponent },
+                    { path: 'decharges', component: decharges_component_1.DechargesComponent },
+                    { path: 'recherche', component: recherche_component_1.RchercheComponent },
+                    { path: 'responsableUE', component: responsableUE_component_1.ResponsableUEComponent },
+                    { path: 'interventions', component: interventions_component_1.InterventionsComponent },
+                    { path: 'listeDesUE', component: listeDesUE_component_1.ListeDesUEComponent },
                     { path: 'accueil', component: accueil_component_1.AccueilComponent }
                 ])
             ],
             declarations: [app_component_1.AppComponent, toolbar_component_1.ToolbarComponent, navbar_component_1.NavbarComponent,
-                descriptionProf_component_1.DescriptionProfComponent, affecterHeure_component_1.AffecterHeureComponent,
-                listeHeureAffecter_component_1.ListeHeureAffecterComponent, planningProf_component_1.PlanningProfComponent, accueil_component_1.AccueilComponent],
+                recherche_component_1.RchercheComponent, decharges_component_1.DechargesComponent,
+                responsableUE_component_1.ResponsableUEComponent, interventions_component_1.InterventionsComponent, accueil_component_1.AccueilComponent, listeDesUE_component_1.ListeDesUEComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

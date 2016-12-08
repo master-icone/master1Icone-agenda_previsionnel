@@ -6,11 +6,13 @@ import { RouterModule }   from '@angular/router';
 import { ToolbarComponent } from '../shared/toolbar/toolbar.component';
 import { NavbarComponent } from '../shared/navbar/navbar.component';
 import { AppComponent }   from './app.component';
-import { AffecterHeureComponent } from '../components/affecterHeure/affecterHeure.component';
-import { DescriptionProfComponent } from '../components/descriptionProf/descriptionProf.component';
-import { ListeHeureAffecterComponent } from '../components/listeHeureAffecter/listeHeureAffecter.component';
-import { PlanningProfComponent } from '../components/planningProf/planningProf.component';
+import { DechargesComponent } from '../components/decharges/decharges.component';
+import { RchercheComponent } from '../components/recherche/recherche.component';
+import { ResponsableUEComponent } from '../components/responsableUE/responsableUE.component';
+import { InterventionsComponent } from '../components/interventions/interventions.component';
 import { AccueilComponent } from '../components/accueil/accueil.component';
+import { ListeDesUEComponent } from '../components/listeDesUE/listeDesUE.component';
+
 import { HttpModule } from '@angular/http';
 
 import {InputTextModule} from 'primeng/primeng';
@@ -27,16 +29,17 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
     SharedModule,
     RouterModule.forRoot([
       { path: '', redirectTo: '/accueil', pathMatch:'full' },
-      { path: 'affecterHeure', component: AffecterHeureComponent },
-      { path: 'description', component: DescriptionProfComponent },
-      { path: 'listeHeureAffecter', component: ListeHeureAffecterComponent },
-      { path: 'planningProf', component: PlanningProfComponent },
+      { path: 'decharges', component: DechargesComponent },
+      { path: 'recherche', component: RchercheComponent },
+      { path: 'responsableUE', component: ResponsableUEComponent },
+      { path: 'interventions', component: InterventionsComponent },
+      { path: 'listeDesUE', component: ListeDesUEComponent },
       { path: 'accueil', component: AccueilComponent }
     ])
   ],
   declarations: [ AppComponent, ToolbarComponent, NavbarComponent,
-  DescriptionProfComponent, AffecterHeureComponent,
-  ListeHeureAffecterComponent, PlanningProfComponent, AccueilComponent ],
+  RchercheComponent, DechargesComponent,
+  ResponsableUEComponent, InterventionsComponent, AccueilComponent, ListeDesUEComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
