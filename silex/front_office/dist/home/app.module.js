@@ -21,6 +21,7 @@ var responsableUE_component_1 = require('../components/responsableUE/responsable
 var interventions_component_1 = require('../components/interventions/interventions.component');
 var accueil_component_1 = require('../components/accueil/accueil.component');
 var listeDesUE_component_1 = require('../components/listeDesUE/listeDesUE.component');
+var probleme_component_1 = require('../components/probleme/probleme.component');
 var http_1 = require('@angular/http');
 var primeng_1 = require('primeng/primeng');
 var primeng_2 = require('primeng/primeng');
@@ -42,12 +43,13 @@ var AppModule = (function () {
                     { path: 'responsableUE', component: responsableUE_component_1.ResponsableUEComponent },
                     { path: 'interventions', component: interventions_component_1.InterventionsComponent },
                     { path: 'listeDesUE', component: listeDesUE_component_1.ListeDesUEComponent },
+                    { path: 'probleme', component: probleme_component_1.ProblemeComponent },
                     { path: 'accueil', component: accueil_component_1.AccueilComponent }
                 ])
             ],
             declarations: [app_component_1.AppComponent, toolbar_component_1.ToolbarComponent, navbar_component_1.NavbarComponent,
                 recherche_component_1.RchercheComponent, decharges_component_1.DechargesComponent,
-                responsableUE_component_1.ResponsableUEComponent, interventions_component_1.InterventionsComponent, accueil_component_1.AccueilComponent, listeDesUE_component_1.ListeDesUEComponent],
+                responsableUE_component_1.ResponsableUEComponent, interventions_component_1.InterventionsComponent, accueil_component_1.AccueilComponent, listeDesUE_component_1.ListeDesUEComponent, probleme_component_1.ProblemeComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

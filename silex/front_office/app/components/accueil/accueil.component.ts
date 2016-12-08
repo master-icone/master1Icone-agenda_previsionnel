@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
 
 })
 
-export class AccueilComponent { }    // € Exportation du component sous la forme du nom de class
+export class AccueilComponent {}    // € Exportation du component sous la forme du nom de class
+

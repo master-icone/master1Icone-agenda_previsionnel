@@ -12,6 +12,7 @@ import { ResponsableUEComponent } from '../components/responsableUE/responsableU
 import { InterventionsComponent } from '../components/interventions/interventions.component';
 import { AccueilComponent } from '../components/accueil/accueil.component';
 import { ListeDesUEComponent } from '../components/listeDesUE/listeDesUE.component';
+import { ProblemeComponent } from '../components/probleme/probleme.component';
 
 import { HttpModule } from '@angular/http';
 
@@ -33,12 +34,13 @@ import {InputTextModule} from 'primeng/primeng';
       { path: 'responsableUE', component: ResponsableUEComponent },
       { path: 'interventions', component: InterventionsComponent },
       { path: 'listeDesUE', component: ListeDesUEComponent },
+      { path: 'probleme', component: ProblemeComponent },
       { path: 'accueil', component: AccueilComponent }
     ])
   ],
   declarations: [ AppComponent, ToolbarComponent, NavbarComponent,
   RchercheComponent, DechargesComponent,
-  ResponsableUEComponent, InterventionsComponent, AccueilComponent, ListeDesUEComponent ],
+  ResponsableUEComponent, InterventionsComponent, AccueilComponent, ListeDesUEComponent, ProblemeComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
