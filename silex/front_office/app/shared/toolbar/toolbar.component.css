@@ -17,5 +17,6 @@ h1  {
 .deco, .statut {
   color:white; 
   margin-top: 13px;
+  font-weight: bold;
 }
 

@@ -28,6 +28,7 @@ var AccueilComponent = (function () {
         core_1.Component({
             selector: 'accueil',
             templateUrl: '../../../app/components/accueil/accueil.html',
+            styleUrls: ['../../../app/components/accueil/accueil.css'],
             providers: [car_service_1.CarService]
         }), 
         __metadata('design:paramtypes', [car_service_1.CarService])

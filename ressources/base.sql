@@ -17,20 +17,18 @@ DROP TABLE IF EXISTS autorisations;
 
 CREATE TABLE typesEnseignement(
 	id integer primary key autoincrement,
-	label text
+	label text unique
 );
-
 
 CREATE TABLE modesEnseignement(
 	id integer primary key,
-	label text
+	label text unique
 );
-
 
 CREATE TABLE statuts(
 	id integer primary key autoincrement,
 	label text,
-	nbHeures integer,
+	nbHeures real,
 	annee integer,
 	UNIQUE(label, annee)
 );
@@ -56,7 +54,6 @@ CREATE TABLE personnel(
 	FOREIGN KEY(idAutorisation) REFERENCES autorisations(id)
 );
 
-
 CREATE TABLE coefficients(
 	idTypeEnseignement integer,
 	idStatut integer,
@@ -64,13 +61,12 @@ CREATE TABLE coefficients(
 	priorite integer,
 	valeurNormale integer,
 	valeurHeureSup integer,
+	annee integer,
 	FOREIGN KEY(idTypeEnseignement) REFERENCES typesEnseignement(id),
 	FOREIGN KEY(idStatut) REFERENCES STATUTS(id),
 	FOREIGN KEY(idModeEnseignement) REFERENCES modesEnseignements(id),
 	PRIMARY KEY(idTypeEnseignement, idStatut, idModeEnseignement)
 );
-
-
 
 CREATE TABLE personnelEnseignant(
 	id integer primary key,
@@ -79,12 +75,10 @@ CREATE TABLE personnelEnseignant(
 	foreign key (idStatut) references STATUTS(id)
 );
 
-
 CREATE TABLE personnelAdministratif(
 	id integer primary key,
 	foreign key (id) references PERSONNEL(id)
 );
-
 
 CREATE TABLE Administrateurs(
 	id integer primary key,
@@ -97,9 +91,8 @@ CREATE TABLE decharges(
 	raison text,
 	duree real,
 	annee integer,
-	foreign key (idEnseignant) references personnel(id)
+	foreign key (idEnseignant) references personnelEnseignant(id)
 );
-
 
 CREATE TABLE departements(
 	id integer primary key,
@@ -108,20 +101,17 @@ CREATE TABLE departements(
 	foreign key(idDirecteur) references personnelEnseignant(id)
 );
 
-
-
 CREATE TABLE Ues(
 	id integer primary key autoincrement,
+	code text,
 	label text,
 	idResponsable integer,
 	idDepartement integer,
 	annee integer,
 	nbMaxApprentis integer,
 	foreign key(idResponsable) references personnelEnseignant(id),
-	foreign key(idDepartement) references departements(id),
-	UNIQUE(label, annee)
+	foreign key(idDepartement) references departements(id)
 );
-
 
 CREATE TABLE interventions(
 	idUE integer,
@@ -129,13 +119,13 @@ CREATE TABLE interventions(
 	idTypeEnseignement integer,
 	idModeEnseignement integer,
 	nbHeures real,
+	annee integer,
 	primary key(idUE, idEnseignant, idTypeEnseignement, idModeEnseignement),
 	foreign key(idUE) references ue(id),
 	foreign key(idEnseignant) references personnelEnseignant(id),
 	foreign key(idTypeEnseignement) references typesEnseignement(id),
 	foreign key(idModeEnseignement) references modeEnseignements(id)
 );
-
 
 CREATE TABLE NombreHeures(
 	idUe integer,

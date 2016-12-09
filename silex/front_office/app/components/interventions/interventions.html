@@ -1,4 +1,6 @@
 <h1>interventions </h1>
+<div class ="lead"> nombre d'heures total: 6+8 </div>
+<div class ="lead"> nombre d'heures restant: 350 - 14 </div>
 <div *ngIf="getData">
   <div class="table-responsive">
     <table class="table table-condensed table-striped table-bordered table-hover no-margin">
@@ -28,3 +30,52 @@
     </li>
   </ul>
 </div>
+
+
+      <div class="table-responsive">
+        <table class="table table-condensed table-striped table-bordered table-hover no-margin">
+          <thead>
+            <tr>
+              <th style="width:15%">Nom module</th>
+              <th style="width:15%">Nom responsable</th>
+              <th style="width:10%" class="hidden-phone">Type cours</th>
+              <th style="width:15%" class="hidden-phone">Nombre d'heures</th>
+              <th style="width:15%" class="hidden-phone">Date attribution</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Ingenierie logicielle
+              </td>
+               <td>
+                <span class="name">Mme Prigeant</span>
+              </td>
+              <td>
+                <span class="name">CM</span>
+              </td>
+              <td class="hidden-phone">6</td>
+              <td class="hidden-phone">
+                <span class="label label label-info">New</span>
+                <span> 15 - 10 - 2013 </span>
+              </td>
+            </tr>
+             <tr>
+              <td>
+                Technique de programmation
+              </td>
+               <td>
+                <span class="name">Mr Revel</span>
+              </td>
+              <td>
+                <span class="name">TP</span>
+              </td>
+              <td class="hidden-phone">8</td>
+              <td class="hidden-phone">
+                <span class="label label label-info">New</span>
+                <span> 15 - 10 - 2013 </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>

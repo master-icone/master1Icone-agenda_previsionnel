@@ -6,6 +6,7 @@ import {Car} from '../../interfaces';
 @Component({
   selector: 'accueil',
   templateUrl: '../../../app/components/accueil/accueil.html',
+  styleUrls: ['../../../app/components/accueil/accueil.css'],
   providers: [CarService]
 })
 
@@ -25,5 +26,4 @@ export class AccueilComponent implements OnInit {
       {field: 'color', header: 'Color'}
     ];
   }
-
 }

@@ -1,8 +1,31 @@
-<h1>Accueil</h1>
+<div class="row space" >
+      <div class="col-xs-12 col-sm-5 col-md-4 col-lg-6">
+            <h4> Vos dernières interventions </h4>
+                <div class="thumbnail">
+                    <div class="caption">
+                      <p-dataTable [value]="cars">
+                          <p-column field="vin" header="N UE"></p-column>
+                          <p-column field="year" header="Intitulé"></p-column>
+                          <p-column field="brand" header="Heures"></p-column>
+                      </p-dataTable>
+                    </div>
+                </div>
+      </div>
+</div>
 
-<p-dataTable [value]="cars">
-    <p-column field="vin" header="Vin"></p-column>
-    <p-column field="year" header="Year"></p-column>
-    <p-column field="brand" header="Brand"></p-column>
-    <p-column field="color" header="Color"></p-column>
-</p-dataTable>
+<div class="row">  
+      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-6">
+            <h4> Responsabilité </h4>
+                <div class="thumbnail">
+                    <div class="caption">
+                      <p-dataTable [value]="cars">
+                          <p-column field="vin" header="N UE"></p-column>
+                          <p-column field="year" header="Intitulé"></p-column>
+                          <p-column field="brand" header="Heures restantes"></p-column>
+                      </p-dataTable>
+                    </div>
+                </div>
+      </div>
+</div>
+
+

@@ -4,7 +4,8 @@ import { HttpService } from '../../services/http.service';
 @Component({
   selector: 'interventions',
   templateUrl: '../../../app/components/interventions/interventions.html',
-  providers: [HttpService]
+  providers: [HttpService],
+  styleUrls: ['../../../app/components/interventions/interventions.css']
 })
 
 export class InterventionsComponent {

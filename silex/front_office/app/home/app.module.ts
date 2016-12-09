@@ -13,12 +13,12 @@ import { InterventionsComponent } from '../components/interventions/intervention
 import { AccueilComponent } from '../components/accueil/accueil.component';
 import { ListeDesUEComponent } from '../components/listeDesUE/listeDesUE.component';
 import { ProblemeComponent } from '../components/probleme/probleme.component';
+import { AjoutProfUEComponent } from '../components/ajoutProfUE/ajoutProfUE.component';
 
 import { HttpModule } from '@angular/http';
 
 import {InputTextModule} from 'primeng/primeng';
 import {DataTableModule,SharedModule} from 'primeng/primeng';
-
 
 @NgModule({
   imports: [
@@ -36,12 +36,13 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
       { path: 'interventions', component: InterventionsComponent },
       { path: 'listeDesUE', component: ListeDesUEComponent },
       { path: 'probleme', component: ProblemeComponent },
+      { path: 'ajoutProfUE', component: AjoutProfUEComponent },
       { path: 'accueil', component: AccueilComponent }
     ])
   ],
   declarations: [ AppComponent, ToolbarComponent, NavbarComponent,
   RchercheComponent, DechargesComponent,
-  ResponsableUEComponent, InterventionsComponent, AccueilComponent, ListeDesUEComponent, ProblemeComponent ],
+  ResponsableUEComponent, InterventionsComponent, AccueilComponent, ListeDesUEComponent, ProblemeComponent, AjoutProfUEComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
