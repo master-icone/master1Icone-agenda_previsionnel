@@ -14,7 +14,7 @@ export class RchercheComponent {
   constructor (private _httpService: HttpService) { }
 
   onTestGet() {
-    this._httpService.getDate(this.text)
+    this._httpService.httpGet(this.text)
         .subscribe(
           data => this.getData = JSON.stringify(data),
           error => alert(error),

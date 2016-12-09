@@ -1,7 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../../services/http.service';
+
 @Component({
   selector: 'interventions',
-  templateUrl: '../../../app/components/interventions/interventions.html'
+  templateUrl: '../../../app/components/interventions/interventions.html',
+  providers: [HttpService]
 })
 
-export class InterventionsComponent { }    // € Exportation du component sous la forme du nom de class
+export class InterventionsComponent {
+  link = 'http://localhost:3000/cars';
+  getData = new Function()();
+
+
+  constructor (private _httpService: HttpService) { }
+
+  ngOnInit() {
+    this.onTestGet();
+  }
+
+  onTestGet() {
+    this._httpService.httpGet(this.link)
+        .subscribe(
+          data => {
+            this.getData = new Function('return ' + JSON.stringify(data))();
+          },
+          error => alert(error),
+          () => console.log("Finished")
+        );
+  }
+}
