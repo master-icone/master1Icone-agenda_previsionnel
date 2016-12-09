@@ -33,24 +33,19 @@ INSERT INTO 'modesEnseignement' ('label') VALUES ("Mauris molestie pharetra");
 INSERT INTO 'modesEnseignement' ('label') VALUES ("nunc, ullamcorper eu,");
 
 
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (2,2,3,10,5,7);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (2,3,3,8,3,14);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (3,3,3,9,2,19);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (1,5,2,6,3,5);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (2,1,3,5,6,7);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (2,2,1,3,7,16);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (1,5,1,8,1,14);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (1,4,3,2,6,15);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (3,1,2,10,9,7);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (2,3,1,5,4,13);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (3,1,3,5,4,11);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (1,4,1,9,5,20);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (3,5,3,7,7,15);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (2,5,2,5,8,6);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (1,3,1,2,2,19);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (2,4,1,10,5,13);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (1,3,3,5,8,4);
-INSERT INTO 'coefficients' ('idTypeEnseignement','idStatut','idModeEnseignement','priorite','valeurNormale','valeurHeureSup') VALUES (3,4,2,4,5,13);
+INSERT INTO `coefficients` (`idTypeEnseignement`,`idStatut`,`idModeEnseignement`,`valeurNormale`,`valeurHeureSup`,`priorite`,`annee`) VALUES (98,2,5,80,57,1,2013);
+INSERT INTO `coefficients` (`idTypeEnseignement`,`idStatut`,`idModeEnseignement`,`valeurNormale`,`valeurHeureSup`,`priorite`,`annee`) VALUES (85,4,2,14,64,10,2008);
+INSERT INTO `coefficients` (`idTypeEnseignement`,`idStatut`,`idModeEnseignement`,`valeurNormale`,`valeurHeureSup`,`priorite`,`annee`) VALUES (78,4,2,41,55,1,1999);
+INSERT INTO `coefficients` (`idTypeEnseignement`,`idStatut`,`idModeEnseignement`,`valeurNormale`,`valeurHeureSup`,`priorite`,`annee`) VALUES (67,3,1,5,6,7,2009);
+INSERT INTO `coefficients` (`idTypeEnseignement`,`idStatut`,`idModeEnseignement`,`valeurNormale`,`valeurHeureSup`,`priorite`,`annee`) VALUES (67,1,5,54,72,2,2006);
+INSERT INTO `coefficients` (`idTypeEnseignement`,`idStatut`,`idModeEnseignement`,`valeurNormale`,`valeurHeureSup`,`priorite`,`annee`) VALUES (66,5,4,24,56,4,2015);
+INSERT INTO `coefficients` (`idTypeEnseignement`,`idStatut`,`idModeEnseignement`,`valeurNormale`,`valeurHeureSup`,`priorite`,`annee`) VALUES (70,4,3,80,72,7,1992);
+INSERT INTO `coefficients` (`idTypeEnseignement`,`idStatut`,`idModeEnseignement`,`valeurNormale`,`valeurHeureSup`,`priorite`,`annee`) VALUES (69,4,1,76,19,7,2011);
+INSERT INTO `coefficients` (`idTypeEnseignement`,`idStatut`,`idModeEnseignement`,`valeurNormale`,`valeurHeureSup`,`priorite`,`annee`) VALUES (64,5,4,66,60,5,2010);
+INSERT INTO `coefficients` (`idTypeEnseignement`,`idStatut`,`idModeEnseignement`,`valeurNormale`,`valeurHeureSup`,`priorite`,`annee`) VALUES (92,3,2,45,60,8,1998);
+INSERT INTO `coefficients` (`idTypeEnseignement`,`idStatut`,`idModeEnseignement`,`valeurNormale`,`valeurHeureSup`,`priorite`,`annee`) VALUES (77,2,2,7,64,3,2010);
+INSERT INTO `coefficients` (`idTypeEnseignement`,`idStatut`,`idModeEnseignement`,`valeurNormale`,`valeurHeureSup`,`priorite`,`annee`) VALUES (88,1,5,7,58,10,2014);
+INSERT INTO `coefficients` (`idTypeEnseignement`,`idStatut`,`idModeEnseignement`,`valeurNormale`,`valeurHeureSup`,`priorite`,`annee`) VALUES (59,1,5,67,72,10,2009);
 
 
 INSERT INTO 'personnel' ('login','motDePasse','nom','prenom','mail','idAutorisation') VALUES ("nec,","EEW46JOH3ZJ","Colon","Caleb","neque@Nullam.ca",3);
@@ -305,6 +300,7 @@ INSERT INTO 'departements' ('idDirecteur') VALUES (72);
 INSERT INTO 'departements' ('idDirecteur') VALUES (50);
 INSERT INTO 'departements' ('idDirecteur') VALUES (73);
 
+
 INSERT INTO 'Ues' ('code','label','idResponsable','idDepartement','annee','nbMaxApprentis') VALUES ("EHII-39144D","eu augue",82,7,2015,6);
 INSERT INTO 'Ues' ('code','label','idResponsable','idDepartement','annee','nbMaxApprentis') VALUES ("UQBU-69684O","turpis nec",52,7,2002,3);
 INSERT INTO 'Ues' ('code','label','idResponsable','idDepartement','annee','nbMaxApprentis') VALUES ("TFXO-86855F","pulvinar arcu",69,1,2010,6);
@@ -348,36 +344,35 @@ INSERT INTO 'Ues' ('code','label','idResponsable','idDepartement','annee','nbMax
 INSERT INTO 'Ues' ('code','label','idResponsable','idDepartement','annee','nbMaxApprentis') VALUES ("UGKB-69414D","et ultrices",97,4,1995,2);
 INSERT INTO 'Ues' ('code','label','idResponsable','idDepartement','annee','nbMaxApprentis') VALUES ("MGZL-69514V","Aenean",88,7,1998,2);
 INSERT INTO 'Ues' ('code','label','idResponsable','idDepartement','annee','nbMaxApprentis') VALUES ("VQLF-71737L","odio tristique pharetra.",91,6,1996,2);
-INSERT INTO 'Ues' ('code','label','idResponsable','idDepartement','annee','nbMaxApprentis') VALUES ("HEFI-99777D","magna. Cras convallis",53,3,2006,6)
+INSERT INTO 'Ues' ('code','label','idResponsable','idDepartement','annee','nbMaxApprentis') VALUES ("HEFI-99777D","magna. Cras convallis",53,3,2006,6);
 
 
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (12,52,3,1,3);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (8,94,1,1,3);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (17,85,3,3,1);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (26,91,3,2,30);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (12,83,2,2,16);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (2,77,3,2,33);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (3,87,2,2,10);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (1,78,2,1,10);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (24,55,1,2,20);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (15,67,3,3,11);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (5,59,2,1,29);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (30,54,3,1,16);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (20,71,3,3,33);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (6,83,2,3,20);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (13,73,1,2,20);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (30,82,1,1,6);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (18,79,1,1,8);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (12,85,3,1,31);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (23,99,1,2,18);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (6,80,2,2,25);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (11,95,3,3,28);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (25,51,2,3,32);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (28,73,3,1,10);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (16,62,1,1,36);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (12,71,2,2,27);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (14,52,3,1,9);
-INSERT INTO 'interventions' ('idUE','idEnseignant','idTypeEnseignement','idModeEnseignement','nbHeures') VALUES (17,60,3,3,11);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (38,70,1,2,46,2016);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (20,88,2,3,35,1991);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (27,62,2,2,59,1999);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (11,63,2,1,39,2000);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (1,71,3,1,32,1996);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (10,91,2,1,74,1998);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (25,93,1,4,3,1999);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (16,75,2,4,20,1996);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (2,74,2,5,66,1996);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (26,98,3,2,81,2001);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (29,97,3,5,7,1997);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (37,51,3,5,70,1993);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (21,66,1,4,89,2012);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (20,84,3,2,18,2003);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (4,74,2,5,56,2011);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (14,84,2,5,85,2002);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (36,65,2,1,12,2011);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (14,88,2,4,1,1996);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (9,56,3,5,57,2011);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (6,56,2,1,78,1994);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (35,90,2,5,16,1996);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (30,54,3,4,22,2004);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (24,93,1,4,78,2002);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (40,80,2,2,77,1994);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (27,91,3,5,23,1995);
+INSERT INTO `interventions` (`idUE`,`idEnseignant`,`idTypeEnseignement`,`idModeEnseignement`,`nbHeures`,`annee`) VALUES (6,97,3,2,67,1999);
 
 
 INSERT INTO 'nombreHeures' ('idUE','idTypeEnseignement','quantite') VALUES (17,2,17);
