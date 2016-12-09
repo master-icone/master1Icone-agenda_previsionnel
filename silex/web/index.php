@@ -36,6 +36,22 @@ $app->post('/addPersonnel', function (Request $request) {
 	}
 });
 
+#
+$app->post('/{ue}/addResponsable', function (Request $request) use($bdd) {
+	try
+	{
+		$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		#Requete SQL permettant l'insertion du nouveau personnel
+		$sql = $bdd->query("UPDATE UE SET ");
+		$bdd->exec($sql);					#Sert à executer l'insertion d'un nouveau personnel  (Provoque une erreur, mais s'execute correctement)
+		return "Insertion REUSSIE";
+	}
+	catch (Exception $e)
+	{
+		die('Erreur : ' . $e->getMessage());
+	}
+});
+
 
 $app->get('/test', function () use($app,$bdd) {
 		
