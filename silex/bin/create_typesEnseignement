@@ -1,0 +1,13 @@
+<?php
+// create_typesEnseignement
+require_once "bootstrap.php";
+
+$label = $argv[1];
+
+$typesEnseignement = new TypesEnseignement();
+$typesEnseignement->setlabel($label);
+
+$entityManager->persist($typesEnseignement);
+$entityManager->flush();
+
+echo "Your new typesEnseignement Id: ".$typesEnseignement->getId()."\n";
