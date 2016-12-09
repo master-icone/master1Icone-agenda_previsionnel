@@ -10,7 +10,7 @@ import { HttpService } from '../../services/http.service';
 
 export class InterventionsComponent {
   link = 'http://localhost:3000/cars';
-  getData = new Function()();
+  getData: any;
 
 
   constructor (private _httpService: HttpService) { }
@@ -23,7 +23,7 @@ export class InterventionsComponent {
     this._httpService.httpGet(this.link)
         .subscribe(
           data => {
-            this.getData = new Function('return ' + JSON.stringify(data))();
+            this.getData = data;
           },
           error => alert(error),
           () => console.log("Finished")
