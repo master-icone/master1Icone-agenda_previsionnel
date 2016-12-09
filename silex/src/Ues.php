@@ -15,24 +15,29 @@ class Ues
 	 * @GeneratedValue
      */
     protected $id;
+
 	/**
      * @Column(type="text")
      */
     protected $label;
+
 	/**
 	 * @OneToOne(targetEntity="personnelEnseignant")
      * @JoinColumn(name="idResponsables", referencedColumnName="id")
      */
     protected $idResponsable;
+
 	/**
 	 * @OneToOne(targetEntity="departements")
      * @JoinColumn(name="idDepartement", referencedColumnName="id")
      */
     protected $idDepartement;
+
 	/**
      * @Column(type="integer")
      */
     protected $annee;
+    
 	/**
      * @Column(type="integer")
      */

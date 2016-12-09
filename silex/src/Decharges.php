@@ -15,19 +15,23 @@ class Decharges
 	 * @GeneratedValue
      */
     protected $id;
+
     /**
      * @ManyToOne(targetEntity="personnelEnseignant")
      * @JoinColumn(name="idenseignant", referencedColumnName="id")
      */
     protected $idenseignant;
+
 	/**
      * @Column(type="text")
      */
     protected $raison;
+
 	/**
      * @Column(type="decimal")
      */
     protected $duree;
+    
 	/**
      * @Column(type="integer")
      */

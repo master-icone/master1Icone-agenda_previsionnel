@@ -15,16 +15,19 @@ class Statuts
 	 * @GeneratedValue
      */
     protected $id;
+
 	/**
      * @Column(type="text")
      */
     protected $label;
-	/**
-	 * @Column(type="integer") 
-     */
-    protected $nbHeures;
+
 	/**
 	 * @Column(type="decimal") 
+     */
+    protected $nbHeures;
+
+	/**
+	 * @Column(type="integer") 
      */
     protected $annee;
 	

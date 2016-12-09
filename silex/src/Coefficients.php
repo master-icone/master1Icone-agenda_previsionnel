@@ -15,26 +15,31 @@ class Coefficients
      * @JoinColumn(name="idtypesEnseignement", referencedColumnName="id")
      */
     protected $idtypesEnseignement;
+
     /**
 	 * @Id 
 	 * @OneToOne(targetEntity="modeEnseignement")
      * @JoinColumn(name="idModeEnseignement", referencedColumnName="id")
      */
     protected $idModeEnseignement;
+
     /**
 	 * @Id 
 	 * @OneToOne(targetEntity="statuts")
      * @JoinColumn(name="idStatut", referencedColumnName="id")
      */
     protected $idStatut;
+
 	/**
      * @Column(type="integer")
      */
     protected $priorite;
+
 	/**
      * @Column(type="decimal")
      */
     protected $valeurNormale;
+    
 	/**
      * @Column(type="decimal")
      */

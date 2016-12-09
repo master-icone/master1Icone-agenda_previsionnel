@@ -15,12 +15,14 @@ class Departements
 	 * @GeneratedValue
      */
     protected $id;
+
     /**
 	 * @Column(type="integer")
 	 * @OneToOne(targetEntity="personnelEnseignant")
      * @JoinColumn(name="idDirecteur", referencedColumnName="id")
      */
     protected $idDirecteur;
+    
     /**
 	 * @Column(type="text")
      */
