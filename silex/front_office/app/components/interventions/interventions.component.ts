@@ -9,7 +9,7 @@ import { HttpService } from '../../services/http.service';
 })
 
 export class InterventionsComponent {
-  link = 'http://localhost:3000/cars';
+  link = 'http://localhost:3000/interventions';
   getData: any;
 
 

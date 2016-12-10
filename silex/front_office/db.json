@@ -1,0 +1,27 @@
+{
+  "cars":{
+    "data": [
+      {"brand": "VW", "year": 2012, "color": "Orange", "vin": "dsad231ff"},
+      {"brand": "Audi", "year": 2011, "color": "Black", "vin": "gwregre345"},
+      {"brand": "Renault", "year": 2005, "color": "Gray", "vin": "h354htr"},
+      {"brand": "BMW", "year": 2003, "color": "Blue", "vin": "j6w54qgh"},
+      {"brand": "Mercedes", "year": 1995, "color": "Orange", "vin": "hrtwy34"},
+      {"brand": "Volvo", "year": 2005, "color": "Black", "vin": "jejtyj"},
+      {"brand": "Honda", "year": 2012, "color": "Yellow", "vin": "g43gr"},
+      {"brand": "Jaguar", "year": 2013, "color": "Orange", "vin": "greg34"},
+      {"brand": "Ford", "year": 2000, "color": "Black", "vin": "h54hw5"},
+      {"brand": "Fiat", "year": 2013, "color": "Red", "vin": "245t2s"}
+    ]
+  },
+  "interventions":{
+    "heureTotal": "130", "heureRestant": "220",
+    "data": [
+      {"numUE": "UE3101", "intitule": "Mathématiques", "responsableUE": "M. Adrien Macheur", "hCM": 4, "hTD": 8, "hTP": 8, "date": "08/12/2016", "attribution": "Mme. Céla dmin"},
+      {"numUE": "UE3102", "intitule": "Ingénieurie Logicielle", "responsableUE": "Mme. Marcelle Ravier", "hCM": 4, "hTD": 8, "hTP": 2, "date": "07/12/2016", "attribution": "Mme. Céla dmin"},
+      {"numUE": "UE3103", "intitule": "Médias Numériques", "responsableUE": "M. Christophe Facielli", "hCM": 4, "hTD": 16, "hTP": 8, "date": "06/12/2016", "attribution": "Mme. Céla dmin"},
+      {"numUE": "UE4101", "intitule": "Réseaux", "responsableUE": "Mme. Christine Qwinz", "hCM": 4, "hTD": 8, "hTP": 8, "date": "05/12/2016", "attribution": "Mme. Céla dmin"},
+      {"numUE": "UE1112", "intitule": "Base de la programmation", "responsableUE": "M. Christophe Facielli", "hCM": 0, "hTD": 8, "hTP": 16, "date": "04/12/2016", "attribution": "Mme. Céla dmin"},
+      {"numUE": "UE1111", "intitule": "Base de données", "responsableUE": "M. Jean-Loup Guillaume", "hCM": 4, "hTD": 8, "hTP": 12, "date": "03/12/2016", "attribution": "Mme. Céla dmin"}
+    ]
+  }
+}
