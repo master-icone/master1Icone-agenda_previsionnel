@@ -4,4 +4,4 @@ import { Component } from '@angular/core';
   templateUrl: '../../../app/components/decharges/decharges.html'
 })
 
-export class DechargesComponent { }    // € Exportation du component sous la forme du nom de class
+export class DechargesComponent { }

@@ -1,22 +1,31 @@
+// Module de base du projet
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { RouterModule }   from '@angular/router';
-
-import { ToolbarComponent } from '../shared/toolbar/toolbar.component';
-import { NavbarComponent } from '../shared/navbar/navbar.component';
-import { AppComponent }   from './app.component';
-import { DechargesComponent } from '../components/decharges/decharges.component';
-import { RchercheComponent } from '../components/recherche/recherche.component';
-import { ResponsableUEComponent } from '../components/responsableUE/responsableUE.component';
-import { InterventionsComponent } from '../components/interventions/interventions.component';
-import { AccueilComponent } from '../components/accueil/accueil.component';
-import { ListeDesUEComponent } from '../components/gererUE/gererUE.component';
-import { ProblemeComponent } from '../components/probleme/probleme.component';
-import { AjoutProfUEComponent } from '../components/ajoutProfUE/ajoutProfUE.component';
-
 import { HttpModule } from '@angular/http';
 
+// Gestionnaire d'inclusion de component
+import { AppComponent }   from './app.component';
+
+// Banniere et menu supérieur
+import { ToolbarComponent } from '../shared/toolbar/toolbar.component';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
+
+// Page du projet
+import { AccueilComponent } from '../components/accueil/accueil.component';
+import { InterventionsComponent } from '../components/interventions/interventions.component';
+import { DechargesComponent } from '../components/decharges/decharges.component';
+import { ProblemeComponent } from '../components/probleme/probleme.component';
+import { GererPersonnelComponent } from '../components/gererPersonnel/gererPersonnel.component';
+import { GererUEComponent } from '../components/gererUE/gererUE.component';
+import { GererStatutsComponent } from '../components/gererStatuts/gererStatuts.component';
+import { GererDroitsComponent } from '../components/gererDroits/gererDroits.component';
+
+import { AjoutProfUEComponent } from '../components/ajoutProfUE/ajoutProfUE.component';
+
+
+// Module primeng
 import {InputTextModule} from 'primeng/primeng';
 import {DataTableModule,SharedModule} from 'primeng/primeng';
 
@@ -30,19 +39,21 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
     SharedModule,
     RouterModule.forRoot([
       { path: '', redirectTo: '/accueil', pathMatch:'full' },
-      { path: 'decharges', component: DechargesComponent },
-      { path: 'recherche', component: RchercheComponent },
-      { path: 'responsableUE', component: ResponsableUEComponent },
+      { path: 'accueil', component: AccueilComponent },
       { path: 'interventions', component: InterventionsComponent },
-      { path: 'listeDesUE', component: ListeDesUEComponent },
+      { path: 'decharges', component: DechargesComponent },
       { path: 'probleme', component: ProblemeComponent },
+      { path: 'gererPersonnel', component: GererPersonnelComponent },
+      { path: 'gererUE', component: GererUEComponent },
       { path: 'ajoutProfUE', component: AjoutProfUEComponent },
-      { path: 'accueil', component: AccueilComponent }
+      { path: 'gererStatuts', component: GererStatutsComponent },
+      { path: 'gererDroits', component: GererDroitsComponent }
     ])
   ],
   declarations: [ AppComponent, ToolbarComponent, NavbarComponent,
-  RchercheComponent, DechargesComponent,
-  ResponsableUEComponent, InterventionsComponent, AccueilComponent, ListeDesUEComponent, ProblemeComponent, AjoutProfUEComponent],
+  AccueilComponent, InterventionsComponent, DechargesComponent,
+  ProblemeComponent, GererPersonnelComponent, GererUEComponent,
+  AjoutProfUEComponent, GererStatutsComponent, GererDroitsComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
