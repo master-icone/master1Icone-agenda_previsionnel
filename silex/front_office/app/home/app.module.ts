@@ -11,7 +11,7 @@ import { RchercheComponent } from '../components/recherche/recherche.component';
 import { ResponsableUEComponent } from '../components/responsableUE/responsableUE.component';
 import { InterventionsComponent } from '../components/interventions/interventions.component';
 import { AccueilComponent } from '../components/accueil/accueil.component';
-import { ListeDesUEComponent } from '../components/listeDesUE/listeDesUE.component';
+import { ListeDesUEComponent } from '../components/gererUE/gererUE.component';
 import { ProblemeComponent } from '../components/probleme/probleme.component';
 import { AjoutProfUEComponent } from '../components/ajoutProfUE/ajoutProfUE.component';
 

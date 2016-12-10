@@ -20,7 +20,7 @@ var recherche_component_1 = require('../components/recherche/recherche.component
 var responsableUE_component_1 = require('../components/responsableUE/responsableUE.component');
 var interventions_component_1 = require('../components/interventions/interventions.component');
 var accueil_component_1 = require('../components/accueil/accueil.component');
-var listeDesUE_component_1 = require('../components/listeDesUE/listeDesUE.component');
+var gererUE_component_1 = require('../components/gererUE/gererUE.component');
 var probleme_component_1 = require('../components/probleme/probleme.component');
 var ajoutProfUE_component_1 = require('../components/ajoutProfUE/ajoutProfUE.component');
 var http_1 = require('@angular/http');
@@ -44,7 +44,7 @@ var AppModule = (function () {
                     { path: 'recherche', component: recherche_component_1.RchercheComponent },
                     { path: 'responsableUE', component: responsableUE_component_1.ResponsableUEComponent },
                     { path: 'interventions', component: interventions_component_1.InterventionsComponent },
-                    { path: 'listeDesUE', component: listeDesUE_component_1.ListeDesUEComponent },
+                    { path: 'listeDesUE', component: gererUE_component_1.ListeDesUEComponent },
                     { path: 'probleme', component: probleme_component_1.ProblemeComponent },
                     { path: 'ajoutProfUE', component: ajoutProfUE_component_1.AjoutProfUEComponent },
                     { path: 'accueil', component: accueil_component_1.AccueilComponent }
@@ -52,7 +52,7 @@ var AppModule = (function () {
             ],
             declarations: [app_component_1.AppComponent, toolbar_component_1.ToolbarComponent, navbar_component_1.NavbarComponent,
                 recherche_component_1.RchercheComponent, decharges_component_1.DechargesComponent,
-                responsableUE_component_1.ResponsableUEComponent, interventions_component_1.InterventionsComponent, accueil_component_1.AccueilComponent, listeDesUE_component_1.ListeDesUEComponent, probleme_component_1.ProblemeComponent, ajoutProfUE_component_1.AjoutProfUEComponent],
+                responsableUE_component_1.ResponsableUEComponent, interventions_component_1.InterventionsComponent, accueil_component_1.AccueilComponent, gererUE_component_1.ListeDesUEComponent, probleme_component_1.ProblemeComponent, ajoutProfUE_component_1.AjoutProfUEComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
