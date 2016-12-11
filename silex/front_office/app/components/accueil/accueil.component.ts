@@ -1,29 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../services/http.service';
-import { CarService } from '../../services/car.service';
-import {Car} from '../../interfaces';
 
 @Component({
   selector: 'accueil',
   templateUrl: '../../../app/components/accueil/accueil.html',
   styleUrls: ['../../../app/components/accueil/accueil.css'],
-  providers: [CarService]
+  providers: [HttpService]
 })
 
 export class AccueilComponent implements OnInit {
-  cars: Car[];
-  cols: any[];
+  link = 'http://localhost:3000/interventions';
+  interventions: any;
 
-  constructor(private carService: CarService) {  }
+
+  constructor (private _httpService: HttpService) { }
 
   ngOnInit() {
-    this.carService.getCarsSmall().then(cars => this.cars = cars);
-
-    this.cols = [
-      {field: 'vin', header: 'Vin'},
-      {field: 'year', header: 'Year'},
-      {field: 'brand', header: 'Brand'},
-      {field: 'color', header: 'Color'}
-    ];
+    this.getInterventions();
   }
+
+  getInterventions() {
+    this._httpService.httpGet(this.link)
+        .subscribe(
+          data => {
+            this.interventions = data;
+          },
+          error => alert(error),
+          () => console.log("Finished")
+        );
+  }
+
+
 }

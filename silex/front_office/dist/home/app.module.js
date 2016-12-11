@@ -28,6 +28,7 @@ var gererPersonnel_component_1 = require('../components/gererPersonnel/gererPers
 var gererUE_component_1 = require('../components/gererUE/gererUE.component');
 var gererStatuts_component_1 = require('../components/gererStatuts/gererStatuts.component');
 var gererDroits_component_1 = require('../components/gererDroits/gererDroits.component');
+var authentification_component_1 = require('../components/authentification/authentification.component');
 var ajoutProfUE_component_1 = require('../components/ajoutProfUE/ajoutProfUE.component');
 // Module primeng
 var primeng_1 = require('primeng/primeng');
@@ -45,7 +46,8 @@ var AppModule = (function () {
                 primeng_2.DataTableModule,
                 primeng_2.SharedModule,
                 router_1.RouterModule.forRoot([
-                    { path: '', redirectTo: '/accueil', pathMatch: 'full' },
+                    { path: '', redirectTo: '/authentification', pathMatch: 'full' },
+                    { path: 'authentification', component: authentification_component_1.AuthentificationComponent },
                     { path: 'accueil', component: accueil_component_1.AccueilComponent },
                     { path: 'interventions', component: interventions_component_1.InterventionsComponent },
                     { path: 'decharges', component: decharges_component_1.DechargesComponent },
@@ -60,7 +62,8 @@ var AppModule = (function () {
             declarations: [app_component_1.AppComponent, toolbar_component_1.ToolbarComponent, navbar_component_1.NavbarComponent,
                 accueil_component_1.AccueilComponent, interventions_component_1.InterventionsComponent, decharges_component_1.DechargesComponent,
                 problemes_component_1.ProblemesComponent, gererPersonnel_component_1.GererPersonnelComponent, gererUE_component_1.GererUEComponent,
-                ajoutProfUE_component_1.AjoutProfUEComponent, gererStatuts_component_1.GererStatutsComponent, gererDroits_component_1.GererDroitsComponent],
+                ajoutProfUE_component_1.AjoutProfUEComponent, gererStatuts_component_1.GererStatutsComponent, gererDroits_component_1.GererDroitsComponent,
+                authentification_component_1.AuthentificationComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

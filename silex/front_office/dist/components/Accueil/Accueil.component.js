@@ -9,29 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var car_service_1 = require('../../services/car.service');
+var http_service_1 = require('../../services/http.service');
 var AccueilComponent = (function () {
-    function AccueilComponent(carService) {
-        this.carService = carService;
+    function AccueilComponent(_httpService) {
+        this._httpService = _httpService;
+        this.link = 'http://localhost:3000/interventions';
     }
     AccueilComponent.prototype.ngOnInit = function () {
+        this.onTestGet();
+    };
+    AccueilComponent.prototype.onTestGet = function () {
         var _this = this;
-        this.carService.getCarsSmall().then(function (cars) { return _this.cars = cars; });
-        this.cols = [
-            { field: 'vin', header: 'Vin' },
-            { field: 'year', header: 'Year' },
-            { field: 'brand', header: 'Brand' },
-            { field: 'color', header: 'Color' }
-        ];
+        this._httpService.httpGet(this.link)
+            .subscribe(function (data) {
+            _this.getData = data;
+        }, function (error) { return alert(error); }, function () { return console.log("Finished"); });
     };
     AccueilComponent = __decorate([
         core_1.Component({
             selector: 'accueil',
             templateUrl: '../../../app/components/accueil/accueil.html',
             styleUrls: ['../../../app/components/accueil/accueil.css'],
-            providers: [car_service_1.CarService]
+            providers: [http_service_1.HttpService]
         }), 
-        __metadata('design:paramtypes', [car_service_1.CarService])
+        __metadata('design:paramtypes', [http_service_1.HttpService])
     ], AccueilComponent);
     return AccueilComponent;
 }());
