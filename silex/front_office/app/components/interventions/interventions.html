@@ -1,25 +1,25 @@
 <h1>Interventions</h1>
 
-<div *ngIf="getData">
-  <div class ="lead"> nombre d'heures total: {{getData.heureTotal}} </div>
-  <div class ="lead"> nombre d'heures restant: {{getData.heureRestant}} </div>
+<div *ngIf="interventions">
+  <div class ="lead"> nombre d'heures total: {{interventions.heureTotal}} </div>
+  <div class ="lead"> nombre d'heures restant: {{interventions.heureRestant}} </div>
 
   <div class="table-responsive">
     <table class="table table-condensed table-striped table-bordered table-hover no-margin">
       <thead>
         <tr>
-          <th style="width:7%">N° UE</th>
-          <th style="width:11%">Intitulé</th>
-          <th style="width:11%" class="hidden-phone">Nom Responsable</th>
-          <th style="width:11%" class="hidden-phone">Heures CM</th>
-          <th style="width:11%" class="hidden-phone">Heures TD</th>
-          <th style="width:11%" class="hidden-phone">Heures TP</th>
-          <th style="width:11%" class="hidden-phone">Date d'ajout</th>
-          <th style="width:11%" class="hidden-phone">Attribution par</th>
+          <th>N° UE</th>
+          <th>Intitulé</th>
+          <th>Nom Responsable</th>
+          <th>Heures CM</th>
+          <th>Heures TD</th>
+          <th>Heures TP</th>
+          <th>Date d'ajout</th>
+          <th>Attribution par</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let intervention of getData.data">
+        <tr *ngFor="let intervention of interventions.interventions">
           <td>{{intervention.numUE}}</td>
           <td>{{intervention.intitule}}</td>
           <td>{{intervention.responsableUE}}</td>
