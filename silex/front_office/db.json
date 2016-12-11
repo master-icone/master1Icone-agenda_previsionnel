@@ -43,17 +43,47 @@
     {
       "id": 1,
       "nom": "Dupont",
-      "prenom": "Jean"
+      "prenom": "Jean",
+	  "heures" : 192
     },
     {
       "id": 2,
       "nom": "Hype",
-      "prenom": "Fil"
+      "prenom": "Fil",
+	  "heures" : 192
     },
     {
       "id": 3,
       "nom": "Oie",
-      "prenom": "France"
+      "prenom": "France",
+	  "heures" : 192
+    }
+  ],
+  
+  "gererUE": [
+    {
+      "id": 1,
+	  "numero" : "UE1111",
+      "intitule": "Base de la programmation",
+	  "cm" : 30,
+	  "td" : 60,
+	  "tp" : 60
+    },
+    {
+      "id": 2,
+	  "numero" : "UE1112",
+      "intitule": "Base de données",
+	  "cm" : 30,
+	  "td" : 60,
+	  "tp" : 60
+    },
+    {
+      "id": 3,
+	  "numero" : "UE1113",
+      "intitule": "Anglais",
+	  "cm" : 0,
+	  "td" : 16,
+	  "tp" : 0
     }
   ]
 }

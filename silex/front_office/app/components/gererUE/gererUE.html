@@ -1,7 +1,17 @@
 <h1>Gérer UE</h1>
-  <h2>UE Genie logiciel</h2>
 
-<div class="col-xs-12 col-sm-5 col-md-4 col-lg-9">
+<div class="col-md-8">
+  <div *ngIf="UE">
+    {{UE.numero}} {{UE.intitule}}
+  </div>
+</div>
+<div *ngIf="listeUE" class="col-md-4">
+  <ul *ngFor="let UE of listeUE" (click)="getUE(UE.id)" class="list-group">
+    <li class="list-group-item">{{UE.numero}} {{UE.intitule}}</li>
+  </ul>
+</div>
+
+<!--<div class="col-xs-12 col-sm-5 col-md-4 col-lg-9">
 <div class="span3">
 <table class="table table-striped">
   <thead>
@@ -83,4 +93,4 @@
               <li class="list-group-item">Technique de programmation</li>
             </ul>
           </div>
-</div>
+</div>-->
