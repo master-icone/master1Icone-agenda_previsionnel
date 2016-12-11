@@ -34,9 +34,26 @@
   },
   "decharges":{
     "decharges": [
-	  {"raisonDecharge" : "handicap", "temps" : 10},
-	  {"raisonDecharge" : "deplacements", "temps" : 20},
-	  {"raisonDecharge" : "enceinte", "temps" : 140}
-	]
-  }
+	    {"raisonDecharge" : "handicap", "temps" : 10},
+	    {"raisonDecharge" : "deplacements", "temps" : 20},
+	    {"raisonDecharge" : "enceinte", "temps" : 140}
+	  ]
+  },
+  "gererPersonnel": [
+    {
+      "id": 1,
+      "nom": "Dupont",
+      "prenom": "Jean"
+    },
+    {
+      "id": 2,
+      "nom": "Hype",
+      "prenom": "Fil"
+    },
+    {
+      "id": 3,
+      "nom": "Oie",
+      "prenom": "France"
+    }
+  ]
 }

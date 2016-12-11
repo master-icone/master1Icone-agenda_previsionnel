@@ -1,8 +1,8 @@
 <h1>Interventions</h1>
 
 <div *ngIf="interventions">
-  <div class ="lead"> nombre d'heures total: {{interventions.heureTotal}} </div>
-  <div class ="lead"> nombre d'heures restant: {{interventions.heureRestant}} </div>
+  <div class ="lead"> nombre d'heures effectué: {{interventions.heureCours}} </div>
+  <div class ="lead"> nombre d'heures restant: {{interventions.heureTotal - interventions.heureCours}} </div>
 
   <div class="table-responsive">
     <table class="table table-condensed table-striped table-bordered table-hover no-margin">
