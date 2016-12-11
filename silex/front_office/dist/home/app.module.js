@@ -23,7 +23,7 @@ var navbar_component_1 = require('../shared/navbar/navbar.component');
 var accueil_component_1 = require('../components/accueil/accueil.component');
 var interventions_component_1 = require('../components/interventions/interventions.component');
 var decharges_component_1 = require('../components/decharges/decharges.component');
-var probleme_component_1 = require('../components/probleme/probleme.component');
+var problemes_component_1 = require('../components/problemes/problemes.component');
 var gererPersonnel_component_1 = require('../components/gererPersonnel/gererPersonnel.component');
 var gererUE_component_1 = require('../components/gererUE/gererUE.component');
 var gererStatuts_component_1 = require('../components/gererStatuts/gererStatuts.component');
@@ -49,7 +49,7 @@ var AppModule = (function () {
                     { path: 'accueil', component: accueil_component_1.AccueilComponent },
                     { path: 'interventions', component: interventions_component_1.InterventionsComponent },
                     { path: 'decharges', component: decharges_component_1.DechargesComponent },
-                    { path: 'probleme', component: probleme_component_1.ProblemeComponent },
+                    { path: 'problemes', component: problemes_component_1.ProblemesComponent },
                     { path: 'gererPersonnel', component: gererPersonnel_component_1.GererPersonnelComponent },
                     { path: 'gererUE', component: gererUE_component_1.GererUEComponent },
                     { path: 'ajoutProfUE', component: ajoutProfUE_component_1.AjoutProfUEComponent },
@@ -59,7 +59,7 @@ var AppModule = (function () {
             ],
             declarations: [app_component_1.AppComponent, toolbar_component_1.ToolbarComponent, navbar_component_1.NavbarComponent,
                 accueil_component_1.AccueilComponent, interventions_component_1.InterventionsComponent, decharges_component_1.DechargesComponent,
-                probleme_component_1.ProblemeComponent, gererPersonnel_component_1.GererPersonnelComponent, gererUE_component_1.GererUEComponent,
+                problemes_component_1.ProblemesComponent, gererPersonnel_component_1.GererPersonnelComponent, gererUE_component_1.GererUEComponent,
                 ajoutProfUE_component_1.AjoutProfUEComponent, gererStatuts_component_1.GererStatutsComponent, gererDroits_component_1.GererDroitsComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 

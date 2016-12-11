@@ -1,0 +1,19 @@
+<h1>Problèmes</h1>
+<div *ngIf="problemes" class="table-responsive">
+  <table class="table table-condensed table-striped table-bordered table-hover no-margin">
+    <thead>
+      <tr>
+        <th>Nom Professeur</th>
+        <th>Statut</th>
+        <th>Heures Manquants</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let probleme of problemes.problemes">
+        <td>{{probleme.nom}} {{probleme.prenom}}</td>
+        <td>{{probleme.statut}}</td>
+        <td>{{probleme.heuresManquants}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

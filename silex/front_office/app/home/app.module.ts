@@ -16,7 +16,7 @@ import { NavbarComponent } from '../shared/navbar/navbar.component';
 import { AccueilComponent } from '../components/accueil/accueil.component';
 import { InterventionsComponent } from '../components/interventions/interventions.component';
 import { DechargesComponent } from '../components/decharges/decharges.component';
-import { ProblemeComponent } from '../components/probleme/probleme.component';
+import { ProblemesComponent } from '../components/problemes/problemes.component';
 import { GererPersonnelComponent } from '../components/gererPersonnel/gererPersonnel.component';
 import { GererUEComponent } from '../components/gererUE/gererUE.component';
 import { GererStatutsComponent } from '../components/gererStatuts/gererStatuts.component';
@@ -42,7 +42,7 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
       { path: 'accueil', component: AccueilComponent },
       { path: 'interventions', component: InterventionsComponent },
       { path: 'decharges', component: DechargesComponent },
-      { path: 'probleme', component: ProblemeComponent },
+      { path: 'problemes', component: ProblemesComponent },
       { path: 'gererPersonnel', component: GererPersonnelComponent },
       { path: 'gererUE', component: GererUEComponent },
       { path: 'ajoutProfUE', component: AjoutProfUEComponent },
@@ -52,7 +52,7 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
   ],
   declarations: [ AppComponent, ToolbarComponent, NavbarComponent,
   AccueilComponent, InterventionsComponent, DechargesComponent,
-  ProblemeComponent, GererPersonnelComponent, GererUEComponent,
+  ProblemesComponent, GererPersonnelComponent, GererUEComponent,
   AjoutProfUEComponent, GererStatutsComponent, GererDroitsComponent ],
   bootstrap:    [ AppComponent ]
 })

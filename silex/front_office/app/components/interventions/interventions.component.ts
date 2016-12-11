@@ -15,10 +15,10 @@ export class InterventionsComponent {
   constructor (private _httpService: HttpService) { }
 
   ngOnInit() {
-    this.onTestGet();
+    this.getInterventions();
   }
 
-  onTestGet() {
+  getInterventions() {
     this._httpService.httpGet(this.link)
         .subscribe(
           data => {

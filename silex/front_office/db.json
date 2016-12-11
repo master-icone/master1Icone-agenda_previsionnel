@@ -23,5 +23,13 @@
       {"numUE": "UE1112", "intitule": "Base de la programmation", "responsableUE": "M. Christophe Facielli", "hCM": 0, "hTD": 8, "hTP": 16, "date": "04/12/2016", "attribution": "Mme. Céla dmin"},
       {"numUE": "UE1111", "intitule": "Base de données", "responsableUE": "M. Jean-Loup Guillaume", "hCM": 4, "hTD": 8, "hTP": 12, "date": "03/12/2016", "attribution": "Mme. Céla dmin"}
     ]
+  },
+  "problemes":{
+    "problemes": [
+      {"non": "Daniel", "prenom": "Antoine", "statut": "Enseignant-Chercheur", "heuresManquants": 192},
+      {"nom": "Serdan", "prenom": "Maurice", "statut": "Enseignant-Chercheur", "heuresManquants": 60},
+      {"nom": "Carmi", "prenom": "Christiane", "statut": "Enseignant-Chercheur", "heuresManquants": 20},
+      {"nom": "Bardet", "prenom": "Jean-Baptiste", "statut": "Doctorant", "heuresManquants": 8}
+    ]
   }
 }
