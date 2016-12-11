@@ -21,6 +21,8 @@ import { GererPersonnelComponent } from '../components/gererPersonnel/gererPerso
 import { GererUEComponent } from '../components/gererUE/gererUE.component';
 import { GererStatutsComponent } from '../components/gererStatuts/gererStatuts.component';
 import { GererDroitsComponent } from '../components/gererDroits/gererDroits.component';
+import { AuthentificationComponent } from '../components/authentification/authentification.component';
+
 
 import { AjoutProfUEComponent } from '../components/ajoutProfUE/ajoutProfUE.component';
 
@@ -38,7 +40,8 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
     DataTableModule,
     SharedModule,
     RouterModule.forRoot([
-      { path: '', redirectTo: '/accueil', pathMatch:'full' },
+      { path: '', redirectTo: '/authentification', pathMatch:'full' },
+      { path: 'authentification', component: AuthentificationComponent },
       { path: 'accueil', component: AccueilComponent },
       { path: 'interventions', component: InterventionsComponent },
       { path: 'decharges', component: DechargesComponent },
@@ -53,7 +56,8 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
   declarations: [ AppComponent, ToolbarComponent, NavbarComponent,
   AccueilComponent, InterventionsComponent, DechargesComponent,
   ProblemeComponent, GererPersonnelComponent, GererUEComponent,
-  AjoutProfUEComponent, GererStatutsComponent, GererDroitsComponent ],
+  AjoutProfUEComponent, GererStatutsComponent, GererDroitsComponent,
+  AuthentificationComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
