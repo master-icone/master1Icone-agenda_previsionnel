@@ -31,5 +31,12 @@
       {"nom": "Carmi", "prenom": "Christiane", "statut": "Enseignant-Chercheur", "heuresManquants": 20},
       {"nom": "Bardet", "prenom": "Jean-Baptiste", "statut": "Doctorant", "heuresManquants": 8}
     ]
+  },
+  "decharges":{
+    "decharges": [
+	  {"raisonDecharge" : "handicap", "temps" : 10},
+	  {"raisonDecharge" : "deplacements", "temps" : 20},
+	  {"raisonDecharge" : "enceinte", "temps" : 140}
+	]
   }
 }
