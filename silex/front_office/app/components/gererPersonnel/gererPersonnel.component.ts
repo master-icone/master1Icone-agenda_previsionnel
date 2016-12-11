@@ -19,6 +19,7 @@ export class GererPersonnelComponent {
     params.params.subscribe(params => {
         this.id = params['id'];
     });
+    this.change();
   }
 
   ngOnInit() {

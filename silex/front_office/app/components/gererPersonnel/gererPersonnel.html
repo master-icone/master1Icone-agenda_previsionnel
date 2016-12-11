@@ -9,7 +9,7 @@
   <ul *ngFor="let personnel of listePersonnel" (click)="change()" class="list-group">
     <a routerLink= "/gererPersonnel/{{personnel.id}}" [routerLinkActive]="['router-link-active']"  class = "surligne">
       <li class="list-group-item">{{personnel.prenom}} {{personnel.nom}}</li>
-  </a>
+    </a>
   </ul>
 </div>
 

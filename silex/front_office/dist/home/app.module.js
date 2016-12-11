@@ -55,6 +55,7 @@ var AppModule = (function () {
                     { path: 'gererPersonnel', component: gererPersonnel_component_1.GererPersonnelComponent },
                     { path: 'gererPersonnel/:id', component: gererPersonnel_component_1.GererPersonnelComponent },
                     { path: 'gererUE', component: gererUE_component_1.GererUEComponent },
+                    { path: 'gererUE/:id', component: gererUE_component_1.GererUEComponent },
                     { path: 'ajoutProfUE', component: ajoutProfUE_component_1.AjoutProfUEComponent },
                     { path: 'gererStatuts', component: gererStatuts_component_1.GererStatutsComponent },
                     { path: 'gererDroits', component: gererDroits_component_1.GererDroitsComponent }

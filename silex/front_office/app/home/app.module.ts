@@ -47,6 +47,7 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
       { path: 'gererPersonnel', component: GererPersonnelComponent },
       { path: 'gererPersonnel/:id', component: GererPersonnelComponent },
       { path: 'gererUE', component: GererUEComponent },
+      { path: 'gererUE/:id', component: GererUEComponent },
       { path: 'ajoutProfUE', component: AjoutProfUEComponent },
       { path: 'gererStatuts', component: GererStatutsComponent },
       { path: 'gererDroits', component: GererDroitsComponent }
