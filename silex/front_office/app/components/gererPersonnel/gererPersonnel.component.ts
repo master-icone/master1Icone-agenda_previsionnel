@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../services/http.service';
 
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'gererPersonnel',
   providers: [HttpService],
@@ -11,11 +13,22 @@ export class GererPersonnelComponent {
   link = 'http://localhost:3000/gererPersonnel';
   listePersonnel: any;
   personnel: any;
+  id: any;
 
-  constructor (private _httpService: HttpService) { }
+  constructor (private _httpService: HttpService, params: ActivatedRoute) {
+    params.params.subscribe(params => {
+        this.id = params['id'];
+    });
+  }
 
   ngOnInit() {
     this.getListePersonnel();
+  }
+
+  change() {
+    if(this.id) {
+      this.getPersonnel(this.id);
+    }
   }
 
   getListePersonnel() {

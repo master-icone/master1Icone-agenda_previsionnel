@@ -53,6 +53,7 @@ var AppModule = (function () {
                     { path: 'decharges', component: decharges_component_1.DechargesComponent },
                     { path: 'problemes', component: problemes_component_1.ProblemesComponent },
                     { path: 'gererPersonnel', component: gererPersonnel_component_1.GererPersonnelComponent },
+                    { path: 'gererPersonnel/:id', component: gererPersonnel_component_1.GererPersonnelComponent },
                     { path: 'gererUE', component: gererUE_component_1.GererUEComponent },
                     { path: 'ajoutProfUE', component: ajoutProfUE_component_1.AjoutProfUEComponent },
                     { path: 'gererStatuts', component: gererStatuts_component_1.GererStatutsComponent },
