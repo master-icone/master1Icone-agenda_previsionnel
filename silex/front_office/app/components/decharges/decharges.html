@@ -1,25 +1,26 @@
 <h1>Décharges</h1>
-<div class="table-responsive">
-    <table class="table table-condensed table-striped table-bordered table-hover no-margin">
-		<thead>
-			<tr>
-				<th>Raison</th>
-				<th>Nombre d'heures</th>
-			</tr>
-		</thead>
-		<tbody *ngIf="decharges">
-			<tr *ngFor="let decharges of decharges.decharges">
-				<td>{{decharges.raisonDecharge}}</td>
-				<td>{{decharges.temps}}</td>
-			</tr>
-		</tbody>
-    </table>
-</div>
+	<div class="table-responsive" style="width: 90%; margin-left: 5%">
+		<table class="table table-condensed table-striped table-bordered table-hover no-margin">
+			<thead>
+				<tr>
+					<th>Raison</th>
+					<th>Nombre d'heures</th>
+				</tr>
+			</thead>
+			<tbody *ngIf="decharges">
+				<tr *ngFor="let decharges of decharges.decharges">
+					<td>{{decharges.raisonDecharge}}</td>
+					<td>{{decharges.temps}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
  
   <div class="col-sm-4">
-    <p>Heure à affecter : 192H</p>
-	<p>Total décharge : </p>
-	<p>Heures à effecuter</p>
+	<p>Heure à affecter :<b> 192 heures</b></p>
+	<p>Total décharge :<b> 170 heures</b></p>
+	<p>Heures à effecuter :<b> 22 heures</b></p>
   </div>
  
 
