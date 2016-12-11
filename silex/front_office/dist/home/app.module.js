@@ -20,6 +20,7 @@ var app_component_1 = require('./app.component');
 var toolbar_component_1 = require('../shared/toolbar/toolbar.component');
 var navbar_component_1 = require('../shared/navbar/navbar.component');
 // Page du projet
+var authentification_component_1 = require('../components/authentification/authentification.component');
 var accueil_component_1 = require('../components/accueil/accueil.component');
 var interventions_component_1 = require('../components/interventions/interventions.component');
 var decharges_component_1 = require('../components/decharges/decharges.component');
@@ -28,7 +29,6 @@ var gererPersonnel_component_1 = require('../components/gererPersonnel/gererPers
 var gererUE_component_1 = require('../components/gererUE/gererUE.component');
 var gererStatuts_component_1 = require('../components/gererStatuts/gererStatuts.component');
 var gererDroits_component_1 = require('../components/gererDroits/gererDroits.component');
-var authentification_component_1 = require('../components/authentification/authentification.component');
 var ajoutProfUE_component_1 = require('../components/ajoutProfUE/ajoutProfUE.component');
 // Module primeng
 var primeng_1 = require('primeng/primeng');
@@ -60,10 +60,10 @@ var AppModule = (function () {
                 ])
             ],
             declarations: [app_component_1.AppComponent, toolbar_component_1.ToolbarComponent, navbar_component_1.NavbarComponent,
-                accueil_component_1.AccueilComponent, interventions_component_1.InterventionsComponent, decharges_component_1.DechargesComponent,
-                problemes_component_1.ProblemesComponent, gererPersonnel_component_1.GererPersonnelComponent, gererUE_component_1.GererUEComponent,
-                ajoutProfUE_component_1.AjoutProfUEComponent, gererStatuts_component_1.GererStatutsComponent, gererDroits_component_1.GererDroitsComponent,
-                authentification_component_1.AuthentificationComponent],
+                authentification_component_1.AuthentificationComponent, accueil_component_1.AccueilComponent, interventions_component_1.InterventionsComponent,
+                decharges_component_1.DechargesComponent, problemes_component_1.ProblemesComponent, gererPersonnel_component_1.GererPersonnelComponent,
+                gererUE_component_1.GererUEComponent, ajoutProfUE_component_1.AjoutProfUEComponent, gererStatuts_component_1.GererStatutsComponent,
+                gererDroits_component_1.GererDroitsComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

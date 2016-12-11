@@ -13,6 +13,7 @@ import { ToolbarComponent } from '../shared/toolbar/toolbar.component';
 import { NavbarComponent } from '../shared/navbar/navbar.component';
 
 // Page du projet
+import { AuthentificationComponent } from '../components/authentification/authentification.component';
 import { AccueilComponent } from '../components/accueil/accueil.component';
 import { InterventionsComponent } from '../components/interventions/interventions.component';
 import { DechargesComponent } from '../components/decharges/decharges.component';
@@ -21,11 +22,8 @@ import { GererPersonnelComponent } from '../components/gererPersonnel/gererPerso
 import { GererUEComponent } from '../components/gererUE/gererUE.component';
 import { GererStatutsComponent } from '../components/gererStatuts/gererStatuts.component';
 import { GererDroitsComponent } from '../components/gererDroits/gererDroits.component';
-import { AuthentificationComponent } from '../components/authentification/authentification.component';
-
 
 import { AjoutProfUEComponent } from '../components/ajoutProfUE/ajoutProfUE.component';
-
 
 // Module primeng
 import {InputTextModule} from 'primeng/primeng';
@@ -54,10 +52,11 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
     ])
   ],
   declarations: [ AppComponent, ToolbarComponent, NavbarComponent,
-  AccueilComponent, InterventionsComponent, DechargesComponent,
-  ProblemesComponent, GererPersonnelComponent, GererUEComponent,
-  AjoutProfUEComponent, GererStatutsComponent, GererDroitsComponent,
-  AuthentificationComponent ],
+   AuthentificationComponent, AccueilComponent, InterventionsComponent,
+   DechargesComponent, ProblemesComponent, GererPersonnelComponent,
+   GererUEComponent, AjoutProfUEComponent, GererStatutsComponent,
+   GererDroitsComponent],
   bootstrap:    [ AppComponent ]
 })
+
 export class AppModule { }

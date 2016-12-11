@@ -1,56 +1,51 @@
-<div *ngIf="interventions">
-
-  <div class="progress">
-    <div class="progress-bar progress-bar-success" role="progressbar" style="width:40%">
-      CM:
-    </div>
-    <div class="progress-bar progress-bar-warning" role="progressbar" style="width:10%">
-      50h TD
-    </div>
-    <div class="progress-bar progress-bar-danger" role="progressbar" style="width:20%">
-      50h CM
-    </div>
-
-
+<div class="progress">
+  <div class="progress-bar progress-bar-success" role="progressbar" style="width:40%">
+    CM:
   </div>
-
+  <div class="progress-bar progress-bar-warning" role="progressbar" style="width:10%">
+    50h TD
+  </div>
+  <div class="progress-bar progress-bar-danger" role="progressbar" style="width:20%">
+    50h CM
+  </div>
+</div>
 
 <div class="row space" >
-      <div class="col-xs-12 col-sm-5 col-md-4 col-lg-6">
-            <h4> Vos dernières interventions </h4>
-                <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th>N°UE</th>
-                            <th>Intitulé</th>
-                            <th>Heures</th>
-                          </tr>
-                        </thead>
-                    <tbody>
-                         <tr *ngFor="let intervention of interventions.interventions">
-                            <td>{{intervention.numUE}}</td>
-                            <td>{{intervention.intitule}}</td>
-                            <td>{{intervention.hCM+intervention.hTD+intervention.hTP}}</td>
-                         </tr>
-                      </tbody>
-                  </table>
-      </div>
+  <div class="col-xs-12 col-sm-5 col-md-4 col-lg-6">
+    <h4>Vos dernières interventions</h4>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>N°UE</th>
+          <th>Intitulé</th>
+          <th>Heures</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="interventions">
+        <tr *ngFor="let intervention of interventions.interventions">
+          <td>{{intervention.numUE}}</td>
+          <td>{{intervention.intitule}}</td>
+          <td>{{intervention.hCM+intervention.hTD+intervention.hTP}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <div class="row">
-      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-6">
-            <h4> Responsabilités </h4>
-                  <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th>N°UE</th>
-                            <th>Intitulé</th>
-                            <th>Heures</th>
-                          </tr>
-                        </thead>
-                    <tbody>
-
-                      </tbody>
-                  </table>
-      </div>
+  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-6">
+    <h4>Vos UE responsables</h4>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>N°UE</th>
+          <th>Intitulé</th>
+          <th>Heures</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Contenus -->
+      </tbody>
+    </table>
+  </div>
 </div>
