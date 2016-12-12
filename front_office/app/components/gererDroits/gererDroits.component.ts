@@ -8,19 +8,23 @@ import { HttpService } from '../../services/http.service';
 })
 
 export class GererDroitsComponent {
-  getData: string;
+  value: string;
   text = 'http://ip.jsontest.com/';
 
   constructor (private _httpService: HttpService) { }
 
-  getListeUE() {
+  getData() {
     this._httpService.httpGet(this.text)
         .subscribe(
           data => {
-            this.getData = JSON.stringify(data);
+            this.value = JSON.stringify(data);
           },
           error => alert(error),
           () => console.log("Finished")
         );
+  }
+
+  postData() {
+    this._httpService.httpPost('username=myusername&password=mypassword','http://localhost:3000/gererPersonnel');
   }
 }
