@@ -1,0 +1,28 @@
+FR :
+Bienvenue dans le README de l'Agenda Prévisionnel.
+Ce projet est créé dans le cadre d'un exercice de groupe, en Master 1 de La Rochelle, France.
+Pour toute question supplémentaire contactez "ambre.lajugie@hotmail.fr" .
+
+--------------------------------------------------------
+EN :
+Welcome ine the "Agenda Prévisionnel" 's README.
+This project has been created for a group exercise, in Master 1 of computer science, in the university of La Rochelle, France.
+For any question, please contact "ambre.lajugie@hotmail.fr" .
+
+----------SOMMAIRE/SUMMARY------------------------------
+I  - installation/how to install
+II - utilisation/how to use
+--------------------------------------------------------
+I  - installation/how to install
+  
+  1) Install NPM on windows.
+  2) go in the folder "silex/front-office"
+  3) console: npm install lite-server
+  4) console: npm install typescript
+  5)  UBUNTU : console: npm start
+      WINDOWS: console: npm run lite
+  6) connect on localhost:3000
+--------------------------------------------------------
+II - utilisation/how to use
+
+  1) 
