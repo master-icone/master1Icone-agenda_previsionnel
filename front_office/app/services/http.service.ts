@@ -12,7 +12,7 @@ export class HttpService {
         .map(res => res.json());
   }
 
-  httpPost(json: string, link: string) {
+  httpPost(link: string, json: string) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this._http.post(link, json, {

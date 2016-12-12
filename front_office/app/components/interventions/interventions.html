@@ -1,9 +1,10 @@
 <h1>Interventions</h1>
 
-<div *ngIf="interventions">
-  <div class ="lead">Nombre d'heures effectué: {{interventions.heureCours}}</div>
-  <div class ="lead">Nombre d'heures restant: {{interventions.heureTotal - interventions.heureCours}}</div>
-
+<div>
+  <div *ngIf="tempsIntervention">
+    <div class ="lead">Nombre d'heures effectué: {{tempsIntervention.heureCours}}</div>
+    <div class ="lead">Nombre d'heures restant: {{tempsIntervention.heureTotal - tempsIntervention.heureCours}}</div>
+  </div>
   <div class="table-responsive"style="width: 90%; margin-left: 5%; margin-right: 5%">
     <table class="table table-condensed table-striped table-bordered table-hover no-margin">
       <thead>
@@ -11,21 +12,19 @@
           <th>N° UE</th>
           <th>Intitulé</th>
           <th>Nom Responsable</th>
-          <th>Heures CM</th>
-          <th>Heures TD</th>
-          <th>Heures TP</th>
+          <th>Type</th>
+          <th>Heure</th>
           <th>Date d'ajout</th>
           <th>Attribution par</th>
         </tr>
       </thead>
-      <tbody>
-        <tr *ngFor="let intervention of interventions.interventions">
+      <tbody *ngIf="interventions">
+        <tr *ngFor="let intervention of interventions">
           <td>{{intervention.numUE}}</td>
           <td>{{intervention.intitule}}</td>
           <td>{{intervention.responsableUE}}</td>
-          <td>{{intervention.hCM}}</td>
-          <td>{{intervention.hTD}}</td>
-          <td>{{intervention.hTP}}</td>
+          <td>{{intervention.type}}</td>
+          <td>{{intervention.heure}}</td>
           <td>
             <span class="label label label-info">New</span>
             {{intervention.date}}
