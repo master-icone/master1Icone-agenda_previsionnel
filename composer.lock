@@ -4,40 +4,40 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "008e001acdd4cb6f522f08950cdfed6c",
-    "content-hash": "58ce568858fac4c40ad07da1311b9862",
+    "hash": "8586112b50d81b3bb5c3c924205a6369",
+    "content-hash": "71a62b5a9225fca3d2449f3c5ff4187d",
     "packages": [
         {
             "name": "doctrine/annotations",
-            "version": "v1.2.7",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "f25c8aab83e0c3e976fd7d19875f198ccf2f7535"
+                "reference": "30e07cf03edc3cd3ef579d0dd4dd8c58250799a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/f25c8aab83e0c3e976fd7d19875f198ccf2f7535",
-                "reference": "f25c8aab83e0c3e976fd7d19875f198ccf2f7535",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/30e07cf03edc3cd3ef579d0dd4dd8c58250799a5",
+                "reference": "30e07cf03edc3cd3ef579d0dd4dd8c58250799a5",
                 "shasum": ""
             },
             "require": {
                 "doctrine/lexer": "1.*",
-                "php": ">=5.3.2"
+                "php": "^5.6 || ^7.0"
             },
             "require-dev": {
                 "doctrine/cache": "1.*",
-                "phpunit/phpunit": "4.*"
+                "phpunit/phpunit": "^5.6.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3.x-dev"
+                    "dev-master": "1.4.x-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Annotations\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\Annotations\\": "lib/Doctrine/Common/Annotations"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -73,7 +73,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2015-08-31 12:32:49"
+            "time": "2016-10-24 11:45:47"
         },
         {
             "name": "doctrine/cache",
@@ -550,6 +550,116 @@
             "time": "2015-08-31 13:19:01"
         },
         {
+            "name": "nephre/php-dbus",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nephre/php-dbus.git",
+                "reference": "77fff229c8552b322b6b4b366c38d46e889a680f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nephre/php-dbus/zipball/77fff229c8552b322b6b4b366c38d46e889a680f",
+                "reference": "77fff229c8552b322b6b4b366c38d46e889a680f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-xml": "*",
+                "lib-libxml": "*",
+                "php": ">=5.4"
+            },
+            "provide": {
+                "ext-xml": "*",
+                "lib-libxml": "*"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "PHP-3.01"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Jeznach",
+                    "email": "djeznach@gmail.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Derick Rethans",
+                    "email": "derick@php.net",
+                    "homepage": "http://derickrethans.nl/",
+                    "role": "Author"
+                }
+            ],
+            "description": "DBUS bindings for PHP language",
+            "homepage": "http://pecl.php.net/rest/r/dbus/",
+            "keywords": [
+                "dbus",
+                "derick",
+                "extension",
+                "module",
+                "php",
+                "rethans"
+            ],
+            "time": "2014-08-14 11:35:07"
+        },
+        {
+            "name": "phpoffice/phpexcel",
+            "version": "1.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPOffice/PHPExcel.git",
+                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPOffice/PHPExcel/zipball/372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+                "shasum": ""
+            },
+            "require": {
+                "ext-xml": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHPExcel": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Maarten Balliauw",
+                    "homepage": "http://blog.maartenballiauw.be"
+                },
+                {
+                    "name": "Mark Baker"
+                },
+                {
+                    "name": "Franck Lefevre",
+                    "homepage": "http://blog.rootslabs.net"
+                },
+                {
+                    "name": "Erik Tilt"
+                }
+            ],
+            "description": "PHPExcel - OpenXML - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
+            "homepage": "http://phpexcel.codeplex.com",
+            "keywords": [
+                "OpenXML",
+                "excel",
+                "php",
+                "spreadsheet",
+                "xls",
+                "xlsx"
+            ],
+            "time": "2015-05-01 07:00:55"
+        },
+        {
             "name": "psr/log",
             "version": "1.0.2",
             "source": {
@@ -826,7 +936,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "nephre/php-dbus": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
