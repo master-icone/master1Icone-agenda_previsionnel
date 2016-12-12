@@ -5,5 +5,5 @@ function __export(m) {
 /**
  * This barrel file provides the export for the shared ToolbarComponent.
  */
-__export(require('./toolbar.component'));
+__export(require("./toolbar.component"));
 //# sourceMappingURL=index.js.map

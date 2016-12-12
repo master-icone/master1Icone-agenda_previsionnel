@@ -85,5 +85,32 @@
 	  "td" : 16,
 	  "tp" : 0
     }
+  ],
+  
+  "gererStatuts": [
+    {
+      "id": 1,
+	  "label" : "Consultant",
+      "heures": 12,
+	  "autorisation": "null"
+    },
+    {
+      "id": 2,
+	  "label" : "Enseignant",
+      "heures": 192,
+	  "autorisation": "null"
+    },
+    {
+      "id": 3,
+	  "label" : "Enseignant-Chercheur",
+      "heures": 192,
+	  "autorisation": "null"
+    },
+	{
+      "id": 4,
+	  "label" : "Doctorant",
+      "heures": 96,
+	  "autorisation": "null"
+    }
   ]
 }

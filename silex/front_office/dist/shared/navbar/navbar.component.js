@@ -8,23 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 /**
  * This class represents the navigation bar component.
  */
 var NavbarComponent = (function () {
     function NavbarComponent() {
     }
-    NavbarComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'sd-navbar',
-            templateUrl: '../../../app/shared/navbar/navbar.component.html',
-            styleUrls: ['../../../app/shared/navbar/navbar.component.css']
-        }), 
-        __metadata('design:paramtypes', [])
-    ], NavbarComponent);
     return NavbarComponent;
 }());
+NavbarComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'sd-navbar',
+        templateUrl: '../../../app/shared/navbar/navbar.component.html',
+        styleUrls: ['../../../app/shared/navbar/navbar.component.css']
+    }),
+    __metadata("design:paramtypes", [])
+], NavbarComponent);
 exports.NavbarComponent = NavbarComponent;
 //# sourceMappingURL=navbar.component.js.map

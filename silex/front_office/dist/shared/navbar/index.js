@@ -5,5 +5,5 @@ function __export(m) {
 /**
  * This barrel file provides the export for the shared NavbarComponent.
  */
-__export(require('./navbar.component'));
+__export(require("./navbar.component"));
 //# sourceMappingURL=index.js.map
