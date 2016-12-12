@@ -11,4 +11,7 @@ export class HttpService {
     return this._http.get(link)
         .map(res => res.json());
   }
+  httpPost() {
+    
+  }
 }
