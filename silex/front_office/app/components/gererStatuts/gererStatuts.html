@@ -1,4 +1,36 @@
 <h1>Gérer Statuts</h1>
+
+<div class="col-md-8">
+  <div *ngIf="statuts">
+    <div class="row" >
+		<div class="col-xs-12 col-sm-5 col-md-4 col-lg-6">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Nom du statuts</th>
+						<th>Heures à répartir</th>
+						<th>Autorisation</th>
+					</tr>
+				</thead>
+					<tr>
+						<td>{{statuts.label}}</td>
+						<td>{{statuts.heures}}</td>
+						<td>{{statuts.autorisation}}</td>
+					</tr>
+			</table>
+		</div>
+	</div>
+  </div>
+</div>
+<div *ngIf="listeStatuts" class="col-md-4">
+  <ul *ngFor="let statuts of listeStatuts" (click)="getStatuts(statuts.id)" class="list-group">
+	<a routerLink= "/gererStatuts/{{statuts.id}}" [routerLinkActive]="['router-link-active']"  class = "surligne">
+    <li class="list-group-item">{{statuts.label}}</li>
+	</a>
+  </ul>
+</div>
+
+<!--<h1>Gérer Statuts</h1>
   <h2>UE Genie logiciel</h2>
 
 <div class="col-xs-12 col-sm-5 col-md-4 col-lg-9">
@@ -84,3 +116,4 @@
             </ul>
           </div>
 </div>
+-->

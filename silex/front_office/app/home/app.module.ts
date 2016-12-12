@@ -50,6 +50,7 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
       { path: 'gererUE/:id', component: GererUEComponent },
       { path: 'ajoutProfUE', component: AjoutProfUEComponent },
       { path: 'gererStatuts', component: GererStatutsComponent },
+	  { path: 'gererStatuts/:id', component: GererStatutsComponent },
       { path: 'gererDroits', component: GererDroitsComponent }
     ])
   ],
