@@ -1,24 +1,29 @@
 <h1>Gérer UE</h1>
-
 <div class="col-md-8">
 	<div *ngIf="UE">
 		<div class="row" >
 			<div class="col-md-12">
+				<h3>{{UE.numero}} : {{UE.intitule}}</h3>
+				<h4>Responsable : {{UE.responsable}}</h4>
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>Titre de l'UE</th>
+							<th>Professeur</th>
+							<th>Statut</th>
 							<th>Heures CM</th>
 							<th>Heures TD</th>
 							<th>Heures TP</th>
+							<th>Fiche</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>{{UE.numero}} : {{UE.intitule}}</td>
-							<td>{{UE.cm}}</td>
-							<td>{{UE.td}}</td>
-							<td>{{UE.tp}}</td>
+							<td>José Luiz Carasco Blanco</td>
+							<td>Intervenant</td>
+							<td>0</td>
+							<td>10</td>
+							<td>10</td>
+							<td>Button</td>
 						</tr>
 					</tbody>
 				</table>
