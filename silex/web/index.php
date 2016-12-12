@@ -14,6 +14,10 @@ catch (Exception $e)
 		die('Erreur : ' . $e->getMessage());
 }
 
+$app->after(function (Request $request, Response $response) {
+    $response->headers->set('Access-Control-Allow-Origin', '*');
+});
+
 
 #il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
 $app->post('/addPersonnel', function (Request $request) {
@@ -56,10 +60,10 @@ $app->post('/{ue}/addResponsable', function (Request $request) use($bdd) {
 $app->get('/test', function () use($app,$bdd) {
 		
 	$req = $bdd->query("SELECT * FROM personnel");
-	echo $app->json($req->fetchAll(PDO::FETCH_ASSOC));	
+	//echo $app->json($req->fetchAll(PDO::FETCH_ASSOC));	
+	return $app->json($req->fetchAll(PDO::FETCH_ASSOC));
 		
-		
-	$log = 'non,';
+	/*$log = 'non,';
 	$pass = 'FGX85BGF4IO';
 	//Hash le mot de passe de l'utilisateur pour ensuite mettre seulement le hash dans la BDD
 	$hash = password_hash($pass,PASSWORD_BCRYPT,['cost' => 13]);
@@ -85,7 +89,7 @@ $app->get('/test', function () use($app,$bdd) {
 		echo 'ERREUR';
 	}
 	$req->closeCursor();
-	return '';
+	return '';//*/
 });
 
 $app->get('/listeEnseignants', function() {	
