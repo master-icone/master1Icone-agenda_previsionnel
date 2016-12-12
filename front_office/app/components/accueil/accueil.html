@@ -17,18 +17,22 @@
       <thead>
         <tr>
           <th>Intitulé</th>
+          <th>Type</th>
           <th>Heures</th>
         </tr>
       </thead>
       <tbody *ngIf="interventions">
-        <tr *ngFor="let intervention of interventions.interventions">
+        <tr *ngFor="let intervention of interventions">
           <td>
-		  <span class="label label label-info">{{intervention.numUE}}</span>
-            {{intervention.intitule}}</td>
-          <td>{{intervention.hCM+intervention.hTD+intervention.hTP}}</td>
+		        <span class="label label label-info">{{intervention.numUE}}</span>
+            {{intervention.intitule}}
+          </td>
+          <td>{{intervention.type}}</td>
+          <td>{{intervention.heure}}</td>
         </tr>
       </tbody>
     </table>
+    <a routerLink="../interventions" [routerLinkActive]="['router-link-active']" class="surligne" style="float:right">Voir plus</a>
   </div>
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
     <h4>Vos UE responsables</h4>
@@ -44,5 +48,6 @@
         <!-- Contenus -->
       </tbody>
     </table>
+    <a routerLink="../gererUE" [routerLinkActive]="['router-link-active']" class="surligne" style="float:right">Voir plus</a>
   </div>
 </div>
