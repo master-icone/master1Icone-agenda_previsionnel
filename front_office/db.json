@@ -1,102 +1,205 @@
 {
-  "interventions":{
-    "heureTotal": "350", "heureCours": "130", "heureCM":"20" , "heureTD": "56", "heureTP": "54",
+  "interventions": {
+    "heureTotal": "350",
+    "heureCours": "130",
+    "heureCM": "20",
+    "heureTD": "56",
+    "heureTP": "54",
     "interventions": [
-      {"numUE": "UE3101", "intitule": "Mathématiques", "responsableUE": "M. Adrien Macheur", "hCM": 4, "hTD": 8, "hTP": 8, "date": "08/12/2016", "attribution": "Mme. Céla dmin"},
-      {"numUE": "UE3102", "intitule": "Ingénieurie Logicielle", "responsableUE": "Mme. Marcelle Ravier", "hCM": 4, "hTD": 8, "hTP": 2, "date": "07/12/2016", "attribution": "Mme. Céla dmin"},
-      {"numUE": "UE3103", "intitule": "Médias Numériques", "responsableUE": "M. Christophe Facielli", "hCM": 4, "hTD": 16, "hTP": 8, "date": "06/12/2016", "attribution": "Mme. Céla dmin"},
-      {"numUE": "UE4101", "intitule": "Réseaux", "responsableUE": "Mme. Christine Qwinz", "hCM": 4, "hTD": 8, "hTP": 8, "date": "05/12/2016", "attribution": "Mme. Céla dmin"},
-      {"numUE": "UE1112", "intitule": "Base de la programmation", "responsableUE": "M. Christophe Facielli", "hCM": 0, "hTD": 8, "hTP": 16, "date": "04/12/2016", "attribution": "Mme. Céla dmin"},
-      {"numUE": "UE1111", "intitule": "Base de données", "responsableUE": "M. Jean-Loup Guillaume", "hCM": 4, "hTD": 8, "hTP": 12, "date": "03/12/2016", "attribution": "Mme. Céla dmin"}
+      {
+        "numUE": "UE3101",
+        "intitule": "Mathématiques",
+        "responsableUE": "M. Adrien Macheur",
+        "hCM": 4,
+        "hTD": 8,
+        "hTP": 8,
+        "date": "08/12/2016",
+        "attribution": "Mme. Céla dmin"
+      },
+      {
+        "numUE": "UE3102",
+        "intitule": "Ingénieurie Logicielle",
+        "responsableUE": "Mme. Marcelle Ravier",
+        "hCM": 4,
+        "hTD": 8,
+        "hTP": 2,
+        "date": "07/12/2016",
+        "attribution": "Mme. Céla dmin"
+      },
+      {
+        "numUE": "UE3103",
+        "intitule": "Médias Numériques",
+        "responsableUE": "M. Christophe Facielli",
+        "hCM": 4,
+        "hTD": 16,
+        "hTP": 8,
+        "date": "06/12/2016",
+        "attribution": "Mme. Céla dmin"
+      },
+      {
+        "numUE": "UE4101",
+        "intitule": "Réseaux",
+        "responsableUE": "Mme. Christine Qwinz",
+        "hCM": 4,
+        "hTD": 8,
+        "hTP": 8,
+        "date": "05/12/2016",
+        "attribution": "Mme. Céla dmin"
+      },
+      {
+        "numUE": "UE1112",
+        "intitule": "Base de la programmation",
+        "responsableUE": "M. Christophe Facielli",
+        "hCM": 0,
+        "hTD": 8,
+        "hTP": 16,
+        "date": "04/12/2016",
+        "attribution": "Mme. Céla dmin"
+      },
+      {
+        "numUE": "UE1111",
+        "intitule": "Base de données",
+        "responsableUE": "M. Jean-Loup Guillaume",
+        "hCM": 4,
+        "hTD": 8,
+        "hTP": 12,
+        "date": "03/12/2016",
+        "attribution": "Mme. Céla dmin"
+      }
     ]
   },
-  "problemes":{
+  "problemes": {
     "problemes": [
-      {"non": "Daniel", "prenom": "Antoine", "statut": "Enseignant-Chercheur", "heuresManquants": 192},
-      {"nom": "Serdan", "prenom": "Maurice", "statut": "Enseignant-Chercheur", "heuresManquants": 60},
-      {"nom": "Carmi", "prenom": "Christiane", "statut": "Enseignant-Chercheur", "heuresManquants": 20},
-      {"nom": "Bardet", "prenom": "Jean-Baptiste", "statut": "Doctorant", "heuresManquants": 8}
+      {
+        "non": "Daniel",
+        "prenom": "Antoine",
+        "statut": "Enseignant-Chercheur",
+        "heuresManquants": 192
+      },
+      {
+        "nom": "Serdan",
+        "prenom": "Maurice",
+        "statut": "Enseignant-Chercheur",
+        "heuresManquants": 60
+      },
+      {
+        "nom": "Carmi",
+        "prenom": "Christiane",
+        "statut": "Enseignant-Chercheur",
+        "heuresManquants": 20
+      },
+      {
+        "nom": "Bardet",
+        "prenom": "Jean-Baptiste",
+        "statut": "Doctorant",
+        "heuresManquants": 8
+      }
     ]
   },
-  "decharges":{
+  "decharges": {
     "decharges": [
-	    {"raisonDecharge" : "handicap", "temps" : 10},
-	    {"raisonDecharge" : "deplacements", "temps" : 20},
-	    {"raisonDecharge" : "enceinte", "temps" : 140}
-	  ]
+      {
+        "raisonDecharge": "handicap",
+        "temps": 10
+      },
+      {
+        "raisonDecharge": "deplacements",
+        "temps": 20
+      },
+      {
+        "raisonDecharge": "enceinte",
+        "temps": 140
+      }
+    ]
   },
   "gererPersonnel": [
     {
       "id": 1,
       "nom": "Dupont",
       "prenom": "Jean",
-	  "heures" : 192
+      "heures": 192
     },
     {
       "id": 2,
       "nom": "Hype",
       "prenom": "Fil",
-	  "heures" : 192
+      "heures": 192
     },
     {
       "id": 3,
       "nom": "Oie",
       "prenom": "France",
-	  "heures" : 192
+      "heures": 192
+    },
+    {
+      "{\"var1\":\"test\",\"var2\":3}": "",
+      "id": 4
+    },
+    {
+      "username": "myusername?password=mypassword",
+      "id": 5
+    },
+    {
+      "username": "myusername",
+      "password": "mypassword",
+      "id": 6
+    },
+    {
+      "username": "myusername",
+      "password": "mypassword",
+      "id": 7
     }
   ],
-
   "gererUE": [
     {
       "id": 1,
-	  "numero" : "UE1111",
+      "numero": "UE1111",
       "intitule": "Base de la programmation",
-	  "cm" : 30,
-	  "td" : 60,
-	  "tp" : 60
+      "cm": 30,
+      "td": 60,
+      "tp": 60
     },
     {
       "id": 2,
-	  "numero" : "UE1112",
+      "numero": "UE1112",
       "intitule": "Base de données",
-	  "cm" : 30,
-	  "td" : 60,
-	  "tp" : 60
+      "cm": 30,
+      "td": 60,
+      "tp": 60
     },
     {
       "id": 3,
-	  "numero" : "UE1113",
+      "numero": "UE1113",
       "intitule": "Anglais",
-	  "cm" : 0,
-	  "td" : 16,
-	  "tp" : 0
+      "cm": 0,
+      "td": 16,
+      "tp": 0
     }
   ],
-
   "gererStatuts": [
     {
       "id": 1,
-	  "label" : "Consultant",
+      "label": "Consultant",
       "heures": 12,
-	  "autorisation": "null"
+      "autorisation": "null"
     },
     {
       "id": 2,
-	  "label" : "Enseignant",
+      "label": "Enseignant",
       "heures": 192,
-	  "autorisation": "null"
+      "autorisation": "null"
     },
     {
       "id": 3,
-	  "label" : "Enseignant-Chercheur",
+      "label": "Enseignant-Chercheur",
       "heures": 192,
-	  "autorisation": "null"
+      "autorisation": "null"
     },
-	{
+    {
       "id": 4,
-	  "label" : "Doctorant",
+      "label": "Doctorant",
       "heures": 96,
-	  "autorisation": "null"
+      "autorisation": "null"
     }
   ]
 }
