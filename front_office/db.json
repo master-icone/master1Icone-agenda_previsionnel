@@ -120,49 +120,6 @@
       "nom": "Oie",
       "prenom": "France",
       "heures": 192
-    },
-    {
-      "{\"var1\":\"test\",\"var2\":3}": "",
-      "id": 4
-    },
-    {
-      "username": "myusername?password=mypassword",
-      "id": 5
-    },
-    {
-      "username": "myusername",
-      "password": "mypassword",
-      "id": 6
-    },
-    {
-      "username": "myusername",
-      "password": "mypassword",
-      "id": 7
-    },
-    {
-      "username": "myusername",
-      "password": "mypassword",
-      "id": 8
-    },
-    {
-      "username": "myusername",
-      "password": "mypassword",
-      "id": 9
-    },
-    {
-      "username": "myusername",
-      "password": "mypassword",
-      "id": 10
-    },
-    {
-      "username": "myusername",
-      "password": "mypassword",
-      "id": 11
-    },
-    {
-      "username": "jean",
-      "password": "mypassword",
-      "id": 12
     }
   ],
   "gererUE": [
