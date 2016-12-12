@@ -12,7 +12,6 @@ export class AccueilComponent implements OnInit {
   link = 'http://localhost:3000/interventions';
   interventions: any;
 
-
   constructor (private _httpService: HttpService) { }
 
   ngOnInit() {
@@ -29,6 +28,4 @@ export class AccueilComponent implements OnInit {
           () => console.log("Finished")
         );
   }
-
-
 }

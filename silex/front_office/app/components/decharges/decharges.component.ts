@@ -5,14 +5,12 @@ import { HttpService } from '../../services/http.service';
   selector: 'decharges',
   templateUrl: '../../../app/components/decharges/decharges.html',
   providers: [HttpService]
-  
 })
 
 export class DechargesComponent implements OnInit{
   link = 'http://localhost:3000/decharges';
   decharges: any;
 
-  
   constructor (private _httpService: HttpService) { }
 
   ngOnInit() {

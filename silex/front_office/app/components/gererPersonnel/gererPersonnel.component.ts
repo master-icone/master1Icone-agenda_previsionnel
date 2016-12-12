@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../services/http.service';
-
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -42,6 +41,7 @@ export class GererPersonnelComponent {
           () => console.log("Finished")
         );
   }
+  
   getPersonnel(id) {
     this._httpService.httpGet(this.link+"/"+id)
         .subscribe(

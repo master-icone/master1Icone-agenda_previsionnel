@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { HttpService } from '../../services/http.service';
-
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -31,7 +30,7 @@ export class GererStatutsComponent {
       this.getStatuts(this.id);
     }
   }
-  
+
   getListeStatuts() {
     this._httpService.httpGet(this.link)
         .subscribe(
@@ -42,6 +41,7 @@ export class GererStatutsComponent {
           () => console.log("Finished")
         );
   }
+  
   getStatuts(id) {
     this._httpService.httpGet(this.link+"/"+id)
         .subscribe(

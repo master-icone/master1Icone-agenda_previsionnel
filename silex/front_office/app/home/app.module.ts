@@ -50,7 +50,7 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
       { path: 'gererUE/:id', component: GererUEComponent },
       { path: 'ajoutProfUE', component: AjoutProfUEComponent },
       { path: 'gererStatuts', component: GererStatutsComponent },
-	  { path: 'gererStatuts/:id', component: GererStatutsComponent },
+      { path: 'gererStatuts/:id', component: GererStatutsComponent },
       { path: 'gererDroits', component: GererDroitsComponent }
     ])
   ],
@@ -58,8 +58,8 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
    AuthentificationComponent, AccueilComponent, InterventionsComponent,
    DechargesComponent, ProblemesComponent, GererPersonnelComponent,
    GererUEComponent, AjoutProfUEComponent, GererStatutsComponent,
-   GererDroitsComponent],
-  bootstrap:    [ AppComponent ]
+   GererDroitsComponent ],
+  bootstrap: [ AppComponent ]
 })
 
 export class AppModule { }
