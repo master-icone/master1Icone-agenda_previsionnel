@@ -15,11 +15,8 @@ export class HttpService {
   httpPost(link: string, json: string) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    this._http.post(link, json, {
+    return this._http.post(link, json, {
       headers: headers
-    }).subscribe(data => {
-          }, error => {
-              console.log(JSON.stringify(error.json()));
-          });
+    }).map(res => res.json());
   }
 }
