@@ -31,6 +31,11 @@ export class GererPersonnelComponent {
     }
   }
 
+  ajoutPersonnel() {
+    this._httpService.httpPost('http://localhost:3000/gererPersonnel', 'nom=Assin&prenom=Marc&heure=200');
+    this.getListePersonnel();
+  }
+
   getListePersonnel() {
     this._httpService.httpGet(this.link)
         .subscribe(
@@ -41,7 +46,7 @@ export class GererPersonnelComponent {
           () => console.log("Finished")
         );
   }
-  
+
   getPersonnel(id) {
     this._httpService.httpGet(this.link+"/"+id)
         .subscribe(

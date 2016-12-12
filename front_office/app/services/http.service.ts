@@ -18,7 +18,6 @@ export class HttpService {
     this._http.post(link, json, {
       headers: headers
     }).subscribe(data => {
-                alert('ok');
           }, error => {
               console.log(JSON.stringify(error.json()));
           });
