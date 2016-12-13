@@ -131,24 +131,6 @@
       "nom": "Assin",
       "prenom": "Marc",
       "heure": "200",
-      "id": 5
-    },
-    {
-      "nom": "Assin",
-      "prenom": "Marc",
-      "heure": "200",
-      "id": 6
-    },
-    {
-      "nom": "Assin",
-      "prenom": "Marc",
-      "heure": "200",
-      "id": 7
-    },
-    {
-      "nom": "Assin",
-      "prenom": "Marc",
-      "heure": "200",
       "id": 8
     },
     {
@@ -234,6 +216,21 @@
       "prenom": "Marc",
       "heure": "200",
       "id": 22
+    },
+    {
+      "username": "myusername",
+      "password": "mypassword",
+      "id": 23
+    },
+    {
+      "username": "myusername",
+      "password": "mypassword",
+      "id": 24
+    },
+    {
+      "username": "myusername",
+      "password": "mypassword",
+      "id": 25
     }
   ],
   "gererUE": [

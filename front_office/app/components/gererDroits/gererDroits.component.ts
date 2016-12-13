@@ -12,6 +12,9 @@ export class GererDroitsComponent {
   text = 'http://ip.jsontest.com/';
   link = 'http://localhost:3000/gererPersonnel';
   data = 'username=myusername&password=mypassword';
+  deleteLink = 'http://localhost:3000/gererPersonnel';
+  deleteID = 5;
+  val: string;
 
   constructor (private _httpService: HttpService) { }
 
@@ -27,6 +30,26 @@ export class GererDroitsComponent {
   }
 
   postData() {
-    this._httpService.httpPost(this.link, this.data);
+    this._httpService.httpPost(this.link, this.data)
+        .subscribe(
+          data => {
+            this.val = JSON.stringify(data);
+            alert('pirouette kakaouette');
+          },
+          error => alert(error),
+          () => console.log("Finished")
+        );
+  }
+
+  deleteData() {
+    this._httpService.httpDelete(this.deleteLink + '/' + this.deleteID)
+        .subscribe(
+          data => {
+            this.val = JSON.stringify(data);
+            alert("hooo");
+          },
+          error => alert(error),
+          () => console.log("Finished")
+        );
   }
 }
