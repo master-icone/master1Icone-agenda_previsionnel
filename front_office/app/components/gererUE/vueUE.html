@@ -4,6 +4,23 @@
 			<h4>{{UE.numero}} : {{UE.label}}</h4>
 			<h4>Responsable de l'UE : {{UE.responsable}}</h4>
 			<hr/>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>CM</th>
+						<th>TD</th>
+						<th>TP</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{{UE.cm}}</td>
+						<td>{{UE.td}}</td>
+						<td>{{UE.tp}}</td>
+					</tr>
+				</tbody>
+			</table>
+
 			<h4>Liste des personnes ayant cette UE :</h4>
 			<table class="table table-striped">
 				<thead>
@@ -21,6 +38,7 @@
 					</tr>
 				</tbody>
 			</table>
+			<button (click)="deleteUE(id)">Supprimer</button>
 		</div>
 	</div>
 </div>

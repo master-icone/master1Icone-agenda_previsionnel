@@ -262,37 +262,52 @@
       "tp": 0
     },
     {
-      "numero": "undefined",
-      "label": "undefined",
-      "responsable": "undefined",
-      "id": 4
-    },
-    {
-      "numero": "undefined",
-      "label": "undefined",
-      "responsable": "undefined",
+      "label": "BLABLA",
+      "numero": "UE1150",
+      "responsable": "MACHIN",
+      "cm": "10",
+      "td": "20",
+      "tp": "20",
       "id": 5
     },
     {
-      "numero": "undefined",
-      "label": "undefined",
-      "responsable": "undefined",
+      "label": "BLA",
+      "numero": "BLA",
+      "responsable": "BLA",
+      "cm": "5",
+      "td": "5",
+      "tp": "5",
       "id": 6
     },
     {
-      "numero": "undefined",
-      "label": "undefined",
-      "responsable": "undefined",
+      "label": "FOR",
+      "numero": "POR",
+      "responsable": "DOR",
+      "cm": "50",
+      "td": "50",
+      "tp": "50",
       "id": 7
+    },
+    {
+      "label": "Marche",
+      "numero": "Marche",
+      "responsable": "Marche",
+      "cm": "0",
+      "td": "0",
+      "tp": "0",
+      "id": 8
+    },
+    {
+      "label": "MaR",
+      "numero": "MAr",
+      "responsable": "faef",
+      "cm": "15",
+      "td": "30",
+      "tp": "30",
+      "id": 9
     }
   ],
   "gererStatuts": [
-    {
-      "id": 1,
-      "label": "Consultant",
-      "heures": 12,
-      "autorisation": "null"
-    },
     {
       "id": 2,
       "label": "Enseignant",
@@ -304,12 +319,6 @@
       "label": "Enseignant-Chercheur",
       "heures": 192,
       "autorisation": "null"
-    },
-    {
-      "label": "Doctorant",
-      "heures": "120",
-      "autorisation": "null",
-      "id": 4
     },
     {
       "label": "Jean",

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpService } from '../../services/http.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'ajouterUE',
@@ -8,33 +9,25 @@ import { HttpService } from '../../services/http.service';
 })
 
 export class AjouterUEComponent {
-link = 'http://localhost:3000/gererUE';
-listeUE: any;
+  link = 'http://localhost:3000/gererUE';
+  label: string;
+  numero: string;
+  responsable: string;
+  cm: int;
+  td: int;
+  tp: int;
+  data: string;
 
-constructor (private _httpService: HttpService) { }
+  constructor (private _httpService: HttpService, private router: Router) { }
 
-ngOnInit() {
-  this.getListeUE();
-}
-
-getListeUE() {
-  this._httpService.httpGet(this.link)
-      .subscribe(
-        data => {
-          this.listeUE = data;
-        },
-        error => alert(error),
-        () => console.log("Finished")
-      );
-}
-
-ajoutUE(unNumero, unLabel, unResponsable) {
-  this._httpService.httpPost('http://localhost:3000/gererUE', 'numero='+unNumero+'&label='+unLabel+'&responsable='+unResponsable)
-      .subscribe(data => {
-          this.test = JSON.stringify(data);
-        }, error => {
-            console.log(JSON.stringify(error.json()));
-        });
-  this.getListeUE();
-}
+  postData() {
+    this.data = 'label='+this.label+'&numero='+this.numero+'&responsable='+this.responsable+'&cm='+this.cm+'&td='+this.td+'&tp='+this.tp;
+    this._httpService.httpPost(this.link, this.data)
+        .subscribe(
+          data => { },
+          error => alert(error),
+          () => console.log("Finished")
+        );
+    this.router.navigate(['./gererUE']);
+  }
 }

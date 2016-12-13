@@ -37,4 +37,15 @@ export class VueUEComponent {
           () => console.log("Finished")
         );
   }
+
+  deleteUE(id) {
+    this._httpService.httpDelete(this.link+"/"+id)
+        .subscribe(
+          data => { },
+          error => alert(error),
+          () => console.log("Finished")
+        );
+    this.sub.unsubscribe();
+    this.router.navigate(['./gererUE']);
+  }
 }

@@ -1,16 +1,33 @@
 <div class="row">
 	<div class="col-md-12">
-		<h4>Numéro de l'UE : <input type="text" name="numeroUE" [(ngModel)]="numeroUE"/></h4>
-		<h4>Nom de l'UE : <input type="text" name="nomUE" [(ngModel)]="nomUE"/></h4>
-    <h4>Responsable de l'UE :
+    <label for="numero">Numéro de l'UE : </label>
+    <input id="numero" type="text" size="30" pInputText [(ngModel)]="numero" />
+    <br/>
+    <label for="label">Nom de l'UE : </label>
+    <input id="label" type="text" size="30" pInputText [(ngModel)]="label" />
+    <br/>
+    <label for="responsable">Responsable de l'UE :</label>
+    <input id="responsable" type="text" size="30" pInputText [(ngModel)]="responsable" />
+    <br/>
+    <label for="cm">Nombre d'heures de CM :</label>
+    <input id="cm" type="number" size="30" pInputText [(ngModel)]="cm" />
+    <br/>
+    <label for="td">Nombre d'heures de TD :</label>
+    <input id="td" type="number" size="30" pInputText [(ngModel)]="td" />
+    <br/>
+    <label for="tp">Nombre d'heures de TP :</label>
+    <input id="tp" type="number" size="30" pInputText [(ngModel)]="tp" />
+    <br/>
+  <!--  <h4>Responsable de l'UE :
       <select name="responsableUE" id="responsableUE">
         <option value="demko">Demko</option>
         <option value="prigent">Prigent</option>
       </select>
-    </h4>
+    </h4>   -->
 		<hr/>
-    <button (click)="ajoutUE(numeroUE, nomUE, responsableUE)">Enregistrer</button>
-    <a routerLink="../" [routerLinkActive]="['router-link-active']" class="btn">Annuler</a>
-    <a routerLink="../" [routerLinkActive]="['router-link-active']" class="btn">Enregistrer</a>
+    <a routerLink="../" [routerLinkActive]="['router-link-active']" class="button">Annuler</a>
+    <a routerLink="../" [routerLinkActive]="['router-link-active']" class="button" (click)="postData()">Enregistrer</a>
+<!--   <a routerLink="../" [routerLinkActive]="['router-link-active']" class="btn">Annuler</a>
+    <a routerLink="../" [routerLinkActive]="['router-link-active']" class="btn">Enregistrer</a> -->
 	</div>
 </div>
