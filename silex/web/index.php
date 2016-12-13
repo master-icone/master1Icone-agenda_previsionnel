@@ -1,18 +1,19 @@
 <?php
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+require_once "bootstrap.php";
 
 require_once __DIR__.'/../vendor/autoload.php';
 
 $app = new Silex\Application();
-try
+/*try
 {
 	$bdd = new PDO('mysql:host=localhost;dbname=projet_m1;charset=utf8', 'root', '');
 }
 catch (Exception $e)
 {
 		die('Erreur : ' . $e->getMessage());
-}
+}//*/
 
 $app->after(function (Request $request, Response $response) {
     $response->headers->set('Access-Control-Allow-Origin', '*');
@@ -20,18 +21,50 @@ $app->after(function (Request $request, Response $response) {
 
 
 #il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
-$app->post('/addPersonnel', function (Request $request) {
+$app->post('/ajouterTypeEnseignement', function (Request $request) {
 	try
 	{
-		$bdd = new PDO('mysql:host=localhost;dbname=projet_m1;charset=utf8', 'root', '');
-		$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);								#Signaler l'insertion de nouvelles données
+		$label = $request->get('label');
+
+		$typesEnseignement = new TypesEnseignement();
+		$typesEnseignement->setlabel($label);
+
+		$entityManager->persist($typesEnseignement);
+		$entityManager->flush();
+
+		echo "Le nouveau type d'enseignement ajouté à l'Id: ".$typesEnseignement->getId()." et le label: " . $typesEnseignement->getlabel(); . "\n";
+		
+		return "Insertion REUSSIE";
+	}
+	catch (Exception $e)
+	{
+		die('Erreur : ' . $e->getMessage());
+	}
+});
+
+#il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
+$app->post('/ajouterTypeEnseignement', function (Request $request) {
+	try
+	{
+		$label = $request->get('label');
+
+		$typesEnseignement = new TypesEnseignement();
+		$typesEnseignement->setlabel($label);
+
+		$entityManager->persist($typesEnseignement);
+		$entityManager->flush();
+
+		echo "Le nouveau type d'enseignement ajouté à l'Id: ".$typesEnseignement->getId()." et le label: " . $typesEnseignement->getlabel(); . "\n";
+		
+		//$bdd = new PDO('mysql:host=localhost;dbname=projet_m1;charset=utf8', 'root', '');
+		//$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);								#Signaler l'insertion de nouvelles données
 		#permet d'accéder au champ avec la valeur pw (ici)) de ce qui est envoyé en post
-		$pass = $request->get('pw');
-		$hash = password_hash($pass,PASSWORD_BCRYPT,['cost' => 13]);								#Hacher le mot de passe
+		//$pass = $request->get('pw');
+		//$hash = password_hash($pass,PASSWORD_BCRYPT,['cost' => 13]);								#Hacher le mot de passe
 		
 		#Requete SQL permettant l'insertion du nouveau personnel
-		$sql = $bdd->query("INSERT INTO personnel (login, password, nom, prenom, mail) VALUES ('". $request->get('login') . "', '" . $hash . "', '" . $request->get('name') . "', '" . $request->get('firstname') . "', '" . $request->get('mail') ."')");
-		$bdd->exec($sql);					#Sert à executer l'insertion d'un nouveau personnel  (Provoque une erreur, mais s'execute correctement)
+		//$sql = $bdd->query("INSERT INTO personnel (login, password, nom, prenom, mail) VALUES ('". $request->get('login') . "', '" . $hash . "', '" . $request->get('name') . "', '" . $request->get('firstname') . "', '" . $request->get('mail') ."')");
+		//$bdd->exec($sql);					#Sert à executer l'insertion d'un nouveau personnel  (Provoque une erreur, mais s'execute correctement)
 		return "Insertion REUSSIE";
 	}
 	catch (Exception $e)
