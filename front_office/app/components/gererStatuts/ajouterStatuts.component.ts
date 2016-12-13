@@ -10,21 +10,24 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 export class AjouterStatutsComponent {
   link = 'http://localhost:3000/gererStatuts';
-  label: string;
-  heures: string;
-  autorisation: string;
+  label = "";
+  heures = "";
+  autorisation = "";
   data: string;
+  result: any;
 
   constructor (private _httpService: HttpService, private router: Router) { }
 
-  postData() {
+  ajouterStatut() {
     this.data = 'label='+this.label+'&heures='+this.heures+'&autorisation='+this.autorisation;
     this._httpService.httpPost(this.link, this.data)
         .subscribe(
-          data => { },
+          data => {
+            this.router.navigate(['./gererStatuts'+'/'+data.id]);
+          },
           error => alert(error),
           () => console.log("Finished")
         );
-    this.router.navigate(['./gererStatuts']);
+
   }
 }

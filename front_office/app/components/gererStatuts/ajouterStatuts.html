@@ -1,8 +1,24 @@
-<label for="nomStatut">Nom Statuts :</label>
-<input id="nomStatut" type="text" size="30" pInputText [(ngModel)]="label" />
-<label for="heures">Heures :</label>
-<input id="heures" type="text" size="30" pInputText [(ngModel)]="heures" />
-<label for="autorisation">Autorisation :</label>>
-<input id="autorisation" type="text" size="30" pInputText [(ngModel)]="autorisation" />
-<br /><br />
-<button (click)="postData()">Ajouter</button>
+<div class="col-sm-offset-3"><h2>Ajouter un Statut :</h2></div>
+<form class="form-horizontal">
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="nomStatut">Nom Statuts :</label>
+    <div class="col-sm-4">
+      <input id="nomStatut" type="text" class="form-control" pInputText [(ngModel)]="label" [ngModelOptions]="{standalone: true}" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="heures">Heures :</label>
+    <div class="col-sm-4">
+      <input id="heures" type="text" class="form-control" pInputText [(ngModel)]="heures" [ngModelOptions]="{standalone: true}" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="autorisation">Autorisation :</label>
+    <div class="col-sm-4">
+      <input id="autorisation" type="text" class="form-control" pInputText [(ngModel)]="autorisation" [ngModelOptions]="{standalone: true}" />
+    </div>
+  </div>
+  <div class="col-sm-offset-2 col-sm-10">
+    <button type="submit" class="btn btn-default" (click)="ajouterStatut()">Ajouter</button>
+  </div>
+</form>
