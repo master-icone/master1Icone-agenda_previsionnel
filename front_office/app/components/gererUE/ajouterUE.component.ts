@@ -13,9 +13,9 @@ export class AjouterUEComponent {
   label: string;
   numero: string;
   responsable: string;
-  cm: int;
-  td: int;
-  tp: int;
+  cm: string;
+  td: string;
+  tp: string;
   data: string;
 
   constructor (private _httpService: HttpService, private router: Router) { }

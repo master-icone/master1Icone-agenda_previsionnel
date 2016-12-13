@@ -12,6 +12,7 @@ export class VueUEComponent {
   link = 'http://localhost:3000/gererUE';
   UE: any;
   id: any;
+  sub;
 
   constructor (private _httpService: HttpService, params: ActivatedRoute, router: Router) {
     params.params.subscribe(params => {
@@ -46,6 +47,5 @@ export class VueUEComponent {
           () => console.log("Finished")
         );
     this.sub.unsubscribe();
-    this.router.navigate(['./gererUE']);
   }
 }
