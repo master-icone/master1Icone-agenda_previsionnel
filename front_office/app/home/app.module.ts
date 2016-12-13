@@ -23,6 +23,10 @@ import { GererUEComponent } from '../components/gererUE/gererUE.component';
 import { GererStatutsComponent } from '../components/gererStatuts/gererStatuts.component';
 import { GererDroitsComponent } from '../components/gererDroits/gererDroits.component';
 
+import { SelectStatutsComponent } from '../components/gererStatuts/selectStatuts.component';
+import { VueStatutsComponent } from '../components/gererStatuts/vueStatuts.component';
+import { AjouterStatutsComponent } from '../components/gererStatuts/ajouterStatuts.component';
+
 import { AjoutProfUEComponent } from '../components/ajoutProfUE/ajoutProfUE.component';
 
 // Module primeng
@@ -49,7 +53,12 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
       { path: 'gererUE', component: GererUEComponent },
       { path: 'gererUE/:id', component: GererUEComponent },
       { path: 'ajoutProfUE', component: AjoutProfUEComponent },
-      { path: 'gererStatuts', component: GererStatutsComponent },
+      { path: 'gererStatuts', component: GererStatutsComponent,
+        children: [
+          { path: '', component: SelectStatutsComponent },
+          { path: 'ajouter', component: AjouterStatutsComponent },
+          { path: ':id', component: VueStatutsComponent }
+        ]},
       { path: 'gererStatuts/:id', component: GererStatutsComponent },
       { path: 'gererDroits', component: GererDroitsComponent }
     ])
@@ -58,7 +67,8 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
    AuthentificationComponent, AccueilComponent, InterventionsComponent,
    DechargesComponent, ProblemesComponent, GererPersonnelComponent,
    GererUEComponent, AjoutProfUEComponent, GererStatutsComponent,
-   GererDroitsComponent ],
+   GererDroitsComponent, VueStatutsComponent, AjouterStatutsComponent,
+   SelectStatutsComponent ],
   bootstrap: [ AppComponent ]
 })
 

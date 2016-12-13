@@ -12,15 +12,11 @@ export class HttpService {
         .map(res => res.json());
   }
 
-  httpPost(json: string, link: string) {
+  httpPost(link: string, json: string) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    this._http.post(link, json, {
+    return this._http.post(link, json, {
       headers: headers
-    }).subscribe(data => {
-                alert('ok');
-          }, error => {
-              console.log(JSON.stringify(error.json()));
-          });
+    }).map(res => res.json());
   }
 }

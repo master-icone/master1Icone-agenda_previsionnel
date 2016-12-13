@@ -10,6 +10,8 @@ import { HttpService } from '../../services/http.service';
 export class GererDroitsComponent {
   value: string;
   text = 'http://ip.jsontest.com/';
+  link = 'http://localhost:3000/gererPersonnel';
+  data = 'username=myusername&password=mypassword';
 
   constructor (private _httpService: HttpService) { }
 
@@ -25,6 +27,6 @@ export class GererDroitsComponent {
   }
 
   postData() {
-    this._httpService.httpPost('username=myusername&password=mypassword','http://localhost:3000/gererPersonnel');
+    this._httpService.httpPost(this.link, this.data);
   }
 }

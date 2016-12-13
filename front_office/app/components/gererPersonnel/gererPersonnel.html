@@ -1,15 +1,94 @@
 <h1>Gérer Personnel</h1>
 
-<div class="col-md-8">
-  <div *ngIf="personnel" style="border:solid 2px black;">
-    {{personnel.nom}}
-  </div>
+<div class="col-md-10">
+	<div *ngIf="personnel">
+		<div class="col-md-12">
+			<div class="col-md-6">
+				<h3> Fiche personnel </h3>
+				<p>Nom : {{personnel.nom}}</p>
+				<p>Prénom : {{personnel.prenom}}</p>
+				<p>Statut : {{personnel.statut}}</p>
+				<p>E-Mail : {{personnel.email}}</p>
+				<p>Droits : {{personnel.droits}}</p>
+			</div>
+			<div class="col-md-6">
+				<h3> Heures de travail </h3>
+				<div class="progress" style="height:50px">
+					<div class="progress-bar progress-bar-success" role="progressbar" style="width:25%">
+						CM : 32h (33,3 %)
+					</div>
+					<div class="progress-bar progress-bar-warning" role="progressbar" style="width:25%">
+						TD : 48h (33,3 %)
+					</div>
+					<div class="progress-bar progress-bar-danger" role="progressbar" style="width:25%">
+						TP : 48h (33,3 %)
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr/>
+		<div class="col-md-12">
+			<div class="col-md-6">
+				<h3> Ses interventions </h3>
+				<div class="table-responsive"style="width: 100%">
+					<table class="table table-condensed table-striped table-bordered table-hover no-margin">
+					  <thead>
+						<tr>
+						  <th>UE</th>
+						  <th>Nom Responsable</th>
+						  <th>CM</th>
+						  <th>TD</th>
+						  <th>TP</th>
+						</tr>
+					  </thead>
+					  <tbody>
+						<tr>
+						  <td>UE1111 Base de la programmation</td>
+						  <td>José Luiz Carasco Blanco</td>
+						  <td>5</td>
+						  <td>10</td>
+						  <td>10</td>
+						</tr>
+					  </tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<h3> Ses UE en tant que responsable </h3>
+				<div class="table-responsive"style="width: 100%">
+					<table class="table table-condensed table-striped table-bordered table-hover no-margin">
+					  <thead>
+						<tr>
+						  <th>UE</th>
+						  <th>Intitulé</th>
+						</tr>
+					  </thead>
+					  <tbody>
+						<tr>
+						  <td>UE1111</td>
+						  <td>Base de programmation</td>
+						</tr>
+					  </tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<h3> Ajouter Heures </h3>
+			<p>Choix de l'UE<p>
+			<p>Nombre Heures CM</p>
+			<p>Nombre Heures TD</p>
+			<p>Nombre Heures TP</p>
+		</div>
+	</div>
 </div>
 
-<div *ngIf="listePersonnel" class="col-md-4">
+<div *ngIf="listePersonnel" class="col-md-2">
   <ul *ngFor="let personnel of listePersonnel" (click)="change()" class="list-group">
     <a routerLink= "/gererPersonnel/{{personnel.id}}" [routerLinkActive]="['router-link-active']" class="surligne">
       <li class="list-group-item">{{personnel.prenom}} {{personnel.nom}}</li>
     </a>
   </ul>
+	{{test}}
+	<button (click)="ajoutPersonnel()">Ajouter Personnel</button>
 </div>

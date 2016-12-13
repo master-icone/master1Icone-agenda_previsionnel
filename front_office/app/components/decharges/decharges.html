@@ -8,9 +8,9 @@
 			</tr>
 		</thead>
 		<tbody *ngIf="decharges">
-			<tr *ngFor="let decharges of decharges.decharges">
-				<td>{{decharges.raisonDecharge}}</td>
-				<td>{{decharges.temps}}</td>
+			<tr *ngFor="let decharge of decharges">
+				<td>{{decharge.raisonDecharge}}</td>
+				<td>{{decharge.temps}}</td>
 			</tr>
 		</tbody>
 	</table>

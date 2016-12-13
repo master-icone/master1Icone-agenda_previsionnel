@@ -1,34 +1,15 @@
 <h1>Gérer Statuts</h1>
-
-<div class="col-md-8">
-  <div *ngIf="statuts">
-    <div class="row">
-		<div class="col-md-12">
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th>Nom du statuts</th>
-						<th>Heures à répartir</th>
-						<th>Autorisation</th>
-					</tr>
-				</thead>
-        <tbody>
-					<tr>
-						<td>{{statuts.label}}</td>
-						<td>{{statuts.heures}}</td>
-						<td>{{statuts.autorisation}}</td>
-					</tr>
-        </tbody>
-			</table>
-		</div>
-	</div>
-  </div>
+<div class="col-md-10">
+	<router-outlet></router-outlet>
 </div>
 
-<div *ngIf="listeStatuts" class="col-md-4">
-  <ul *ngFor="let statuts of listeStatuts" (click)="getStatuts(statuts.id)" class="list-group">
-	  <a routerLink= "/gererStatuts/{{statuts.id}}" [routerLinkActive]="['router-link-active']" class="surligne">
-      <li class="list-group-item">{{statuts.label}}</li>
-	  </a>
-  </ul>
+<div *ngIf="listeStatuts" class="col-md-2">
+    <ul *ngFor="let statuts of listeStatuts"  class="list-group">
+			<a routerLink= "/gererStatuts/{{statuts.id}}" [routerLinkActive]="['router-link-active']" class="surligne">
+				<li class="list-group-item" >{{statuts.label}}</li>
+			</a>
+    </ul>
+		<a routerLink= "/gererStatuts/ajouter" [routerLinkActive]="['router-link-active']" class="surligne">
+			Ajouter
+		</a>
 </div>

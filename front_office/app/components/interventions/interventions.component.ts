@@ -10,12 +10,15 @@ import { HttpService } from '../../services/http.service';
 
 export class InterventionsComponent {
   link = 'http://localhost:3000/interventions';
+  link2 = 'http://localhost:3000/tempsIntervention';
   interventions: any;
+  tempsIntervention: any;
 
   constructor (private _httpService: HttpService) { }
 
   ngOnInit() {
     this.getInterventions();
+    this.getTempsInterventions();
   }
 
   getInterventions() {
@@ -23,6 +26,16 @@ export class InterventionsComponent {
         .subscribe(
           data => {
             this.interventions = data;
+          },
+          error => alert(error),
+          () => console.log("Finished")
+        );
+  }
+  getTempsInterventions() {
+    this._httpService.httpGet(this.link2)
+        .subscribe(
+          data => {
+            this.tempsIntervention = data;
           },
           error => alert(error),
           () => console.log("Finished")

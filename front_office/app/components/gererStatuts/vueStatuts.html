@@ -1,0 +1,26 @@
+<div *ngIf="statuts">
+	<div class="row">
+		<div class="col-md-12">
+			<h3>Nom du statut : {{statuts.label}}</h3>
+			<h4>Service annuel (TD/TP) : {{statuts.heures}}</h4>
+			<hr/>
+			<h4>Liste des personnes ayant ce statut :</h4>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Nom</th>
+						<th>Prénom</th>
+						<th>Fiche Professeur</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Prigent</td>
+						<td>Armelle</td>
+						<td>BOUTON</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
