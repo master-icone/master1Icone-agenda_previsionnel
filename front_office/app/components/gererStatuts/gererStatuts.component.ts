@@ -11,9 +11,15 @@ export class GererStatutsComponent {
   link = 'http://localhost:3000/gererStatuts';
   listeStatuts: any;
 
-  constructor (private _httpService: HttpService) { }
+  constructor (private _httpService: HttpService) {
+  }
 
   ngOnInit() {
+    this.getListeStatuts();
+  }
+
+  change() {
+    alert("test");
     this.getListeStatuts();
   }
 

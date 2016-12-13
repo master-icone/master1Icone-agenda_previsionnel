@@ -1,1 +1,8 @@
-Ajout
+<label for="nomStatut">Nom Statuts :</label>
+<input id="nomStatut" type="text" size="30" pInputText [(ngModel)]="label" />
+<label for="heures">Heures :</label>
+<input id="heures" type="text" size="30" pInputText [(ngModel)]="heures" />
+<label for="autorisation">Autorisation :</label>>
+<input id="autorisation" type="text" size="30" pInputText [(ngModel)]="autorisation" />
+<br /><br />
+<button (click)="postData()">Ajouter</button>

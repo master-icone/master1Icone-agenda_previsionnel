@@ -12,13 +12,14 @@ export class VueStatutsComponent {
   link = 'http://localhost:3000/gererStatuts';
   statuts: any;
   id: any;
+  sub;
 
-  constructor (private _httpService: HttpService, params: ActivatedRoute, router: Router) {
+  constructor (private _httpService: HttpService, params: ActivatedRoute, private router: Router) {
     params.params.subscribe(params => {
         this.id = params['id'];
     });
     this.change();
-    router.events.subscribe(() => this.change());
+    this.sub = router.events.subscribe(() => this.change());
   }
 
   change() {
@@ -36,5 +37,16 @@ export class VueStatutsComponent {
           error => alert(error),
           () => console.log("Finished")
         );
+  }
+
+  deleteStatut(id) {
+    this._httpService.httpDelete(this.link+"/"+id)
+        .subscribe(
+          data => { },
+          error => alert(error),
+          () => console.log("Finished")
+        );
+    this.sub.unsubscribe();
+    this.router.navigate(['./gererStatuts']);
   }
 }
