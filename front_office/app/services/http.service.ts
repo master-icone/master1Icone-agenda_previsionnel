@@ -19,4 +19,10 @@ export class HttpService {
       headers: headers
     }).map(res => res.json());
   }
+
+
+
+  httpDelete(link: string) {
+    return this._http.delete(link).map(res => res.json());
+  }
 }
