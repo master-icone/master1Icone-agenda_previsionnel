@@ -279,10 +279,16 @@
       "autorisation": "null"
     },
     {
-      "id": 4,
       "label": "Doctorant",
-      "heures": 96,
-      "autorisation": "null"
+      "heures": "120",
+      "autorisation": "null",
+      "id": 4
+    },
+    {
+      "label": "Jean",
+      "heures": "12121",
+      "autorisation": "null",
+      "id": 5
     }
   ]
 }
