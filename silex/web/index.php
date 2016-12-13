@@ -1,12 +1,12 @@
 <?php
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-require_once "bootstrap.php";
+require_once "../bootstrap.php";
 
 require_once __DIR__.'/../vendor/autoload.php';
 
 $app = new Silex\Application();
-/*try
+try
 {
 	$bdd = new PDO('mysql:host=localhost;dbname=projet_m1;charset=utf8', 'root', '');
 }
@@ -17,6 +17,22 @@ catch (Exception $e)
 
 $app->after(function (Request $request, Response $response) {
     $response->headers->set('Access-Control-Allow-Origin', '*');
+});
+
+
+#il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
+$app->post('/obtenirTypeEnseignement', function (Request $request) {
+	$dql = "SELECT * FROM typesEnseignement";
+
+	$query = $entityManager->createQuery($dql);
+	$query->setMaxResults(30);
+	$types = $query->getResult();
+
+	foreach ($types as $type) {
+		echo $type->getlabel() . "\n";
+	}
+	
+	return "bonjour";
 });
 
 
@@ -32,7 +48,7 @@ $app->post('/ajouterTypeEnseignement', function (Request $request) {
 		$entityManager->persist($typesEnseignement);
 		$entityManager->flush();
 
-		echo "Le nouveau type d'enseignement ajouté à l'Id: ".$typesEnseignement->getId()." et le label: " . $typesEnseignement->getlabel(); . "\n";
+		echo "Le nouveau type d'enseignement ajouté à l'Id: ".$typesEnseignement->getId()." et le label: " . $typesEnseignement->getlabel() . "\n";
 		
 		return "Insertion REUSSIE";
 	}
@@ -54,7 +70,7 @@ $app->post('/ajouterTypeEnseignement', function (Request $request) {
 		$entityManager->persist($typesEnseignement);
 		$entityManager->flush();
 
-		echo "Le nouveau type d'enseignement ajouté à l'Id: ".$typesEnseignement->getId()." et le label: " . $typesEnseignement->getlabel(); . "\n";
+		echo "Le nouveau type d'enseignement ajouté à l'Id: ".$typesEnseignement->getId()." et le label: " . $typesEnseignement->getlabel() . "\n";
 		
 		//$bdd = new PDO('mysql:host=localhost;dbname=projet_m1;charset=utf8', 'root', '');
 		//$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);								#Signaler l'insertion de nouvelles données
