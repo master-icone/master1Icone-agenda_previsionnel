@@ -21,18 +21,17 @@ $app->after(function (Request $request, Response $response) {
 
 
 #il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
-$app->post('/obtenirTypeEnseignement', function (Request $request) {
-	$dql = "SELECT * FROM typesEnseignement";
-
+$app->get('/obtenirTypeEnseignement', function () use($app,$entityManager){
+	$dql = "SELECT te FROM typesEnseignement te";
 	$query = $entityManager->createQuery($dql);
 	$query->setMaxResults(30);
 	$types = $query->getResult();
-
+	$n = 0;
 	foreach ($types as $type) {
-		echo $type->getlabel() . "\n";
+		$types[$n] = array('id' => $type->getId(), 'name' => $type->getlabel());
+		$n++;
 	}
-	
-	return "bonjour";
+	return $app->json($types);
 });
 
 
@@ -109,7 +108,8 @@ $app->post('/{ue}/addResponsable', function (Request $request) use($bdd) {
 $app->get('/test', function () use($app,$bdd) {
 		
 	$req = $bdd->query("SELECT * FROM personnel");
-	//echo $app->json($req->fetchAll(PDO::FETCH_ASSOC));	
+	//echo $app->json($req->fetchAll(PDO::FETCH_ASSOC));
+		var_dump($req->fetchAll(PDO::FETCH_ASSOC));
 	return $app->json($req->fetchAll(PDO::FETCH_ASSOC));
 		
 	/*$log = 'non,';
