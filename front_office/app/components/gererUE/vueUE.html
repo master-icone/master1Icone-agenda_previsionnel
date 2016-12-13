@@ -3,7 +3,6 @@
 		<div class="col-md-12">
 			<h4>{{UE.numero}} : {{UE.label}}</h4>
 			<h4>Responsable de l'UE : {{UE.responsable}}</h4>
-			<hr/>
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -20,6 +19,8 @@
 					</tr>
 				</tbody>
 			</table>
+			<button>Modifier</button>
+			<hr/>
 
 			<h4>Liste des personnes ayant cette UE :</h4>
 			<table class="table table-striped">
@@ -38,7 +39,10 @@
 					</tr>
 				</tbody>
 			</table>
+			<button>Ajouter des professeurs dans la liste</button>
+			<hr/>
 			<button (click)="deleteUE(id)">Supprimer</button>
+			<hr/>
 		</div>
 	</div>
 </div>
