@@ -237,7 +237,8 @@
     {
       "id": 1,
       "numero": "UE1111",
-      "intitule": "Base de la programmation",
+      "label": "Base de la programmation",
+      "responsable": "Demko",
       "cm": 30,
       "td": 60,
       "tp": 60
@@ -245,7 +246,8 @@
     {
       "id": 2,
       "numero": "UE1112",
-      "intitule": "Base de données",
+      "label": "Base de données",
+      "responsable": "Demko",
       "cm": 30,
       "td": 60,
       "tp": 60
@@ -253,10 +255,35 @@
     {
       "id": 3,
       "numero": "UE1113",
-      "intitule": "Anglais",
+      "label": "Anglais",
+      "responsable": "Eboueya",
       "cm": 0,
       "td": 16,
       "tp": 0
+    },
+    {
+      "numero": "undefined",
+      "label": "undefined",
+      "responsable": "undefined",
+      "id": 4
+    },
+    {
+      "numero": "undefined",
+      "label": "undefined",
+      "responsable": "undefined",
+      "id": 5
+    },
+    {
+      "numero": "undefined",
+      "label": "undefined",
+      "responsable": "undefined",
+      "id": 6
+    },
+    {
+      "numero": "undefined",
+      "label": "undefined",
+      "responsable": "undefined",
+      "id": 7
     }
   ],
   "gererStatuts": [

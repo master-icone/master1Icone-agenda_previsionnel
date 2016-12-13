@@ -1,0 +1,16 @@
+<div class="row">
+	<div class="col-md-12">
+		<h4>Numéro de l'UE : <input type="text" name="numeroUE" [(ngModel)]="numeroUE"/></h4>
+		<h4>Nom de l'UE : <input type="text" name="nomUE" [(ngModel)]="nomUE"/></h4>
+    <h4>Responsable de l'UE :
+      <select name="responsableUE" id="responsableUE">
+        <option value="demko">Demko</option>
+        <option value="prigent">Prigent</option>
+      </select>
+    </h4>
+		<hr/>
+    <button (click)="ajoutUE(numeroUE, nomUE, responsableUE)">Enregistrer</button>
+    <a routerLink="../" [routerLinkActive]="['router-link-active']" class="btn">Annuler</a>
+    <a routerLink="../" [routerLinkActive]="['router-link-active']" class="btn">Enregistrer</a>
+	</div>
+</div>

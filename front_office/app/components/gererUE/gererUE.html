@@ -1,41 +1,15 @@
 <h1>Gérer UE</h1>
-<div class="col-md-8">
-	<div *ngIf="UE">
-		<div class="row" >
-			<div class="col-md-12">
-				<h3>{{UE.numero}} : {{UE.intitule}}</h3>
-				<h4>Responsable : {{UE.responsable}}</h4>
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>Professeur</th>
-							<th>Statut</th>
-							<th>Heures CM</th>
-							<th>Heures TD</th>
-							<th>Heures TP</th>
-							<th>Fiche</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>José Luiz Carasco Blanco</td>
-							<td>Intervenant</td>
-							<td>0</td>
-							<td>10</td>
-							<td>10</td>
-							<td>Button</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
+<div class="col-md-10">
+	<router-outlet></router-outlet>
 </div>
 
-<div *ngIf="listeUE" class="col-md-4">
-  <ul *ngFor="let UE of listeUE" (click)="change()" class="list-group">
-    <a routerLink= "/gererUE/{{UE.id}}" [routerLinkActive]="['router-link-active']" class="surligne">
-      <li class="list-group-item">{{UE.numero}} {{UE.intitule}}</li>
-    </a>
-  </ul>
+<div *ngIf="listeUE" class="col-md-2">
+    <ul *ngFor="let ue of listeUE"  class="list-group">
+			<a routerLink= "/gererUE/{{ue.id}}" [routerLinkActive]="['router-link-active']" class="surligne">
+				<li class="list-group-item" >{{ue.numero}} : {{ue.label}}</li>
+			</a>
+    </ul>
+		<a routerLink= "/gererUE/ajouter" [routerLinkActive]="['router-link-active']" class="surligne">
+			Ajouter
+		</a>
 </div>
