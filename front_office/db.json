@@ -260,10 +260,10 @@
       "tp": 60
     },
     {
-      "id": 3,
+      "label": "English",
       "numero": "UE1113",
-      "label": "Anglais",
       "responsable": "Eboueya",
+<<<<<<< HEAD
       "cm": 0,
       "td": 16,
       "tp": 0
@@ -276,11 +276,17 @@
       "td": "",
       "tp": "",
       "id": 4
+=======
+      "cm": "0",
+      "td": "16",
+      "tp": "0",
+      "id": 3
+>>>>>>> refs/remotes/origin/0.1
     }
   ],
   "gererStatuts": [
     {
-      "label": "Enseignant",
+      "label": "EnseignantC",
       "heures": "180",
       "autorisation": "null",
       "id": 1

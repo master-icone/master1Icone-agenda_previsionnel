@@ -10,7 +10,7 @@
 			<p-confirmDialog acceptIcon="glyphicon glyphicon-ok" acceptLabel="Supprimer" rejectIcon="glyphicon glyphicon-remove" rejectLabel="Annuler" width="425"></p-confirmDialog>
 			<button type="button" (click)="confirm()" pButton icon="glyphicon glyphicon-trash" label="Supprimer"></button>
 			<a routerLink="/gererStatuts/{{id}}/modifier" [routerLinkActive]="['router-link-active']" class="surligne">
-				<button type="button">Modifier</button>
+				<button type="button" pButton icon="glyphicon glyphicon-cog" label="Modifier"></button>
 			</a>
 		</div>
 	</div>
