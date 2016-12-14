@@ -274,7 +274,7 @@
   ],
   "gererStatuts": [
     {
-      "label": "Enseignant",
+      "label": "EnseignantC",
       "heures": "180",
       "autorisation": "null",
       "id": 1
