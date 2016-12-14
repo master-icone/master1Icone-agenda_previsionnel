@@ -1,33 +1,34 @@
 import { Component } from '@angular/core';
 import { HttpService } from '../../services/http.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { CommunicateService } from '../../services/communicate.service';
 
 @Component({
   selector: 'ajouterUE',
-  providers: [HttpService],
-  templateUrl: '../../../app/components/gererUE/ajouterUE.html'
+  templateUrl: '../../../app/components/gererUE/ajouterUE.html',
+  providers: [HttpService, CommunicateService]
 })
 
 export class AjouterUEComponent {
   link = 'http://localhost:3000/gererUE';
-  label: string;
-  numero: string;
-  responsable: string;
-  cm: string;
-  td: string;
-  tp: string;
+  label = "";
+  heures = "";
+  autorisation = "";
   data: string;
+  result: any;
 
-  constructor (private _httpService: HttpService, private router: Router) { }
+  constructor (private _httpService: HttpService, private router: Router, private communicateService: CommunicateService) { }
 
-  postData() {
+  ajouterUE() {
+    this.communicateService.confirmMission();
     this.data = 'label='+this.label+'&numero='+this.numero+'&responsable='+this.responsable+'&cm='+this.cm+'&td='+this.td+'&tp='+this.tp;
     this._httpService.httpPost(this.link, this.data)
         .subscribe(
-          data => { },
+          data => {
+            this.router.navigate(['./gererUE'+'/'+data.id]);
+          },
           error => alert(error),
           () => console.log("Finished")
         );
-    this.router.navigate(['./gererUE']);
   }
 }
