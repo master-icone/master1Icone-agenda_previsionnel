@@ -212,9 +212,9 @@
       "id": 21
     },
     {
-      "nom": "Assin",
-      "prenom": "Marc",
-      "heure": "200",
+      "nom": "dupont",
+      "prenom": "jean",
+      "heures": 200,
       "id": 22
     },
     {
@@ -231,6 +231,16 @@
       "username": "myusername",
       "password": "mypassword",
       "id": 25
+    },
+    {
+      "nom": "dupont",
+      "prenom": "jean",
+      "heures": 200,
+      "id": 26
+    },
+    {
+      "{\"nom\":\"dupont\",\"prenom\":\"jean\",\"heures\":200}": "",
+      "id": 27
     }
   ],
   "gererUE": [

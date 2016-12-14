@@ -7,22 +7,26 @@ export class HttpService {
 
   constructor(private _http: Http) {}
 
-  httpGet(link: string) {
-    return this._http.get(link)
+  httpGet(url: string) {
+    return this._http.get(url)
         .map(res => res.json());
   }
 
-  httpPost(link: string, json: string) {
+  httpPost(url: string, json: string) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    return this._http.post(link, json, {
-      headers: headers
-    }).map(res => res.json());
+    return this._http.post(url, json, {headers: headers})
+               .map(res => res.json());
   }
 
+  httpPut(url: string, json: string) {
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this._http.put(url, json, {headers: headers})
+               .map(res => res.json());
+  }
 
-
-  httpDelete(link: string) {
-    return this._http.delete(link).map(res => res.json());
+  httpDelete(url: string) {
+    return this._http.delete(url).map(res => res.json());
   }
 }

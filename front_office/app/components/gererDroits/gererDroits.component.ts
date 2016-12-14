@@ -8,21 +8,31 @@ import { HttpService } from '../../services/http.service';
 })
 
 export class GererDroitsComponent {
-  value: string;
-  text = 'http://ip.jsontest.com/';
-  link = 'http://localhost:3000/gererPersonnel';
-  data = 'username=myusername&password=mypassword';
-  deleteLink = 'http://localhost:3000/gererPersonnel';
-  deleteID = 5;
-  val: string;
+
+  // Url des méthodes GET, POST, PUT et DELETE
+  urlGet = 'http://ip.jsontest.com/';
+  urlPost = 'http://localhost:3000/gererPersonnel';
+  urlPut = 'http://localhost:3000/gererPersonnel/1';
+  urlDelete = 'http://localhost:3000/gererPersonnel';
+
+  // Parametre des méthodes GET, POST, PUT et DELETE
+  dataPost = 'nom=Dupont&prenom=Jean';
+  dataPut = '{"nom":"dupont","prenom":"jean","heures":200}';
+  idDelete = 5;
+
+  //Resultat des méthodes GET, POST, PUT et DELETE
+  resultGet: string;
+  resultPost: string;
+  resultPut: string;
+  resultDelete: string;
 
   constructor (private _httpService: HttpService) { }
 
   getData() {
-    this._httpService.httpGet(this.text)
+    this._httpService.httpGet(this.urlGet)
         .subscribe(
           data => {
-            this.value = JSON.stringify(data);
+            this.resultGet = JSON.stringify(data);
           },
           error => alert(error),
           () => console.log("Finished")
@@ -30,10 +40,10 @@ export class GererDroitsComponent {
   }
 
   postData() {
-    this._httpService.httpPost(this.link, this.data)
+    this._httpService.httpPost(this.urlPost, this.dataPost)
         .subscribe(
           data => {
-            this.val = JSON.stringify(data);
+            this.resultPost = JSON.stringify(data);
             alert('pirouette kakaouette');
           },
           error => alert(error),
@@ -41,11 +51,22 @@ export class GererDroitsComponent {
         );
   }
 
-  deleteData() {
-    this._httpService.httpDelete(this.deleteLink + '/' + this.deleteID)
+  putData() {
+    this._httpService.httpPut(this.urlPut, this.dataPut)
         .subscribe(
           data => {
-            this.val = JSON.stringify(data);
+            this.resultPut = JSON.stringify(data);
+          },
+          error => alert(error),
+          () => console.log("Finished")
+        );
+  }
+
+  deleteData() {
+    this._httpService.httpDelete(this.urlDelete + '/' + this.idDelete)
+        .subscribe(
+          data => {
+            this.resultDelete = JSON.stringify(data);
             alert("hooo");
           },
           error => alert(error),
