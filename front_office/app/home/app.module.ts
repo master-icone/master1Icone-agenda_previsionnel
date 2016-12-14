@@ -36,6 +36,7 @@ import { ModifierStatutsComponent } from '../components/gererStatuts/modifierSta
 import { SelectUEComponent } from '../components/gererUE/selectUE.component';
 import { VueUEComponent } from '../components/gererUE/vueUE.component';
 import { AjouterUEComponent } from '../components/gererUE/ajouterUE.component';
+import { ModifierUEComponent } from '../components/gererUE/modifierUE.component';
 
 import { AjoutProfUEComponent } from '../components/ajoutProfUE/ajoutProfUE.component';
 
@@ -77,7 +78,8 @@ import {GrowlModule} from 'primeng/primeng';
         children: [
           { path: '', component: SelectUEComponent },
           { path: 'ajouter', component: AjouterUEComponent },
-          { path: ':id', component: VueUEComponent }
+          { path: ':id', component: VueUEComponent },
+          { path: ':id/modifier', component: ModifierUEComponent }
         ]},
       { path: 'gererUE/:id', component: GererUEComponent },
       { path: 'ajoutProfUE', component: AjoutProfUEComponent },
@@ -98,7 +100,7 @@ import {GrowlModule} from 'primeng/primeng';
    GererUEComponent, AjoutProfUEComponent, GererStatutsComponent,
    GererDroitsComponent, VueStatutsComponent, AjouterStatutsComponent,
    SelectStatutsComponent, ModifierStatutsComponent, VueUEComponent,
-   AjouterUEComponent, SelectUEComponent, VuePersonnelComponent,
+   AjouterUEComponent, SelectUEComponent, ModifierUEComponent, VuePersonnelComponent,
    AjouterPersonnelComponent, SelectPersonnelComponent ],
 
    providers: [ CommunicateService, ConfirmationService ],
