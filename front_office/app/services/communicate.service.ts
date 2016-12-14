@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 
 @Injectable()
-export class MissionService {
+export class CommunicateService {
 
   // Observable string sources
   private missionAnnouncedSource = new Subject<string>();
@@ -13,10 +13,10 @@ export class MissionService {
   missionConfirmed$ = this.missionConfirmedSource.asObservable();
 
   // Service message commands
-  announceMission(mission: string) {
-    this.missionAnnouncedSource.next(mission);
+  announceMission() {
+    this.missionAnnouncedSource.next();
   }
-  confirmMission(astronaut: string) {
-    this.missionConfirmedSource.next(astronaut);
+  confirmMission() {
+    this.missionConfirmedSource.next();
   }
 }

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { HttpService } from '../../services/http.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { CommunicateService } from '../../services/communicate.service';
 
 @Component({
   selector: 'ajouterStatuts',
   templateUrl: '../../../app/components/gererStatuts/ajouterStatuts.html',
-  providers: [HttpService]
+  providers: [HttpService, CommunicateService]
 })
 
 export class AjouterStatutsComponent {
@@ -16,9 +17,10 @@ export class AjouterStatutsComponent {
   data: string;
   result: any;
 
-  constructor (private _httpService: HttpService, private router: Router) { }
+  constructor (private _httpService: HttpService, private router: Router, private communicateService: CommunicateService) { }
 
   ajouterStatut() {
+    this.communicateService.confirmMission();
     this.data = 'label='+this.label+'&heures='+this.heures+'&autorisation='+this.autorisation;
     this._httpService.httpPost(this.link, this.data)
         .subscribe(
@@ -28,6 +30,5 @@ export class AjouterStatutsComponent {
           error => alert(error),
           () => console.log("Finished")
         );
-
   }
 }
