@@ -33,6 +33,8 @@ import { AjouterUEComponent } from '../components/gererUE/ajouterUE.component';
 
 import { AjoutProfUEComponent } from '../components/ajoutProfUE/ajoutProfUE.component';
 
+import { CommunicateService } from '../services/communicate.service';
+
 // Module primeng
 import {InputTextModule} from 'primeng/primeng';
 import {DataTableModule,SharedModule} from 'primeng/primeng';
@@ -79,6 +81,7 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
    GererDroitsComponent, VueStatutsComponent, AjouterStatutsComponent,
    SelectStatutsComponent, VueUEComponent, AjouterUEComponent,
    SelectUEComponent ],
+  providers: [ CommunicateService ],
   bootstrap: [ AppComponent ]
 })
 

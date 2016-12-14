@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { HttpService } from '../../services/http.service';
 import { CommunicateService } from '../../services/communicate.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'gererStatuts',
-  providers: [HttpService, CommunicateService],
+  providers: [HttpService],
   templateUrl: '../../../app/components/gererStatuts/gererStatuts.html'
 })
 
@@ -13,22 +13,23 @@ export class GererStatutsComponent {
   link = 'http://localhost:3000/gererStatuts';
   listeStatuts: any;
 
-  constructor (private _httpService: HttpService, private communicateService: CommunicateService, private router: Router) {
-    communicateService.missionConfirmed$.subscribe(
-      () => {
-        this.getListeStatuts();
-        alert("test");
-      }
-    );
-    router.events.subscribe(() => this.change());
-  }
+  constructor (private _httpService: HttpService,
+               private router: Router,
+               private communicateService: CommunicateService) { }
 
   ngOnInit() {
     this.getListeStatuts();
   }
 
-  change() {
-    this.getListeStatuts();
+  ngDoCheck() {
+    if(this.communicateService.getCheckParent()) {
+      this.getListeStatuts();
+    }
+    this.communicateService.resetParent();
+  }
+
+  loadPage() {
+    this.communicateService.setCheckchild();
   }
 
   getListeStatuts() {
@@ -37,7 +38,9 @@ export class GererStatutsComponent {
           data => {
             this.listeStatuts = data;
           },
-          error => alert(error),
+          error => {
+            this.router.navigate(['./accueil']);
+          },
           () => console.log("Finished")
         );
   }
