@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UtilisateurService } from '../../services/utilisateur.service';
 
 @Component({
   moduleId: module.id,
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['../../../app/shared/toolbar/toolbar.component.css']
 })
 
-export class ToolbarComponent {}
+export class ToolbarComponent {
+	utilisateur: string;;
+
+	constructor (private _utilisateurService: UtilisateurService) { }
+
+	getUtilisateur(){
+    this.utilisateur = this._utilisateurService.getValue();
+  }
+}
+    

@@ -11,6 +11,7 @@ import { HttpService } from '../../services/http.service';
 export class AccueilComponent implements OnInit {
   link = 'http://localhost:3000/interventions';
   interventions: any;
+  utilisateur: string;
 
   constructor (private _httpService: HttpService) { }
 

@@ -263,7 +263,6 @@
       "label": "English",
       "numero": "UE1113",
       "responsable": "Eboueya",
-<<<<<<< HEAD
       "cm": 0,
       "td": 16,
       "tp": 0
@@ -276,12 +275,6 @@
       "td": "",
       "tp": "",
       "id": 4
-=======
-      "cm": "0",
-      "td": "16",
-      "tp": "0",
-      "id": 3
->>>>>>> refs/remotes/origin/0.1
     }
   ],
   "gererStatuts": [

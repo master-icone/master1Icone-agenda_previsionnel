@@ -105,7 +105,7 @@ import {GrowlModule} from 'primeng/primeng';
    AjouterUEComponent, SelectUEComponent, ModifierUEComponent, VuePersonnelComponent,
    AjouterPersonnelComponent, SelectPersonnelComponent ],
 
-   providers: [ CommunicateService, ConfirmationService ],
+  providers: [ CommunicateService, ConfirmationService, UtilisateurService ],
   bootstrap: [ AppComponent ]
 })
 
