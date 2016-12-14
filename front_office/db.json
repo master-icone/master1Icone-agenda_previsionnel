@@ -264,64 +264,28 @@
   ],
   "gererStatuts": [
     {
-      "id": 2,
       "label": "Enseignant",
       "heures": 192,
-      "autorisation": "null"
-    },
-    {
-      "label": "zrzererez",
-      "heures": "rerze",
-      "autorisation": "ezrz",
-      "id": 8
-    },
-    {
-      "label": "azfdz",
-      "heures": "zeze",
-      "autorisation": "zz",
-      "id": 9
-    },
-    {
-      "label": "zzer",
-      "heures": "refrg",
-      "autorisation": "efze",
-      "id": 10
-    },
-    {
-      "label": "jean",
-      "heures": "1212",
       "autorisation": "null",
-      "id": 11
+      "id": 1
     },
     {
-      "label": "jean",
-      "heures": "1212",
+      "label": "Enseignant-Chercheur",
+      "heures": 192,
       "autorisation": "null",
-      "id": 12
+      "id": 2
     },
     {
-      "label": "jean",
-      "heures": "azea",
-      "autorisation": "rezr",
-      "id": 13
-    },
-    {
-      "label": "jean",
-      "heures": "azea",
-      "autorisation": "rezr",
-      "id": 14
-    },
-    {
-      "label": "rip",
-      "heures": "dans la paix",
-      "autorisation": "lobotomie",
-      "id": 15
-    },
-    {
-      "label": "agbani",
-      "heures": "1999999999",
+      "label": "Doctorant",
+      "heures": "120",
       "autorisation": "null",
-      "id": 16
+      "id": 3
+    },
+    {
+      "label": "Scolarité",
+      "heures": "121",
+      "autorisation": "null",
+      "id": 4
     }
   ]
 }

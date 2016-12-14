@@ -4,7 +4,7 @@
 
 <div *ngIf="listeStatuts" class="col-md-2">
     <ul *ngFor="let statuts of listeStatuts"  class="list-group">
-			<a routerLink= "/gererStatuts/{{statuts.id}}" [routerLinkActive]="['router-link-active']" class="surligne">
+			<a routerLink= "/gererStatuts/{{statuts.id}}" [routerLinkActive]="['router-link-active']" (click)="loadPage()" class="surligne">
 				<li class="list-group-item" >{{statuts.label}}</li>
 			</a>
     </ul>

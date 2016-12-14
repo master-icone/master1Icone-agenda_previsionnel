@@ -4,7 +4,7 @@
 
 <div *ngIf="listeUE" class="col-md-2">
     <ul *ngFor="let ue of listeUE"  class="list-group">
-			<a routerLink= "/gererUE/{{ue.id}}" [routerLinkActive]="['router-link-active']" class="surligne">
+			<a routerLink= "/gererUE/{{ue.id}}" [routerLinkActive]="['router-link-active']" (click)="loadPage()" class="surligne">
 				<li class="list-group-item" >{{ue.numero}} : {{ue.label}}</li>
 			</a>
     </ul>

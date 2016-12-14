@@ -23,14 +23,16 @@ export class AjouterUEComponent {
   constructor (private _httpService: HttpService, private router: Router, private communicateService: CommunicateService) { }
 
   ajouterUE() {
-    this.communicateService.confirmMission();
     this.data = 'label='+this.label+'&numero='+this.numero+'&responsable='+this.responsable+'&cm='+this.cm+'&td='+this.td+'&tp='+this.tp;
     this._httpService.httpPost(this.link, this.data)
         .subscribe(
           data => {
+            this.communicateService.setCheckParent();
             this.router.navigate(['./gererUE'+'/'+data.id]);
           },
-          error => alert(error),
+          error => {
+            this.router.navigate(['./accueil']);
+          },
           () => console.log("Finished")
         );
   }

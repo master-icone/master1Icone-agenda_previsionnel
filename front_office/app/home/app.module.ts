@@ -38,6 +38,8 @@ import { AjouterUEComponent } from '../components/gererUE/ajouterUE.component';
 
 import { AjoutProfUEComponent } from '../components/ajoutProfUE/ajoutProfUE.component';
 
+import { CommunicateService } from '../services/communicate.service';
+
 // Module primeng
 import {InputTextModule} from 'primeng/primeng';
 import {DataTableModule,SharedModule} from 'primeng/primeng';
@@ -88,8 +90,9 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
    GererUEComponent, AjoutProfUEComponent, GererStatutsComponent,
    GererDroitsComponent, VueStatutsComponent, AjouterStatutsComponent,
    SelectStatutsComponent, VueUEComponent, AjouterUEComponent,
-   SelectUEComponent, SelectPersonnelComponent,
-   AjouterPersonnelComponent, VuePersonnelComponent ],
+   SelectUEComponent, VuePersonnelComponent, AjouterPersonnelComponent,
+   SelectPersonnelComponent ],
+   providers: [ CommunicateService ],
   bootstrap: [ AppComponent ]
 })
 
