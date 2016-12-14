@@ -39,7 +39,9 @@ import { AjouterUEComponent } from '../components/gererUE/ajouterUE.component';
 
 import { AjoutProfUEComponent } from '../components/ajoutProfUE/ajoutProfUE.component';
 
+// Service
 import { CommunicateService } from '../services/communicate.service';
+import { UtilisateurService } from '../services/utilisateur.service';
 
 // Module primeng
 import {InputTextModule} from 'primeng/primeng';

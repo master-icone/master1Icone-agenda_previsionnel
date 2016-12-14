@@ -107,19 +107,25 @@
       "nom": "dupont",
       "prenom": "jean",
       "heures": 200,
-      "id": 1
+      "id": 1,
+      "Statut": "Maitre de conference",
+      "email": "Jean.dupont@gmail.com"
     },
     {
       "id": 2,
       "nom": "Hype",
-      "prenom": "Fil",
-      "heures": 192
+      "prenom": "Hype",
+      "heures": 192,
+      "statut": "Maitre de conference",
+      "email": "Hype.Hype@gmail.com"
     },
     {
       "id": 3,
-      "nom": "Oie",
-      "prenom": "France",
-      "heures": 192
+      "nom": "Gills",
+      "prenom": "Hunautl",
+      "heures": 192,
+      "Statut": "professeur chercheur",
+      "email": "gill.hunault@gmail.com"
     },
     {
       "nom": "Assin",
@@ -261,6 +267,15 @@
       "cm": 0,
       "td": 16,
       "tp": 0
+    },
+    {
+      "label": "",
+      "numero": "eee",
+      "responsable": "",
+      "cm": "",
+      "td": "",
+      "tp": "",
+      "id": 4
     }
   ],
   "gererStatuts": [

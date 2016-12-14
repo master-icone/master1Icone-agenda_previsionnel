@@ -1,6 +1,3 @@
-<div class="col-sm-offset-3"><h2>Fiche Personnel :</h2></div>
-
-
 	<div *ngIf="personnel">
 		<div class="col-md-12">
 			<div class="col-md-6">
@@ -9,7 +6,7 @@
 				<p>Prénom : {{personnel.prenom}}</p>
 				<p>Statut : {{personnel.statut}}</p>
 				<p>E-Mail : {{personnel.email}}</p>
-				<p>Droits : {{personnel.droits}}</p>
+				<p>Droits : Visible que par les administrateur ()</p>
 			</div>
 			<div class="col-md-6">
 				<h3> Heures de travail </h3>
@@ -31,26 +28,21 @@
 			<div class="col-md-6">
 				<h3> Ses interventions </h3>
 				<div class="table-responsive"style="width: 100%">
-					<table class="table table-condensed table-striped table-bordered table-hover no-margin">
-					  <thead>
-						<tr>
-						  <th>UE</th>
-						  <th>Nom Responsable</th>
-						  <th>CM</th>
-						  <th>TD</th>
-						  <th>TP</th>
-						</tr>
-					  </thead>
-					  <tbody>
-						<tr>
-						  <td>UE1111 Base de la programmation</td>
-						  <td>José Luiz Carasco Blanco</td>
-						  <td>5</td>
-						  <td>10</td>
-						  <td>10</td>
-						</tr>
-					  </tbody>
-					</table>
+				   <table class="well well-lg table table-striped">
+			<thead>
+				<tr>
+					<th>Nom</th>
+				</tr>
+			</thead>
+			<tbody *ngIf="personnels">
+				<tr *ngFor="let personnel of personnels">
+					<td>{{personnel.nom}} {{personnel.prenom}}</td>
+				</tr>
+			</tbody>
+			<tbody *ngIf="personnels == ''">
+				<tr><td>Aucun</td></tr>
+			</tbody>
+		</table>
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -80,4 +72,4 @@
 			<p>Nombre Heures TD</p>
 			<p>Nombre Heures TP</p>
 		</div>
-	</div>
+	</div>				
