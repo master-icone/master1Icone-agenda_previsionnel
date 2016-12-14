@@ -245,15 +245,6 @@
   ],
   "gererUE": [
     {
-      "id": 1,
-      "numero": "UE1111",
-      "label": "Base de la programmation",
-      "responsable": "Demko",
-      "cm": 30,
-      "td": 60,
-      "tp": 60
-    },
-    {
       "id": 2,
       "numero": "UE1112",
       "label": "Base de données",

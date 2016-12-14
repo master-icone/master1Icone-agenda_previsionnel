@@ -4,8 +4,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { CommunicateService } from '../../services/communicate.service';
 
 @Component({
-  selector: 'ajouterStatuts',
-  templateUrl: '../../../app/components/gererStatuts/ajouterStatuts.html',
+  selector: 'ajouterPersonnel',
+  templateUrl: '../../../app/components/gererPersonnel/ajouterPersonnel.html',
   providers: [HttpService, CommunicateService]
 })
 
