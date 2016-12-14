@@ -24,12 +24,14 @@ $app->after(function (Request $request, Response $response) {
 $app->get('/obtenirTypeEnseignement', function () use($app,$entityManager){
 	$dql = "SELECT te FROM typesEnseignement te";
 	$query = $entityManager->createQuery($dql);
-	$query->setMaxResults(30);
-	$types = $query->getResult();
-	$n = 0;
-	foreach ($types as $type) {
-		$types[$n] = array('id' => $type->getId(), 'name' => $type->getlabel());
-		$n++;
+	//$query->setMaxResults(30);
+	try
+	{
+		$types = $query->getArrayResult();
+	}
+	catch(Exception $e)
+	{
+		die('Erreur : ' . $e->getMessage());
 	}
 	return $app->json($types);
 });
