@@ -23,6 +23,10 @@
 				</tbody>
 			</table>
 			<button (click)="deleteStatut(id)">Supprimer</button>
+			<a routerLink="/gererStatuts/{{id}}/modifier" [routerLinkActive]="['router-link-active']" class="surligne">
+				<button>Modifier</button>
+			</a>
+
 		</div>
 	</div>
 </div>

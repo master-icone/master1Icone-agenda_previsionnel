@@ -275,7 +275,7 @@
   "gererStatuts": [
     {
       "label": "Enseignant",
-      "heures": 192,
+      "heures": "180",
       "autorisation": "null",
       "id": 1
     },
@@ -286,7 +286,7 @@
       "id": 2
     },
     {
-      "label": "Doctorant",
+      "label": "Doctorante",
       "heures": "120",
       "autorisation": "null",
       "id": 3
