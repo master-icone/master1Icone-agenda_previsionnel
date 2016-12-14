@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { HttpService } from '../../services/http.service';
 
 @Component({
-  selector: 'selectStatuts',
-  templateUrl: '../../../app/components/gererStatuts/selectStatuts.html'
+  selector: 'selectPersonnel',
+  templateUrl: '../../../app/components/gererPersonnel/selectPersonnel.html'
 })
 
 export class SelectPersonnelComponent { }

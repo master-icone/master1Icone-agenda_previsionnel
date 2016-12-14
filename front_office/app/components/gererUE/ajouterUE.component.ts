@@ -12,8 +12,11 @@ import { CommunicateService } from '../../services/communicate.service';
 export class AjouterUEComponent {
   link = 'http://localhost:3000/gererUE';
   label = "";
-  heures = "";
-  autorisation = "";
+  numero = "";
+  responsable = "";
+  cm = "";
+  td = "";
+  tp = "";
   data: string;
   result: any;
 
