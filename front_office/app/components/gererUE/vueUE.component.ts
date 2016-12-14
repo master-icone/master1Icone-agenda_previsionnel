@@ -13,6 +13,7 @@ export class VueUEComponent {
   link = 'http://localhost:3000/gererUE';
   UE: any;
   id: any;
+  displayDial: boolean = false;
 
   constructor (private _httpService: HttpService,
                params: ActivatedRoute,
@@ -62,5 +63,10 @@ export class VueUEComponent {
           },
           () => console.log("Finished")
         );
+        this.displayDial = false;
   }
+
+  showDialog() {
+        this.displayDial = true;
   }
+}

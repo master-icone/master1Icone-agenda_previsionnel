@@ -10,9 +10,11 @@ import { CommunicateService } from '../../services/communicate.service';
 })
 
 export class VueStatutsComponent {
-  link = 'http://localhost:3000/gererStatuts';
-  statuts: any;
   id: any;
+  urlStatuts = 'http://localhost:3000/gererStatuts';
+  statuts: any;
+  urlPersonnels = 'http://localhost:3000/listePersonnelByStatut?statut=';
+  personnels: any;
 
   constructor (private _httpService: HttpService,
                params: ActivatedRoute,
@@ -34,11 +36,25 @@ export class VueStatutsComponent {
   display() {
     if(this.id) {
       this.getStatut(this.id);
+      this.getPersonnel(this.id);
     }
   }
 
+  getPersonnel(id) {
+    this._httpService.httpGet(this.urlPersonnels+id)
+        .subscribe(
+          data => {
+            this.personnels = data;
+          },
+          error => {alert(error);
+            this.router.navigate(['./accueil']);
+          },
+          () => console.log("Finished")
+        );
+  }
+
   getStatut(id) {
-    this._httpService.httpGet(this.link+"/"+id)
+    this._httpService.httpGet(this.urlStatuts+"/"+id)
         .subscribe(
           data => {
             this.statuts = data;
@@ -51,7 +67,7 @@ export class VueStatutsComponent {
   }
 
   deleteStatut(id) {
-    this._httpService.httpDelete(this.link+"/"+id)
+    this._httpService.httpDelete(this.urlStatuts+"/"+id)
         .subscribe(
           data => {
             this.communicateService.setCheckParent();

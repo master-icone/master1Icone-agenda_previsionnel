@@ -1,22 +1,21 @@
 <h1>Gérer Droits</h1>
 <input id="input" type="text" size="30" pInputText [(ngModel)]="urlGet" />
-<button (click)="getData()">Test ton biftek</button>
+<button (click)="getData()">GET</button>
 <p>Output : {{resultGet}}</p>
 <br />
 Link :
 <input id="input" type="text" size="30" pInputText [(ngModel)]="urlPost" />
 Value :
 <input id="input" type="text" size="30" pInputText [(ngModel)]="dataPost" />
-<button (click)="postData()">Test ton PO PO PO POST</button>
+<button (click)="postData()">POST</button>
 <p>Result : {{resultPost}}</p>
 <br />
 <br />
 Link :
 <input id="input" type="text" size="30" pInputText [(ngModel)]="urlPut" />
-<button (click)="putData()">Tous des put</button>
 Value :
 <input id="input" type="text" size="30" pInputText [(ngModel)]="dataPut" />
-<button (click)="putData()">Tous des put</button>
+<button (click)="putData()">PUT</button>
 <p>Result : {{resultPut}}</p>
 <br />
 <br />
@@ -24,5 +23,5 @@ Link :
 <input id="input" type="text" size="30" pInputText [(ngModel)]="urlDelete" />
 ID :
 <input id="input" type="text" size="30" pInputText [(ngModel)]="idDelete" />
-<button (click)="deleteData()">Delete au bout du monde</button>
+<button (click)="deleteData()">DELETE</button>
 <p>Result : {{resultDelete}}</p>

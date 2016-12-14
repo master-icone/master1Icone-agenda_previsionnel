@@ -1,32 +1,31 @@
-<div class="col-sm-offset-3"><h2>Fiche Statut :</h2></div>
+<div class="col-md-offset-1"><h2>Fiche Statut :</h2></div>
 <div *ngIf="statuts">
-	<div class="row">
-		<div class="col-md-12">
-			<h3>Nom du statut : {{statuts.label}}</h3>
-			<h4>Service annuel (TD/TP) : {{statuts.heures}}</h4>
-			<hr/>
-			<h4>Liste des personnes ayant ce statut :</h4>
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th>Nom</th>
-						<th>Prénom</th>
-						<th>Fiche Professeur</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Prigent</td>
-						<td>Armelle</td>
-						<td>BOUTON</td>
-					</tr>
-				</tbody>
-			</table>
+	<div class="col-md-1"></div>
+	<div class="col-md-4 well well-sm">
+		<h3>Nom du statut : {{statuts.label}}</h3>
+		<h4>Service annuel (TD/TP) : {{statuts.heures}}</h4>
+		<div>
 			<button (click)="deleteStatut(id)">Supprimer</button>
 			<a routerLink="/gererStatuts/{{id}}/modifier" [routerLinkActive]="['router-link-active']" class="surligne">
 				<button>Modifier</button>
 			</a>
-
 		</div>
+	</div>
+	<div class="col-md-1"></div>
+	<div class="col-md-5 well well-sm">
+		<h4>Liste des personnes ayant ce statut :</h4>
+		<table class="well well-lg table table-striped">
+			<thead>
+				<tr>
+					<th>Nom</th>
+				</tr>
+			</thead>
+			<tbody *ngIf="personnels">
+				<tr *ngFor="let personnel of personnels">
+					<td>{{personnel.nom}} {{personnel.prenom}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<!--  -->
 	</div>
 </div>

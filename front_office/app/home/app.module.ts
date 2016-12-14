@@ -42,8 +42,9 @@ import { AjoutProfUEComponent } from '../components/ajoutProfUE/ajoutProfUE.comp
 import { CommunicateService } from '../services/communicate.service';
 
 // Module primeng
-import {InputTextModule} from 'primeng/primeng';
+import {InputTextModule,ConfirmDialogModule,ConfirmationService} from 'primeng/primeng';
 import {DataTableModule,SharedModule} from 'primeng/primeng';
+import {DialogModule} from 'primeng/primeng';
 
 @NgModule({
   imports: [
@@ -53,6 +54,7 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
     InputTextModule,
     DataTableModule,
     SharedModule,
+    DialogModule,
     RouterModule.forRoot([
       { path: '', redirectTo: '/authentification', pathMatch:'full' },
       { path: 'authentification', component: AuthentificationComponent },
@@ -91,9 +93,15 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
    DechargesComponent, ProblemesComponent, GererPersonnelComponent,
    GererUEComponent, AjoutProfUEComponent, GererStatutsComponent,
    GererDroitsComponent, VueStatutsComponent, AjouterStatutsComponent,
+<<<<<<< HEAD
    SelectStatutsComponent, ModifierStatutsComponent, VueUEComponent,
    AjouterUEComponent, SelectUEComponent, VuePersonnelComponent,
    AjouterPersonnelComponent, SelectPersonnelComponent ],
+=======
+   SelectStatutsComponent, VueUEComponent, AjouterUEComponent,
+   SelectUEComponent, VuePersonnelComponent, AjouterPersonnelComponent,
+   SelectPersonnelComponent],
+>>>>>>> e09c9cb371e63759935bc7fa0a37f4e6ff3e65cf
    providers: [ CommunicateService ],
   bootstrap: [ AppComponent ]
 })

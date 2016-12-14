@@ -25,46 +25,31 @@ $app->get('/obtenirTypeEnseignement', function () use($app,$entityManager){
 	$dql = "SELECT te FROM typesEnseignement te";
 	$query = $entityManager->createQuery($dql);
 	$query->setMaxResults(30);
-	$types = $query->getResult();
-	$n = 0;
-	foreach ($types as $type) {
-		$types[$n] = array('id' => $type->getId(), 'name' => $type->getlabel());
-		$n++;
-	}
+	$types = $query->getArrayResult();
 	return $app->json($types);
 });
 
-
 #il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
-$app->post('/ajouterTypeEnseignement', function (Request $request) {
-	try
-	{
-		$label = $request->get('label');
-
-		$typesEnseignement = new TypesEnseignement();
-		$typesEnseignement->setlabel($label);
-
-		$entityManager->persist($typesEnseignement);
-		$entityManager->flush();
-
-		echo "Le nouveau type d'enseignement ajouté à l'Id: ".$typesEnseignement->getId()." et le label: " . $typesEnseignement->getlabel() . "\n";
-		
-		return "Insertion REUSSIE";
-	}
-	catch (Exception $e)
-	{
-		die('Erreur : ' . $e->getMessage());
-	}
+$app->delete('/supprimerTypeEnseignement/{id}', function ($id) use($app,$entityManager){
+	$dql = "DELETE FROM typesEnseignement te WHERE te.id = " . $id;
+	$query = $entityManager->createQuery($dql);
+	$types = $query->getArrayResult();
+	return $app->json($types);
 });
 
 #il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
-$app->post('/ajouterTypeEnseignement', function (Request $request) {
-	$label = $request->get('label');
-
+$app->post('/ajouterTypeEnseignement', function (Request $request) use($app,$entityManager){
+	//var_dump($request);
+	echo $request;
+	$label = $request->get("label");
+	echo "label : " . $label . "\n";
 	$typesEnseignement = new TypesEnseignement();
+	echo "typeSDEnseignement";
+	var_dump($typesEnseignement);
 	$typesEnseignement->setlabel($label);
-
+	echo "test";
 	$entityManager->persist($typesEnseignement);
+	echo "test";
 	$entityManager->flush();
 
 	echo "Le nouveau type d'enseignement ajouté à l'Id: ".$typesEnseignement->getId()." et le label: " . $typesEnseignement->getlabel() . "\n";

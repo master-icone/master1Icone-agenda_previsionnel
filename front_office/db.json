@@ -104,10 +104,10 @@
   ],
   "gererPersonnel": [
     {
-      "id": 1,
-      "nom": "Dupont",
-      "prenom": "Jean",
-      "heures": 192
+      "nom": "dupont",
+      "prenom": "jean",
+      "heures": 200,
+      "id": 1
     },
     {
       "id": 2,
@@ -281,7 +281,7 @@
     },
     {
       "label": "Enseignant-Chercheur",
-      "heures": 192,
+      "heures": "192",
       "autorisation": "null",
       "id": 2
     },
@@ -296,6 +296,32 @@
       "heures": "121",
       "autorisation": "null",
       "id": 4
+    }
+  ],
+  "listePersonnelByStatut": [
+    {
+      "nom": "Dupont",
+      "prenom": "Jean",
+      "statut": 1,
+      "id": 1
+    },
+    {
+      "nom": "Demko",
+      "prenom": "Christophe",
+      "statut": 1,
+      "id": 1
+    },
+    {
+      "nom": "Prigent",
+      "prenom": "Armelle",
+      "statut": 3,
+      "id": 1
+    },
+    {
+      "nom": "Durant",
+      "prenom": "Jeanne",
+      "statut": 1,
+      "id": 1
     }
   ]
 }
