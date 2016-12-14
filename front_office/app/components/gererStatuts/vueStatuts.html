@@ -32,6 +32,10 @@
 				<tr><td>Aucun</td></tr>
 			</tbody>
 		</table>
+		<select *ngIf="personnelsAdd" [(ngModel)]="personnelAdd">
+			<option *ngFor="let personnel of personnelsAdd" [value]="personnel.nom">{{personnel.nom}} {{personnel.prenom}}</option>
+		</select>
+		<button type="button" pButton label="Add" (click)="updateStatutPersonnel()"></button>
 		<!--  -->
 	</div>
 </div>

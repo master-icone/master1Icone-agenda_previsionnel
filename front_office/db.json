@@ -293,26 +293,26 @@
     {
       "nom": "Dupont",
       "prenom": "Jean",
-      "statut": 1,
+      "statut": 3,
       "id": 1
     },
     {
       "nom": "Demko",
       "prenom": "Christophe",
-      "statut": 1,
-      "id": 1
+      "statut": 2,
+      "id": 2
     },
     {
       "nom": "Prigent",
       "prenom": "Armelle",
-      "statut": 3,
-      "id": 1
+      "statut": 4,
+      "id": 3
     },
     {
       "nom": "Durant",
       "prenom": "Jeanne",
       "statut": 1,
-      "id": 1
+      "id": 4
     }
   ]
 }
