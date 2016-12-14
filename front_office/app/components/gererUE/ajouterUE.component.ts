@@ -6,7 +6,7 @@ import { CommunicateService } from '../../services/communicate.service';
 @Component({
   selector: 'ajouterUE',
   templateUrl: '../../../app/components/gererUE/ajouterUE.html',
-  providers: [HttpService, CommunicateService]
+  providers: [HttpService]
 })
 
 export class AjouterUEComponent {

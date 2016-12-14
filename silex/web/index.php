@@ -88,6 +88,32 @@ catch (Exception $e)
 
 		return "Insertion REUSSIE";
 	});
+$app->delete('/supprimerTypeEnseignement/{id}', function ($id) use($app,$entityManager){
+	$dql = "DELETE FROM typesEnseignement te WHERE te.id = " . $id;
+	$query = $entityManager->createQuery($dql);
+	$types = $query->getArrayResult();
+	return $app->json($types);
+});
+
+#il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
+$app->post('/ajouterTypeEnseignement', function (Request $request) use($app,$entityManager){
+	//var_dump($request);
+	echo $request;
+	$label = $request->get("label");
+	echo "label : " . $label . "\n";
+	$typesEnseignement = new TypesEnseignement();
+	echo "typeSDEnseignement";
+	var_dump($typesEnseignement);
+	$typesEnseignement->setlabel($label);
+	echo "test";
+	$entityManager->persist($typesEnseignement);
+	echo "test";
+	$entityManager->flush();
+
+	echo "Le nouveau type d'enseignement ajouté à l'Id: ".$typesEnseignement->getId()." et le label: " . $typesEnseignement->getlabel() . "\n";
+	
+	return "Insertion REUSSIE";
+});
 /*
 #
 $app->post('/{ue}/addResponsable', function (Request $request) use() {
