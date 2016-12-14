@@ -18,7 +18,12 @@ import { AccueilComponent } from '../components/accueil/accueil.component';
 import { InterventionsComponent } from '../components/interventions/interventions.component';
 import { DechargesComponent } from '../components/decharges/decharges.component';
 import { ProblemesComponent } from '../components/problemes/problemes.component';
+
 import { GererPersonnelComponent } from '../components/gererPersonnel/gererPersonnel.component';
+import { AjouterPersonnelComponent } from '../components/gererPersonnel/ajouterPersonnel.component';
+import { SelectPersonnelComponent } from '../components/gererPersonnel/selectPersonnel.component';
+import { VuePersonnelComponent } from '../components/gererPersonnel/vuePersonnel.component';
+
 import { GererUEComponent } from '../components/gererUE/gererUE.component';
 import { GererStatutsComponent } from '../components/gererStatuts/gererStatuts.component';
 import { GererDroitsComponent } from '../components/gererDroits/gererDroits.component';
@@ -32,6 +37,8 @@ import { VueUEComponent } from '../components/gererUE/vueUE.component';
 import { AjouterUEComponent } from '../components/gererUE/ajouterUE.component';
 
 import { AjoutProfUEComponent } from '../components/ajoutProfUE/ajoutProfUE.component';
+
+import { CommunicateService } from '../services/communicate.service';
 
 // Module primeng
 import {InputTextModule} from 'primeng/primeng';
@@ -52,7 +59,12 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
       { path: 'interventions', component: InterventionsComponent },
       { path: 'decharges', component: DechargesComponent },
       { path: 'problemes', component: ProblemesComponent },
-      { path: 'gererPersonnel', component: GererPersonnelComponent },
+      { path: 'gererPersonnel', component: GererPersonnelComponent ,
+        children: [
+          { path: '', component: SelectPersonnelComponent },
+          { path: 'ajouter', component: AjouterPersonnelComponent },
+          { path: ':id', component: VuePersonnelComponent }
+        ]},
       { path: 'gererPersonnel/:id', component: GererPersonnelComponent },
       { path: 'gererUE', component: GererUEComponent,
         children: [
@@ -78,7 +90,9 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
    GererUEComponent, AjoutProfUEComponent, GererStatutsComponent,
    GererDroitsComponent, VueStatutsComponent, AjouterStatutsComponent,
    SelectStatutsComponent, VueUEComponent, AjouterUEComponent,
-   SelectUEComponent ],
+   SelectUEComponent, VuePersonnelComponent, AjouterPersonnelComponent,
+   SelectPersonnelComponent ],
+   providers: [ CommunicateService ],
   bootstrap: [ AppComponent ]
 })
 

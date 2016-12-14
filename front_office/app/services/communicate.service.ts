@@ -1,22 +1,27 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class CommunicateService {
 
-  // Observable string sources
-  private missionAnnouncedSource = new Subject<string>();
-  private missionConfirmedSource = new Subject<string>();
+  checkParent: boolean = false;
+  checkChild: boolean = false;
 
-  // Observable string streams
-  missionAnnounced$ = this.missionAnnouncedSource.asObservable();
-  missionConfirmed$ = this.missionConfirmedSource.asObservable();
-
-  // Service message commands
-  announceMission() {
-    this.missionAnnouncedSource.next();
+  getCheckParent(): boolean {
+    return this.checkParent;
   }
-  confirmMission() {
-    this.missionConfirmedSource.next();
+  setCheckParent() {
+    this.checkParent = true;
+  }
+  resetParent() {
+    this.checkParent = false;
+  }
+  getCheckChild(): boolean {
+    return this.checkChild;
+  }
+  setCheckchild() {
+    this.checkChild = true;
+  }
+  resetChild() {
+    this.checkChild = false;
   }
 }

@@ -212,9 +212,9 @@
       "id": 21
     },
     {
-      "nom": "Assin",
-      "prenom": "Marc",
-      "heure": "200",
+      "nom": "dupont",
+      "prenom": "jean",
+      "heures": 200,
       "id": 22
     },
     {
@@ -231,6 +231,16 @@
       "username": "myusername",
       "password": "mypassword",
       "id": 25
+    },
+    {
+      "nom": "dupont",
+      "prenom": "jean",
+      "heures": 200,
+      "id": 26
+    },
+    {
+      "{\"nom\":\"dupont\",\"prenom\":\"jean\",\"heures\":200}": "",
+      "id": 27
     }
   ],
   "gererUE": [
@@ -264,118 +274,28 @@
   ],
   "gererStatuts": [
     {
-      "id": 2,
       "label": "Enseignant",
       "heures": 192,
-      "autorisation": "null"
+      "autorisation": "null",
+      "id": 1
     },
     {
-      "id": 3,
       "label": "Enseignant-Chercheur",
       "heures": 192,
-      "autorisation": "null"
-    },
-    {
-      "label": "Jean",
-      "heures": "12121",
       "autorisation": "null",
-      "id": 5
+      "id": 2
     },
     {
-      "label": "zrzererez",
-      "heures": "rerze",
-      "autorisation": "ezrz",
-      "id": 8
-    },
-    {
-      "label": "azfdz",
-      "heures": "zeze",
-      "autorisation": "zz",
-      "id": 9
-    },
-    {
-      "label": "zzer",
-      "heures": "refrg",
-      "autorisation": "efze",
-      "id": 10
-    },
-    {
-      "label": "jean",
-      "heures": "1212",
+      "label": "Doctorant",
+      "heures": "120",
       "autorisation": "null",
-      "id": 11
+      "id": 3
     },
     {
-      "label": "jean",
-      "heures": "1212",
+      "label": "Scolarité",
+      "heures": "121",
       "autorisation": "null",
-      "id": 12
-    },
-    {
-      "label": "jean",
-      "heures": "azea",
-      "autorisation": "rezr",
-      "id": 13
-    },
-    {
-      "label": "jean",
-      "heures": "azea",
-      "autorisation": "rezr",
-      "id": 14
-    },
-    {
-      "label": "rip",
-      "heures": "dans la paix",
-      "autorisation": "lobotomie",
-      "id": 15
-    },
-    {
-      "label": "agbani",
-      "heures": "1999999999",
-      "autorisation": "null",
-      "id": 16
-    },
-    {
-      "label": "azeaz",
-      "heures": "zae",
-      "autorisation": "zaeae",
-      "id": 17
-    },
-    {
-      "label": "zae",
-      "heures": "aze",
-      "autorisation": "az",
-      "id": 18
-    },
-    {
-      "label": "zaaa",
-      "heures": "zaaze",
-      "autorisation": "effe",
-      "id": 19
-    },
-    {
-      "label": "dfdzf",
-      "heures": "efze",
-      "autorisation": "cfdsfds",
-      "id": 20
-    },
-    {
-      "label": "erazr",
-      "heures": "dqsfqsf",
-      "autorisation": "qsdf",
-      "id": 21
-    },
-    {
-      "label": "jigebeld",
-      "heures": "jigebeld",
-      "autorisation": "tintintintin",
-      "id": 22
-    },
-    {
-      "label": "jean",
-      "heures": "jea",
-      "autorisation": "jea",
-      "id": 26
+      "id": 4
     }
   ]
 }
