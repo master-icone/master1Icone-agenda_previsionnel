@@ -260,42 +260,6 @@
       "cm": 0,
       "td": 16,
       "tp": 0
-    },
-    {
-      "label": "BLA",
-      "numero": "BLA",
-      "responsable": "BLA",
-      "cm": "5",
-      "td": "5",
-      "tp": "5",
-      "id": 6
-    },
-    {
-      "label": "FOR",
-      "numero": "POR",
-      "responsable": "DOR",
-      "cm": "50",
-      "td": "50",
-      "tp": "50",
-      "id": 7
-    },
-    {
-      "label": "Marche",
-      "numero": "Marche",
-      "responsable": "Marche",
-      "cm": "0",
-      "td": "0",
-      "tp": "0",
-      "id": 8
-    },
-    {
-      "label": "MaR",
-      "numero": "MAr",
-      "responsable": "faef",
-      "cm": "15",
-      "td": "30",
-      "tp": "30",
-      "id": 9
     }
   ],
   "gererStatuts": [
@@ -304,18 +268,6 @@
       "label": "Enseignant",
       "heures": 192,
       "autorisation": "null"
-    },
-    {
-      "label": "Jean",
-      "heures": "12121",
-      "autorisation": "null",
-      "id": 5
-    },
-    {
-      "label": "aa",
-      "heures": "a",
-      "autorisation": "a",
-      "id": 6
     },
     {
       "label": "zrzererez",
