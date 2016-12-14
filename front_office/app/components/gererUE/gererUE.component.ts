@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { HttpService } from '../../services/http.service';
 import { CommunicateService } from '../../services/communicate.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'gererUE',
-  providers: [HttpService, CommunicateService],
+  providers: [HttpService],
   templateUrl: '../../../app/components/gererUE/gererUE.html'
 })
 
@@ -13,22 +13,21 @@ export class GererUEComponent {
   link = 'http://localhost:3000/gererUE';
   listeUE: any;
 
-  constructor (private _httpService: HttpService, private communicateService: CommunicateService, private router: Router) {
-    communicateService.missionConfirmed$.subscribe(
-      () => {
-        this.getListeUE();
-        alert("test");
-      }
-    );
-    router.events.subscribe(() => this.change());
-  }
+  constructor (private _httpService: HttpService, private communicateService: CommunicateService, private router: Router) { }
 
   ngOnInit() {
     this.getListeUE();
   }
 
-  change() {
-    this.getListeUE();
+  ngDoCheck() {
+    if(this.communicateService.getCheckParent()) {
+      this.getListeUE();
+    }
+    this.communicateService.resetParent();
+  }
+
+  loadPage() {
+    this.communicateService.setCheckchild();
   }
 
   getListeUE() {
@@ -37,7 +36,9 @@ export class GererUEComponent {
           data => {
             this.listeUE = data;
           },
-          error => alert(error),
+          error => {
+            this.router.navigate(['./accueil']);
+          },
           () => console.log("Finished")
         );
   }
