@@ -260,6 +260,51 @@
       "cm": 0,
       "td": 16,
       "tp": 0
+    },
+    {
+      "label": "BLABLA",
+      "numero": "UE1150",
+      "responsable": "MACHIN",
+      "cm": "10",
+      "td": "20",
+      "tp": "20",
+      "id": 5
+    },
+    {
+      "label": "BLA",
+      "numero": "BLA",
+      "responsable": "BLA",
+      "cm": "5",
+      "td": "5",
+      "tp": "5",
+      "id": 6
+    },
+    {
+      "label": "FOR",
+      "numero": "POR",
+      "responsable": "DOR",
+      "cm": "50",
+      "td": "50",
+      "tp": "50",
+      "id": 7
+    },
+    {
+      "label": "Marche",
+      "numero": "Marche",
+      "responsable": "Marche",
+      "cm": "0",
+      "td": "0",
+      "tp": "0",
+      "id": 8
+    },
+    {
+      "label": "MaR",
+      "numero": "MAr",
+      "responsable": "faef",
+      "cm": "15",
+      "td": "30",
+      "tp": "30",
+      "id": 9
     }
   ],
   "gererStatuts": [
@@ -270,16 +315,16 @@
       "autorisation": "null"
     },
     {
-      "id": 3,
-      "label": "Enseignant-Chercheur",
-      "heures": 192,
-      "autorisation": "null"
-    },
-    {
       "label": "Jean",
       "heures": "12121",
       "autorisation": "null",
       "id": 5
+    },
+    {
+      "label": "aa",
+      "heures": "a",
+      "autorisation": "a",
+      "id": 6
     },
     {
       "label": "zrzererez",
@@ -334,48 +379,6 @@
       "heures": "1999999999",
       "autorisation": "null",
       "id": 16
-    },
-    {
-      "label": "azeaz",
-      "heures": "zae",
-      "autorisation": "zaeae",
-      "id": 17
-    },
-    {
-      "label": "zae",
-      "heures": "aze",
-      "autorisation": "az",
-      "id": 18
-    },
-    {
-      "label": "zaaa",
-      "heures": "zaaze",
-      "autorisation": "effe",
-      "id": 19
-    },
-    {
-      "label": "dfdzf",
-      "heures": "efze",
-      "autorisation": "cfdsfds",
-      "id": 20
-    },
-    {
-      "label": "erazr",
-      "heures": "dqsfqsf",
-      "autorisation": "qsdf",
-      "id": 21
-    },
-    {
-      "label": "jigebeld",
-      "heures": "jigebeld",
-      "autorisation": "tintintintin",
-      "id": 22
-    },
-    {
-      "label": "jean",
-      "heures": "jea",
-      "autorisation": "jea",
-      "id": 26
     }
   ]
 }
