@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { HttpService } from '../../services/http.service';
-import { ActivatedRoute } from '@angular/router';
+import { CommunicateService } from '../../services/communicate.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'gererPersonnel',
@@ -11,35 +12,24 @@ import { ActivatedRoute } from '@angular/router';
 export class GererPersonnelComponent {
   link = 'http://localhost:3000/gererPersonnel';
   listePersonnel: any;
-  personnel: any;
-  id: any;
-  test: string;
 
-  constructor (private _httpService: HttpService, params: ActivatedRoute) {
-    params.params.subscribe(params => {
-        this.id = params['id'];
-    });
-    this.change();
-  }
+  constructor (private _httpService: HttpService,
+               private router: Router,
+               private communicateService: CommunicateService) { }
 
   ngOnInit() {
     this.getListePersonnel();
   }
 
-  change() {
-    if(this.id) {
-      this.getPersonnel(this.id);
+  ngDoCheck() {
+    if(this.communicateService.getCheckParent()) {
+      this.getListePersonnel();
     }
+    this.communicateService.resetParent();
   }
 
-  ajoutPersonnel() {
-    this._httpService.httpPost('http://localhost:3000/gererPersonnel', 'nom=Assin&prenom=Marc&heure=200')
-        .subscribe(data => {
-            this.test = JSON.stringify(data);
-          }, error => {
-              console.log(JSON.stringify(error.json()));
-          });
-    this.getListePersonnel();
+  loadPage() {
+    this.communicateService.setCheckchild();
   }
 
   getListePersonnel() {
@@ -48,18 +38,9 @@ export class GererPersonnelComponent {
           data => {
             this.listePersonnel = data;
           },
-          error => alert(error),
-          () => console.log("Finished")
-        );
-  }
-
-  getPersonnel(id) {
-    this._httpService.httpGet(this.link+"/"+id)
-        .subscribe(
-          data => {
-            this.personnel = data;
+          error => {
+            this.router.navigate(['./accueil']);
           },
-          error => alert(error),
           () => console.log("Finished")
         );
   }

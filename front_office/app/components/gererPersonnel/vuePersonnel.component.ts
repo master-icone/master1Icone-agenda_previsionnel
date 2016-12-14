@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { HttpService } from '../../services/http.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { CommunicateService } from '../../services/communicate.service';
 
 @Component({
   selector: 'vuePersonnel',
@@ -14,11 +15,27 @@ export class VuePersonnelComponent {
   id: any;
   test: string;
 
-constructor (private _httpService: HttpService, params: ActivatedRoute) {
+  constructor (private _httpService: HttpService,
+               params: ActivatedRoute,
+               private router: Router,
+               private communicateService: CommunicateService) {
     params.params.subscribe(params => {
         this.id = params['id'];
     });
-    this.change();
+    this.display();
+  }
+
+  ngDoCheck() {
+    if(this.communicateService.getCheckChild()) {
+      this.display();
+    }
+    this.communicateService.resetChild();
+  }
+  
+  display() {
+    if(this.id) {
+      this.getPersonnel(this.id);
+    }
   }
 
   change() {
