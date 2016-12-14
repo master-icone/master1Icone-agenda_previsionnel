@@ -5,6 +5,7 @@ export class CommunicateService {
 
   checkParent: boolean = false;
   checkChild: boolean = false;
+  display: boolean = false;
 
   getCheckParent(): boolean {
     return this.checkParent;
@@ -23,5 +24,14 @@ export class CommunicateService {
   }
   resetChild() {
     this.checkChild = false;
+  }
+  getDisplay(): boolean {
+    return this.display;
+  }
+  setDisplay() {
+    this.display = true;
+  }
+  resetDisplay() {
+    this.display = false;
   }
 }

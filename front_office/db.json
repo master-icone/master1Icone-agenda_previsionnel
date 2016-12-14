@@ -104,10 +104,10 @@
   ],
   "gererPersonnel": [
     {
-      "id": 1,
-      "nom": "Dupont",
-      "prenom": "Jean",
-      "heures": 192
+      "nom": "dupont",
+      "prenom": "jean",
+      "heures": 200,
+      "id": 1
     },
     {
       "id": 2,
@@ -212,9 +212,9 @@
       "id": 21
     },
     {
-      "nom": "Assin",
-      "prenom": "Marc",
-      "heure": "200",
+      "nom": "dupont",
+      "prenom": "jean",
+      "heures": 200,
       "id": 22
     },
     {
@@ -231,6 +231,16 @@
       "username": "myusername",
       "password": "mypassword",
       "id": 25
+    },
+    {
+      "nom": "dupont",
+      "prenom": "jean",
+      "heures": 200,
+      "id": 26
+    },
+    {
+      "{\"nom\":\"dupont\",\"prenom\":\"jean\",\"heures\":200}": "",
+      "id": 27
     }
   ],
   "gererUE": [
@@ -256,18 +266,18 @@
   "gererStatuts": [
     {
       "label": "Enseignant",
-      "heures": 192,
+      "heures": "180",
       "autorisation": "null",
       "id": 1
     },
     {
       "label": "Enseignant-Chercheur",
-      "heures": 192,
+      "heures": "192",
       "autorisation": "null",
       "id": 2
     },
     {
-      "label": "Doctorant",
+      "label": "Doctorante",
       "heures": "120",
       "autorisation": "null",
       "id": 3
@@ -277,6 +287,32 @@
       "heures": "121",
       "autorisation": "null",
       "id": 4
+    }
+  ],
+  "listePersonnelByStatut": [
+    {
+      "nom": "Dupont",
+      "prenom": "Jean",
+      "statut": 1,
+      "id": 1
+    },
+    {
+      "nom": "Demko",
+      "prenom": "Christophe",
+      "statut": 1,
+      "id": 1
+    },
+    {
+      "nom": "Prigent",
+      "prenom": "Armelle",
+      "statut": 3,
+      "id": 1
+    },
+    {
+      "nom": "Durant",
+      "prenom": "Jeanne",
+      "statut": 1,
+      "id": 1
     }
   ]
 }

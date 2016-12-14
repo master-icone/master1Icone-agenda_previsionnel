@@ -1,19 +1,21 @@
-import { Component, DoCheck } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { HttpService } from '../../services/http.service';
-import { Router, ActivatedRoute } from '@angular/router';
 import { CommunicateService } from '../../services/communicate.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'vueUE',
+  selector: 'modifierStatuts',
   providers: [HttpService],
-  templateUrl: '../../../app/components/gererUE/vueUE.html'
+  templateUrl: '../../../app/components/gererStatuts/modifierStatuts.html'
 })
 
-export class VueUEComponent {
-  link = 'http://localhost:3000/gererUE';
-  UE: any;
+export class ModifierStatutsComponent {
+  link = 'http://localhost:3000/gererStatuts';
   id: any;
-  displayDial: boolean = false;
+  label: string;
+  heures: string;
+  autorisation: string;
+  json: string;
 
   constructor (private _httpService: HttpService,
                params: ActivatedRoute,
@@ -25,24 +27,19 @@ export class VueUEComponent {
     this.display();
   }
 
-  ngDoCheck() {
-    if(this.communicateService.getCheckChild()) {
-      this.display();
-    }
-    this.communicateService.resetChild();
-  }
-
   display() {
     if(this.id) {
-      this.getUE(this.id);
+      this.getStatut(this.id);
     }
   }
 
-  getUE(id) {
+  getStatut(id) {
     this._httpService.httpGet(this.link+"/"+id)
         .subscribe(
           data => {
-            this.UE = data;
+            this.label = data.label;
+            this.heures = data.heures;
+            this.autorisation = data.autorisation;
           },
           error => {
             this.router.navigate(['./accueil']);
@@ -51,22 +48,16 @@ export class VueUEComponent {
         );
   }
 
-  deleteUE(id) {
-    this._httpService.httpDelete(this.link+"/"+id)
+  modifierStatuts() {
+    this.json = '{"label":"'+this.label+'","heures":"'+this.heures+'","autorisation":"'+this.autorisation+'"}';
+    this._httpService.httpPut(this.link+'/'+this.id, this.json)
         .subscribe(
           data => {
             this.communicateService.setCheckParent();
-            this.router.navigate(['./gererUE']);
+            this.router.navigate(['./gererStatuts'+'/'+data.id]);
           },
-          error => {
-            this.router.navigate(['./accueil']);
-          },
+          error => alert(error),
           () => console.log("Finished")
         );
-        this.displayDial = false;
-  }
-
-  showDialog() {
-        this.displayDial = true;
   }
 }

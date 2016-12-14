@@ -31,6 +31,7 @@ import { GererDroitsComponent } from '../components/gererDroits/gererDroits.comp
 import { SelectStatutsComponent } from '../components/gererStatuts/selectStatuts.component';
 import { VueStatutsComponent } from '../components/gererStatuts/vueStatuts.component';
 import { AjouterStatutsComponent } from '../components/gererStatuts/ajouterStatuts.component';
+import { ModifierStatutsComponent } from '../components/gererStatuts/modifierStatuts.component';
 
 import { SelectUEComponent } from '../components/gererUE/selectUE.component';
 import { VueUEComponent } from '../components/gererUE/vueUE.component';
@@ -43,6 +44,9 @@ import { CommunicateService } from '../services/communicate.service';
 // Module primeng
 import {InputTextModule} from 'primeng/primeng';
 import {DataTableModule,SharedModule} from 'primeng/primeng';
+import {DialogModule} from 'primeng/primeng';
+import {ConfirmDialogModule,ConfirmationService} from 'primeng/primeng';
+import {GrowlModule} from 'primeng/primeng';
 
 @NgModule({
   imports: [
@@ -52,6 +56,9 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
     InputTextModule,
     DataTableModule,
     SharedModule,
+    DialogModule,
+    ConfirmDialogModule,
+    GrowlModule,
     RouterModule.forRoot([
       { path: '', redirectTo: '/authentification', pathMatch:'full' },
       { path: 'authentification', component: AuthentificationComponent },
@@ -78,7 +85,8 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
         children: [
           { path: '', component: SelectStatutsComponent },
           { path: 'ajouter', component: AjouterStatutsComponent },
-          { path: ':id', component: VueStatutsComponent }
+          { path: ':id', component: VueStatutsComponent },
+          { path: ':id/modifier', component: ModifierStatutsComponent }
         ]},
       { path: 'gererStatuts/:id', component: GererStatutsComponent },
       { path: 'gererDroits', component: GererDroitsComponent }
@@ -89,10 +97,11 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
    DechargesComponent, ProblemesComponent, GererPersonnelComponent,
    GererUEComponent, AjoutProfUEComponent, GererStatutsComponent,
    GererDroitsComponent, VueStatutsComponent, AjouterStatutsComponent,
-   SelectStatutsComponent, VueUEComponent, AjouterUEComponent,
-   SelectUEComponent, VuePersonnelComponent, AjouterPersonnelComponent,
-   SelectPersonnelComponent ],
-   providers: [ CommunicateService ],
+   SelectStatutsComponent, ModifierStatutsComponent, VueUEComponent,
+   AjouterUEComponent, SelectUEComponent, VuePersonnelComponent,
+   AjouterPersonnelComponent, SelectPersonnelComponent ],
+
+   providers: [ CommunicateService, ConfirmationService ],
   bootstrap: [ AppComponent ]
 })
 
