@@ -254,13 +254,13 @@
       "tp": 60
     },
     {
-      "id": 3,
+      "label": "English",
       "numero": "UE1113",
-      "label": "Anglais",
       "responsable": "Eboueya",
-      "cm": 0,
-      "td": 16,
-      "tp": 0
+      "cm": "0",
+      "td": "16",
+      "tp": "0",
+      "id": 3
     }
   ],
   "gererStatuts": [

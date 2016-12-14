@@ -19,8 +19,9 @@
 					</tr>
 				</tbody>
 			</table>
+			<p-growl [value]="msgs"></p-growl>
 			<a routerLink="/gererUE/{{id}}/modifier" [routerLinkActive]="['router-link-active']" class="surligne">
-				<button type="button">Modifier l'UE</button>
+				<button type="button" pButton icon="glyphicon glyphicon-cog" label="Modifier"></button>
 			</a>
 			<hr/>
 
