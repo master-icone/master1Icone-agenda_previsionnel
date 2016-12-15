@@ -22,7 +22,7 @@ class Autorisations
 	/**
 	 * @Column(type="integer") 
      */
-    protected $peutAccorderDecharge;
+    protected $peutAccorderDecharges;
 	/**
 	 * @Column(type="integer") 
      */
