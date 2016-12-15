@@ -6,6 +6,13 @@ require_once "../bootstrap.php";
 require_once __DIR__.'/../vendor/autoload.php';
 
 $app = new Silex\Application();
+
+include "get.php";
+include "add.php";
+include "update.php";
+include "delete.php";
+include "authentification.php";
+
 /*try
 {
 	$bdd = new PDO('mysql:host=localhost;dbname=projet_m1;charset=utf8', 'root', '');
@@ -19,101 +26,6 @@ catch (Exception $e)
 		$response->headers->set('Access-Control-Allow-Origin', '*');
 	});
 
-
-#il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
-	$app->get('/obtenirTypeEnseignement', function () use($app,$entityManager){
-		$dql = "SELECT te FROM typesEnseignement te";
-		$query = $entityManager->createQuery($dql);
-	//$query->setMaxResults(30);
-		try
-		{
-			$types = $query->getArrayResult();
-		}
-		catch(Exception $e)
-		{
-			die('Erreur : ' . $e->getMessage());
-		}
-		return $app->json($types);
-	});
-
-#il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
-	$app->get('/listeEnseignants', function () use($app,$entityManager){
-		$dql = 'SELECT p.id, p.nom, p.prenom, IDENTITY(pe.idstatut) as idstatut FROM personnel p, personnelEnseignant pe WHERE EXISTS (SELECT IDENTITY (ppe.id) FROM personnelEnseignant ppe WHERE ppe.id = p.id) AND pe.id = p.id';
-		$query = $entityManager->createQuery($dql);
-		try
-		{
-			$professeurs = $query->getArrayResult();
-		}
-		catch(Exception $e)
-		{
-			die('Erreur : ' . $e->getMessage());
-		}
-		return $app->json($professeurs);
-	});
-
-
-#il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
-	$app->post('/ajouterTypeEnseignement', function (Request $request) {
-		try
-		{
-			$label = $request->get('label');
-
-			$typesEnseignement = new TypesEnseignement();
-			$typesEnseignement->setlabel($label);
-
-			$entityManager->persist($typesEnseignement);
-			$entityManager->flush();
-
-			echo "Le nouveau type d'enseignement ajouté à l'Id: ".$typesEnseignement->getId()." et le label: " . $typesEnseignement->getlabel() . "\n";
-
-			return "Insertion REUSSIE";
-		}
-		catch (Exception $e)
-		{
-			die('Erreur : ' . $e->getMessage());
-		}
-	});
-
-#il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
-	$app->post('/ajouterTypeEnseignement', function (Request $request) {
-		$label = $request->get('label');
-
-		$typesEnseignement = new TypesEnseignement();
-		$typesEnseignement->setlabel($label);
-
-		$entityManager->persist($typesEnseignement);
-		$entityManager->flush();
-
-		echo "Le nouveau type d'enseignement ajouté à l'Id: ".$typesEnseignement->getId()." et le label: " . $typesEnseignement->getlabel() . "\n";
-
-		return "Insertion REUSSIE";
-	});
-$app->delete('/supprimerTypeEnseignement/{id}', function ($id) use($app,$entityManager){
-	$dql = "DELETE FROM typesEnseignement te WHERE te.id = " . $id;
-	$query = $entityManager->createQuery($dql);
-	$types = $query->getArrayResult();
-	return $app->json($types);
-});
-
-#il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
-$app->post('/ajouterTypeEnseignement', function (Request $request) use($app,$entityManager){
-	//var_dump($request);
-	echo $request;
-	$label = $request->get("label");
-	echo "label : " . $label . "\n";
-	$typesEnseignement = new TypesEnseignement();
-	echo "typeSDEnseignement";
-	var_dump($typesEnseignement);
-	$typesEnseignement->setlabel($label);
-	echo "test";
-	$entityManager->persist($typesEnseignement);
-	echo "test";
-	$entityManager->flush();
-
-	echo "Le nouveau type d'enseignement ajouté à l'Id: ".$typesEnseignement->getId()." et le label: " . $typesEnseignement->getlabel() . "\n";
-	
-	return "Insertion REUSSIE";
-});
 /*
 #
 $app->post('/{ue}/addResponsable', function (Request $request) use() {
