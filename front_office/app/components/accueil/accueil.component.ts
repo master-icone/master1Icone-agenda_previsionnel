@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../services/http.service';
+import { UtilisateurService } from '../../services/utilisateur.service';
 
 @Component({
   selector: 'accueil',
@@ -15,7 +16,10 @@ export class AccueilComponent implements OnInit {
   linkP = 'http://localhost:3000/problemes';
   problemes: any;
 
-  constructor (private _httpService: HttpService) { }
+  constructor (private _httpService: HttpService,
+    private _utilisateurService: UtilisateurService) { 
+      this.utilisateur = this.utilisateur = this._utilisateurService.getValueToolBar() ; ;
+}
 
   ngOnInit() {
     this.getInterventions();

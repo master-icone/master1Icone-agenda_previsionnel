@@ -1,58 +1,60 @@
-<div class="progress" style="height:25px">
-  <div class="progress-bar progress-bar-success" role="progressbar" style="width:25%">
-    CM : 32h
+<div *ngIf="utilisateur == 'prof' ">
+  <div class="progress" style="height:25px">
+    <div class="progress-bar progress-bar-success" role="progressbar" style="width:25%">
+      CM : 32h
+    </div>
+    <div class="progress-bar progress-bar-warning" role="progressbar" style="width:25%">
+      TD : 48h
+    </div>
+    <div class="progress-bar progress-bar-danger" role="progressbar" style="width:25%">
+      TP : 48h
+    </div>
   </div>
-  <div class="progress-bar progress-bar-warning" role="progressbar" style="width:25%">
-    TD : 48h
-  </div>
-  <div class="progress-bar progress-bar-danger" role="progressbar" style="width:25%">
-    TP : 48h
+    <div class="row space" >
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <h4>Vos dernières interventions</h4>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Intitulé</th>
+            <th>Type</th>
+            <th>Heures</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="interventions">
+          <tr *ngFor="let intervention of interventions">
+            <td>
+              <span class="label label label-info">{{intervention.numUE}}</span>
+              {{intervention.intitule}}
+            </td>
+            <td>{{intervention.type}}</td>
+            <td>{{intervention.heure}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <a routerLink="../interventions" [routerLinkActive]="['router-link-active']" class="surligne" style="float:right">Voir plus</a>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <h4>Vos UE responsables</h4>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>N°UE</th>
+            <th>Intitulé</th>
+            <th>Heures</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Contenus -->
+        </tbody>
+      </table>
+      <a routerLink="../gererUE" [routerLinkActive]="['router-link-active']" class="surligne" style="float:right">Voir plus</a>
+    </div>
   </div>
 </div>
 
-<div class="row space" >
-  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-    <h4>Vos dernières interventions</h4>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Intitulé</th>
-          <th>Type</th>
-          <th>Heures</th>
-        </tr>
-      </thead>
-      <tbody *ngIf="interventions">
-        <tr *ngFor="let intervention of interventions">
-          <td>
-		        <span class="label label label-info">{{intervention.numUE}}</span>
-            {{intervention.intitule}}
-          </td>
-          <td>{{intervention.type}}</td>
-          <td>{{intervention.heure}}</td>
-        </tr>
-      </tbody>
-    </table>
-    <a routerLink="../interventions" [routerLinkActive]="['router-link-active']" class="surligne" style="float:right">Voir plus</a>
-  </div>
-  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-    <h4>Vos UE responsables</h4>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>N°UE</th>
-          <th>Intitulé</th>
-          <th>Heures</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Contenus -->
-      </tbody>
-    </table>
-    <a routerLink="../gererUE" [routerLinkActive]="['router-link-active']" class="surligne" style="float:right">Voir plus</a>
-  </div>
-</div>
 
-<div id="sco">
+<div id="sco" *ngIf="utilisateur == 'scolarite' ">
   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
     <div class="table-responsive">
       <table class="table table-condensed table-striped table-bordered table-hover no-margin">
