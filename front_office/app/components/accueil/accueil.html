@@ -51,3 +51,33 @@
     <a routerLink="../gererUE" [routerLinkActive]="['router-link-active']" class="surligne" style="float:right">Voir plus</a>
   </div>
 </div>
+
+<div id="sco">
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+    <div class="table-responsive">
+      <table class="table table-condensed table-striped table-bordered table-hover no-margin">
+        <thead>
+          <tr>
+            <th>Nom Professeur</th>
+            <th>Statut</th>
+            <th>Heures Manquants</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="problemes">
+          <tr *ngFor="let probleme of problemes">
+            <td>{{probleme.nom}} {{probleme.prenom}}</td>
+            <td>{{probleme.statut}}</td>
+            <td>{{probleme.heuresManquants}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <a routerLink="../interventions" [routerLinkActive]="['router-link-active']" class="surligne" style="float:right">Voir plus</a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+    <a routerLink="../gererPersonnel" [routerLinkActive]="['router-link-active']" class="surligne"><button>Liste des personnels</button></a><br/>
+    <a routerLink="../gererPersonnel/ajouter" [routerLinkActive]="['router-link-active']" class="surligne"><button>Ajouter un personnel</button></a><br/><br/>
+    <a routerLink="../gererUE" [routerLinkActive]="['router-link-active']" class="surligne"><button>Liste des UE</button></a><br/>
+    <a routerLink="../gererUE/ajouter" [routerLinkActive]="['router-link-active']" class="surligne"><button>Ajouter un UE</button></a><br/>
+  </div>
+</div>
