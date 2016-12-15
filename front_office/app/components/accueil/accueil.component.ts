@@ -9,21 +9,35 @@ import { HttpService } from '../../services/http.service';
 })
 
 export class AccueilComponent implements OnInit {
-  link = 'http://localhost:3000/interventions';
+  linkI = 'http://localhost:3000/interventions';
   interventions: any;
   utilisateur: string;
+  linkP = 'http://localhost:3000/problemes';
+  problemes: any;
 
   constructor (private _httpService: HttpService) { }
 
   ngOnInit() {
     this.getInterventions();
+    this.getProblemes();
   }
 
   getInterventions() {
-    this._httpService.httpGet(this.link)
+    this._httpService.httpGet(this.linkI)
         .subscribe(
           data => {
             this.interventions = data;
+          },
+          error => alert(error),
+          () => console.log("Finished")
+        );
+  }
+
+  getProblemes() {
+    this._httpService.httpGet(this.linkP)
+        .subscribe(
+          data => {
+            this.problemes = data;
           },
           error => alert(error),
           () => console.log("Finished")
