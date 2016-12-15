@@ -8,7 +8,8 @@
 		<div style="  width: 100%; " class="pull-right" >
 		  <div class="panel panel-primary">
 				    <div class="panel-heading">
-				      <span class="glyphicon glyphicon-user"></span>  <span style= "font-weight: bold;"> Personnel: </span>
+				      <span class="glyphicon glyphicon-user"></span>  <span style= "font-weight: bold;"> Personnel </span>
+							<hr style= "margin-top:10px ; margin-bottom:10px"/>
 				        <ul *ngFor="let personnel of listePersonnel"  style=" height:15px; word-wrap: break-word;" >
 								<li style = "list-style-type: none;" >
 									<a style=" color: white;" routerLink= "/gererPersonnel/{{personnel.id}}" [routerLinkActive]="['router-link-active']" (click)="loadPage()" class="surligne"> {{ personnel.prenom }}  {{ personnel.nom}} </a>
