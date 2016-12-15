@@ -173,6 +173,15 @@
       "td": 16,
       "tp": 0,
       "id": 4
+    },
+    {
+      "label": "NOMNOM",
+      "numero": "UETEST",
+      "responsable": "RESPO",
+      "cm": "15",
+      "td": "15",
+      "tp": "15",
+      "id": 5
     }
   ],
   "gererStatuts": [
@@ -231,19 +240,19 @@
     {
       "nom": "Dupont",
       "prenom": "Jean",
-      "ue": 2,
+      "ue": 5,
       "id": 1
     },
     {
       "nom": "Demko",
       "prenom": "Christophe",
-      "statut": 5,
+      "ue": 5,
       "id": 2
     },
     {
       "nom": "Prigent",
       "prenom": "Armelle",
-      "statut": 5,
+      "ue": 5,
       "id": 3
     },
     {

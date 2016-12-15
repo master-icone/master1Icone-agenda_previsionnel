@@ -126,7 +126,7 @@ export class VueUEComponent {
         .subscribe(
           data => {
             this.personnelFind = data[0];
-            this.resultAdd = '{"nom": "'+this.personnelFind.nom+'","prenom":"'+this.personnelFind.prenom+'","statut":'+this.id+'}';
+            this.resultAdd = '{"nom": "'+this.personnelFind.nom+'","prenom":"'+this.personnelFind.prenom+'","ue":'+this.id+'}';
             this.putPersonnelInUE();
           },
           error => {alert(error);
