@@ -11,7 +11,7 @@
             <input type="text" class="form-control" name="username" placeholder="Login">
           </div>
           <span class="help-block"></span>
-          <button class="btn btn-lg btn-primary btn-block" type="submit" routerLink="/accueil" (click)="onClick()" >Login</button>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" routerLink="/accueil" (click)="onClick()" [(ngModel)]="utilisateur">Login</button>
         </form>
       </div>
     </div>

@@ -3,7 +3,7 @@ import { AuthentificationComponent } from '../components/authentification/authen
 
 @Injectable()
 export class UtilisateurService {
-    private utilisateur;
+    private utilisateur:string;
 
     constructor() {}
 

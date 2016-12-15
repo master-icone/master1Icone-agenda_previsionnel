@@ -307,19 +307,19 @@
     {
       "nom": "Dupont",
       "prenom": "Jean",
-      "statut": 3,
+      "statut": 1,
       "id": 1
     },
     {
       "nom": "Demko",
       "prenom": "Christophe",
-      "statut": 2,
+      "statut": 1,
       "id": 2
     },
     {
       "nom": "Prigent",
       "prenom": "Armelle",
-      "statut": 4,
+      "statut": 2,
       "id": 3
     },
     {
