@@ -30,31 +30,24 @@ $app->get('/obtenirTypeEnseignement', function () use($app,$entityManager){
 });
 
 #il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
-$app->delete('/supprimerTypeEnseignement/{id}', function ($id) use($app,$entityManager){
-	$dql = "DELETE FROM typesEnseignement te WHERE te.id = " . $id;
-	$query = $entityManager->createQuery($dql);
-	$types = $query->getArrayResult();
-	return $app->json($types);
+$app->delete('/supprimerTypeEnseignement/{id}', function ($id, Request $request) use($app,$entityManager){
+	$typesEnseignement = $entityManager->find('typesEnseignement',$id);
+	echo "L'enseignement avec l'ID " . $id . " et le label " . $typesEnseignement->getlabel() . " va être supprimé";
+	$entityManager->remove($typesEnseignement);
+	$entityManager->flush();
+	echo "L'enseignement avec l'ID " . $id . " a été supprimé";
+	return "suppression réussie";	
 });
 
 #il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
 $app->post('/ajouterTypeEnseignement', function (Request $request) use($app,$entityManager){
-	//var_dump($request);
-	echo $request;
 	$label = $request->get("label");
-	echo "label : " . $label . "\n";
 	$typesEnseignement = new TypesEnseignement();
-	echo "typeSDEnseignement";
-	var_dump($typesEnseignement);
 	$typesEnseignement->setlabel($label);
-	echo "test";
 	$entityManager->persist($typesEnseignement);
-	echo "test";
 	$entityManager->flush();
 
-	echo "Le nouveau type d'enseignement ajouté à l'Id: ".$typesEnseignement->getId()." et le label: " . $typesEnseignement->getlabel() . "\n";
-	
-	return "Insertion REUSSIE";
+	return "Le nouveau type d'enseignement ajouté à l'Id: ".$typesEnseignement->getId()." et le label: " . $typesEnseignement->getlabel() . "\n";
 });
 /*
 #
