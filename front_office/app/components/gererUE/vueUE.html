@@ -19,7 +19,13 @@
 					</tr>
 				</tbody>
 			</table>
-			<button>Modifier</button>
+			<p-growl [value]="msgs"></p-growl>
+			<a routerLink="/gererUE/{{id}}/modifier" [routerLinkActive]="['router-link-active']" class="surligne">
+				<button type="button" pButton icon="glyphicon glyphicon-cog" label="Modifier l'UE"></button>
+			</a>
+			<p-growl [value]="msgs"></p-growl>
+			<p-confirmDialog acceptIcon="glyphicon glyphicon-ok" acceptLabel="Supprimer" rejectIcon="glyphicon glyphicon-remove" rejectLabel="Annuler" width="425"></p-confirmDialog>
+			<button type="button" (click)="confirm()" pButton icon="glyphicon glyphicon-trash" label="Supprimer l'UE"></button>
 			<hr/>
 
 			<h4>Liste des personnes ayant cette UE :</h4>
@@ -39,9 +45,54 @@
 					</tr>
 				</tbody>
 			</table>
-			<button>Ajouter des professeurs dans la liste</button>
-			<hr/>
-			<button (click)="deleteUE(id)">Supprimer</button>
+			<button type="button" pButton icon="glyphicon glyphicons-plus-sign" label="Ajouter des professeurs dans la liste"></button>
+			<!--<p-dialog header="Suppression d'un UE" [(visible)]="displayDial" modal="modal" responsive="true">
+    	<p>Etes-vous sûr de supprimer l'UE {{UE.numero}} : {{UE.label}} ?</p>
+        	<footer>
+	            <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+	                <button type="button" (click)="displayDial=false" label="Annuler">Annuler</button>
+	                <button type="button" (click)=deleteUE(id) label="Supprimer">Supprimer</button>
+	            </div>
+        	</footer>
+			</p-dialog>-->
+
+			<!--<button type="text" (click)="showDialog()" label="Supprimer">Supprimer</button>-->
+		<!--	<div class="modal-header"><h2>Suppression d'un UE</h2></div>
+			<div class="modal-body">Etes-vous sûr de supprimer l'UE {{UE.numero}} : {{UE.label}} ?</div>
+			<div class="modal-footer">
+				<button class="btn" ng-click="cancel()">Annuler</button>
+    		<button class="btn btn-primary" ng-click="delete()">Supprimer</button>
+			</div>
+			<dialog id="deleteDialog">
+				<form method="dialog">
+					<section>
+						<p>Etes-vous sûr de supprimer l'UE {{UE.numero}} : {{UE.label}} ?</p>
+					</section>
+					<menu>
+						<button id="cancel" type="reset" value="non">Non</button>
+						<button value="oui" (click)="deleteUE(id)">Supprimer</button>
+					</menu>
+				</form>
+			</dialog>
+			<menu>
+				<button id="delete">Supprimer</button>
+			</menu>
+			<script text="javascript">
+			  (function() {
+			    var deleteButton = document.getElementById('delete');
+			    var cancelButton = document.getElementById('cancel');
+
+			    deleteButton.addEventListener('click', function() {
+			      document.getElementById('deleteDialog').showModal();
+			    });
+
+			    cancelButton.addEventListener('click', function() {
+			      document.getElementById('deleteDialog').close();
+			    });
+
+			  })();
+			</script>
+			<button (click)="deleteUE(id)">Supprimer</button>-->
 			<hr/>
 		</div>
 	</div>

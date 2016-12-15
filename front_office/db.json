@@ -104,22 +104,28 @@
   ],
   "gererPersonnel": [
     {
+      "nom": "dupont",
+      "prenom": "jean",
+      "heures": 200,
       "id": 1,
-      "nom": "Dupont",
-      "prenom": "Jean",
-      "heures": 192
+      "Statut": "Maitre de conference",
+      "email": "Jean.dupont@gmail.com"
     },
     {
       "id": 2,
       "nom": "Hype",
-      "prenom": "Fil",
-      "heures": 192
+      "prenom": "Hype",
+      "heures": 192,
+      "statut": "Maitre de conference",
+      "email": "Hype.Hype@gmail.com"
     },
     {
       "id": 3,
-      "nom": "Oie",
-      "prenom": "France",
-      "heures": 192
+      "nom": "Gills",
+      "prenom": "Hunautl",
+      "heures": 192,
+      "Statut": "professeur chercheur",
+      "email": "gill.hunault@gmail.com"
     },
     {
       "nom": "Assin",
@@ -239,20 +245,15 @@
       "id": 26
     },
     {
-      "{\"nom\":\"dupont\",\"prenom\":\"jean\",\"heures\":200}": "",
+      "nom": "Michaud",
+      "prenom": "Fabien",
+      "heures": "",
+      "Statut": "",
+      "email": "fabien.michaud0@orange.fr",
       "id": 27
     }
   ],
   "gererUE": [
-    {
-      "id": 1,
-      "numero": "UE1111",
-      "label": "Base de la programmation",
-      "responsable": "Demko",
-      "cm": 30,
-      "td": 60,
-      "tp": 60
-    },
     {
       "id": 2,
       "numero": "UE1112",
@@ -263,30 +264,38 @@
       "tp": 60
     },
     {
-      "id": 3,
+      "label": "English",
       "numero": "UE1113",
-      "label": "Anglais",
       "responsable": "Eboueya",
       "cm": 0,
       "td": 16,
       "tp": 0
+    },
+    {
+      "label": "",
+      "numero": "eee",
+      "responsable": "",
+      "cm": "",
+      "td": "",
+      "tp": "",
+      "id": 4
     }
   ],
   "gererStatuts": [
     {
-      "label": "Enseignant",
-      "heures": 192,
+      "label": "EnseignantC",
+      "heures": "180",
       "autorisation": "null",
       "id": 1
     },
     {
       "label": "Enseignant-Chercheur",
-      "heures": 192,
+      "heures": "192",
       "autorisation": "null",
       "id": 2
     },
     {
-      "label": "Doctorant",
+      "label": "Doctorante",
       "heures": "120",
       "autorisation": "null",
       "id": 3
@@ -295,6 +304,32 @@
       "label": "Scolarité",
       "heures": "121",
       "autorisation": "null",
+      "id": 4
+    }
+  ],
+  "listePersonnelByStatut": [
+    {
+      "nom": "Dupont",
+      "prenom": "Jean",
+      "statut": 1,
+      "id": 1
+    },
+    {
+      "nom": "Demko",
+      "prenom": "Christophe",
+      "statut": 1,
+      "id": 2
+    },
+    {
+      "nom": "Prigent",
+      "prenom": "Armelle",
+      "statut": 1,
+      "id": 3
+    },
+    {
+      "nom": "Durant",
+      "prenom": "Jeanne",
+      "statut": 1,
       "id": 4
     }
   ]

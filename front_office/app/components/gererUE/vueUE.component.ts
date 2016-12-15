@@ -2,6 +2,7 @@ import { Component, DoCheck } from '@angular/core';
 import { HttpService } from '../../services/http.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CommunicateService } from '../../services/communicate.service';
+import { ConfirmationService } from 'primeng/primeng';
 
 @Component({
   selector: 'vueUE',
@@ -13,15 +14,29 @@ export class VueUEComponent {
   link = 'http://localhost:3000/gererUE';
   UE: any;
   id: any;
+  displayDial: boolean = false;
 
   constructor (private _httpService: HttpService,
                params: ActivatedRoute,
                private router: Router,
-               private communicateService: CommunicateService) {
+               private communicateService: CommunicateService,
+               private confirmationService: ConfirmationService) {
     params.params.subscribe(params => {
         this.id = params['id'];
     });
     this.display();
+  }
+
+  confirm() {
+    this.confirmationService.confirm({
+            message: 'Êtes vous sur de vouloir supprimer cet UE ?',
+            header: 'Confirmer la suppression',
+            icon: ' 	glyphicon glyphicon-info-sign',
+            accept: () => {
+              this.communicateService.setDisplay();
+              this.deleteUE(this.id);
+            }
+        });
   }
 
   ngDoCheck() {
@@ -48,7 +63,7 @@ export class VueUEComponent {
           },
           () => console.log("Finished")
         );
-  }
+}
 
   deleteUE(id) {
     this._httpService.httpDelete(this.link+"/"+id)
@@ -63,4 +78,8 @@ export class VueUEComponent {
           () => console.log("Finished")
         );
   }
+
+  showDialog() {
+        this.displayDial = true;
   }
+}

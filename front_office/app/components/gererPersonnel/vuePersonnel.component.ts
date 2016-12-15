@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { HttpService } from '../../services/http.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { CommunicateService } from '../../services/communicate.service';
+import { ConfirmationService } from 'primeng/primeng';
 
 @Component({
   selector: 'vuePersonnel',
@@ -12,16 +14,39 @@ export class VuePersonnelComponent {
   link = 'http://localhost:3000/gererPersonnel';
   personnel: any;
   id: any;
-  test: string;
+  displayDial: boolean = false;
 
-constructor (private _httpService: HttpService, params: ActivatedRoute) {
+  constructor (private _httpService: HttpService,
+               params: ActivatedRoute,
+               private router: Router,
+               private communicateService: CommunicateService,
+               private confirmationService: ConfirmationService) {
     params.params.subscribe(params => {
         this.id = params['id'];
     });
-    this.change();
+    this.display();
   }
 
-  change() {
+  confirm() {
+    this.confirmationService.confirm({
+            message: 'Êtes vous sur de vouloir supprimer ce personnel ?',
+            header: 'Confirmer la suppression',
+            icon: ' 	glyphicon glyphicon-info-sign',
+            accept: () => {
+              this.communicateService.setDisplay();
+              this.deletePersonnel(this.id);
+            }
+        });
+  }
+
+  ngDoCheck() {
+    if(this.communicateService.getCheckChild()) {
+      this.display();
+    }
+    this.communicateService.resetChild();
+  }
+
+  display() {
     if(this.id) {
       this.getPersonnel(this.id);
     }
@@ -33,8 +58,28 @@ constructor (private _httpService: HttpService, params: ActivatedRoute) {
           data => {
             this.personnel = data;
           },
-          error => alert(error),
+          error => {
+            this.router.navigate(['./accueil']);
+          },
           () => console.log("Finished")
         );
+}
+
+  deletePersonnel(id) {
+    this._httpService.httpDelete(this.link+"/"+id)
+        .subscribe(
+          data => {
+            this.communicateService.setCheckParent();
+            this.router.navigate(['./gererPersonnel']);
+          },
+          error => {
+            this.router.navigate(['./accueil']);
+          },
+          () => console.log("Finished")
+        );
+  }
+
+  showDialog() {
+        this.displayDial = true;
   }
 }

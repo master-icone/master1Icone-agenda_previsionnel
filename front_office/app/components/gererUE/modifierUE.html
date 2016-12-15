@@ -1,0 +1,43 @@
+<div class="col-sm-offset-3"><h2>Modifier Statut :</h2></div>
+<form class="form-horizontal">
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="numeroUE">Numéro de l'UE : </label>
+    <div class="col-sm-4">
+      <input id="numeroUE" type="text" class="form-control" pInputText [(ngModel)]="numero" [ngModelOptions]="{standalone: true}" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="labelUE">Nom de l'UE : </label>
+    <div class="col-sm-4">
+      <input id="labelUE" type="text" class="form-control" pInputText [(ngModel)]="label" [ngModelOptions]="{standalone: true}" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="responsableUE">Responsable de l'UE :</label>
+    <div class="col-sm-4">
+      <input id="responsableUE" type="text" class="form-control" pInputText [(ngModel)]="responsable" [ngModelOptions]="{standalone: true}" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="cmUE">Nombre d'heures de CM :</label>
+    <div class="col-sm-4">
+      <input id="cmUE" type="number" class="form-control" pInputText [(ngModel)]="cm" [ngModelOptions]="{standalone: true}" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="tdUE">Nombre d'heures de TD :</label>
+    <div class="col-sm-4">
+      <input id="tdUE" type="number" class="form-control" pInputText [(ngModel)]="td" [ngModelOptions]="{standalone: true}" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="tpUE">Nombre d'heures de TP :</label>
+    <div class="col-sm-4">
+      <input id="tpUE" type="number" class="form-control" pInputText [(ngModel)]="tp" [ngModelOptions]="{standalone: true}" />
+    </div>
+  </div>
+  <div class="col-sm-offset-2 col-sm-10">
+    <a routerLink="../" [routerLinkActive]="['router-link-active']" class="button">Annuler</a>
+    <button type="submit" class="btn btn-default" (click)="modifierUE()">Enregistrer</button>
+  </div>
+</form>
