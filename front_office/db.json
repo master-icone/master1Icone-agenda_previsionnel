@@ -137,20 +137,43 @@
   "gererUE": [
     {
       "label": "Base de données",
-      "numero": "UE1112",
+      "numero": "UE1111",
       "responsable": "Demko",
+      "idResponsable": 1,
       "cm": "30",
       "td": "60",
       "tp": "60",
-      "id": 2
+      "id": 1
     },
     {
       "label": "English",
-      "numero": "UE1113",
+      "numero": "UE1121",
       "responsable": "Eboueya",
+      "idResponsable": 2,
       "cm": 0,
       "td": 16,
-      "tp": 0
+      "tp": 0,
+      "id": 2
+    },
+    {
+      "label": "Mathématique",
+      "numero": "UE1122",
+      "responsable": "Crotterau",
+      "idResponsable": 3,
+      "cm": 0,
+      "td": 16,
+      "tp": 0,
+      "id": 3
+    },
+    {
+      "label": "Programmation",
+      "numero": "UE1112",
+      "responsable": "Malki",
+      "idResponsable": 1,
+      "cm": 0,
+      "td": 16,
+      "tp": 0,
+      "id": 4
     }
   ],
   "gererStatuts": [
@@ -195,7 +218,7 @@
     {
       "nom": "Prigent",
       "prenom": "Armelle",
-      "statut": 4,
+      "statut": 2,
       "id": 3
     },
     {
