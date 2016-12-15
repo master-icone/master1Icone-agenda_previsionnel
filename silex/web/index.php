@@ -37,6 +37,7 @@ catch (Exception $e)
 	});
 
 #il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
+
 	$app->get('/listeEnseignants', function () use($app,$entityManager){
 		$dql = 'SELECT p.id, p.login, p.nom, p.prenom, IDENTITY(pe.idstatut) as idstatut 
 		FROM personnel p, personnelEnseignant pe 
@@ -77,40 +78,23 @@ catch (Exception $e)
 
 
 #il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
-	$app->post('/ajouterTypeEnseignement', function (Request $request) {
-		try
-		{
-			$label = $request->get('label');
-
-			$typesEnseignement = new TypesEnseignement();
-			$typesEnseignement->setlabel($label);
-
-			$entityManager->persist($typesEnseignement);
-			$entityManager->flush();
-
-			echo "Le nouveau type d'enseignement ajouté à l'Id: ".$typesEnseignement->getId()." et le label: " . $typesEnseignement->getlabel() . "\n";
-
-			return "Insertion REUSSIE";
-		}
-		catch (Exception $e)
-		{
-			die('Erreur : ' . $e->getMessage());
-		}
-	});
-
-#il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
-	$app->post('/ajouterTypeEnseignement', function (Request $request) {
-		$label = $request->get('label');
-
+	$app->post('/ajouterTypeEnseignement', function (Request $request) use($app,$entityManager){
+		$label = $request->get("label");
 		$typesEnseignement = new TypesEnseignement();
 		$typesEnseignement->setlabel($label);
-
 		$entityManager->persist($typesEnseignement);
 		$entityManager->flush();
 
-		echo "Le nouveau type d'enseignement ajouté à l'Id: ".$typesEnseignement->getId()." et le label: " . $typesEnseignement->getlabel() . "\n";
-
-		return "Insertion REUSSIE";
+		return "Le nouveau type d'enseignement ajouté à l'Id: ".$typesEnseignement->getId()." et le label: " . $typesEnseignement->getlabel() . "\n";
+	});
+	
+	$app->delete('/supprimerTypeEnseignement/{id}', function ($id, Request $request) use($app,$entityManager){
+		$typesEnseignement = $entityManager->find('typesEnseignement',$id);
+		echo "L'enseignement avec l'ID " . $id . " et le label " . $typesEnseignement->getlabel() . " va être supprimé";
+		$entityManager->remove($typesEnseignement);
+		$entityManager->flush();
+		echo "L'enseignement avec l'ID " . $id . " a été supprimé";
+		return "suppression réussie";
 	});
 	$app->delete('/supprimerTypeEnseignement/{id}', function ($id) use($app,$entityManager){
 		$dql = "DELETE FROM typesEnseignement te WHERE te.id = " . $id;
