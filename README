@@ -1,7 +1,16 @@
+                               _         _____        _       _     _                        _ 
+     /\                       | |       |  __ \      //      (_)   (_)                      | |
+    /  \   __ _  ___ _ __   __| | __ _  | |__) | __ _____   ___ ___ _  ___  _ __  _ __   ___| |
+   / /\ \ / _` |/ _ \ '_ \ / _` |/ _` | |  ___/ '__/ _ \ \ / / / __| |/ _ \| '_ \| '_ \ / _ \ |
+  / ____ \ (_| |  __/ | | | (_| | (_| | | |   | | |  __/\ V /| \__ \ | (_) | | | | | | |  __/ |
+ /_/    \_\__, |\___|_| |_|\__,_|\__,_| |_|   |_|  \___| \_/ |_|___/_|\___/|_| |_|_| |_|\___|_|
+           __/ |                                                                               
+          |___/                                                                                
+
 FR :
 Bienvenue dans le README de l'Agenda Prévisionnel.
 Ce projet est créé dans le cadre d'un exercice de groupe, en Master 1 de La Rochelle, France.
-Pour toute question supplémentaire contactez "ambre.lajugie@hotmail.fr" .
+Pour toute question supplémentaire, contactez "ambre.lajugie@hotmail.fr" .
 
 --------------------------------------------------------
 EN :
@@ -13,16 +22,45 @@ For any question, please contact "ambre.lajugie@hotmail.fr" .
 I  - installation/how to install
 II - utilisation/how to use
 --------------------------------------------------------
-I  - installation/how to install
-  
-  1) Install NPM on windows.
-  2) go in the folder "silex/front-office"
-  3) console: npm install lite-server
-  4) console: npm install typescript
-  5)  UBUNTU : console: npm start
-      WINDOWS: console: npm run lite
-  6) connect on localhost:3000
+FR
 --------------------------------------------------------
-II - utilisation/how to use
+I  - installation
+  json-server :
+    1) Se déplacer dans le dossier "silex/front-office"
+    2) Console : "json-server --watch db.json"
+    Utilise le port 3000
+    
+  lite-server :
+    1) Installer NPM on windows.
+    2) Se déplacer dans le dossier "silex/front-office"
+    3) Console: "npm install lite-server"
+    4) Console: "npm install typescript"
+    5)  UBUNTU : Console: "npm start"
+        WINDOWS: Console: "npm run lite"
+    6) Se connecter sur localhost:3001
 
+II - Utilisation
   1) 
+    
+--------------------------------------------------------
+EN
+--------------------------------------------------------
+I  - how to install
+  json-server :
+    1) Go in the folder "silex/front-office"
+    2) Console : json-server --watch db.json
+    Uses the port 3000
+    
+  lite-server :
+    1) Install NPM on windows.
+    2) Go in the folder "silex/front-office"
+    3) Console: "npm install lite-server"
+    4) Console: "npm install typescript"
+    5)  UBUNTU : Console: "npm start"
+        WINDOWS: Console: "npm run lite"
+    6) Connect on localhost:3001
+    
+II - How to use
+  1) 
+  
+--------------------------------------------------------
