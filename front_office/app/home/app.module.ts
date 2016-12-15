@@ -23,6 +23,7 @@ import { GererPersonnelComponent } from '../components/gererPersonnel/gererPerso
 import { AjouterPersonnelComponent } from '../components/gererPersonnel/ajouterPersonnel.component';
 import { SelectPersonnelComponent } from '../components/gererPersonnel/selectPersonnel.component';
 import { VuePersonnelComponent } from '../components/gererPersonnel/vuePersonnel.component';
+//import { ModifierPersonnelComponent } from '../components/gererPersonnel/modifierPersonnel.component';
 
 import { GererUEComponent } from '../components/gererUE/gererUE.component';
 import { GererStatutsComponent } from '../components/gererStatuts/gererStatuts.component';
@@ -75,7 +76,12 @@ import {GrowlModule} from 'primeng/primeng';
           { path: 'ajouter', component: AjouterPersonnelComponent },
           { path: ':id', component: VuePersonnelComponent }
         ]},
-      { path: 'gererPersonnel/:id', component: GererPersonnelComponent },
+      { path: 'gererPersonnel/:id', component: GererPersonnelComponent,
+        children: [
+          { path: '', component: SelectPersonnelComponent },
+          { path: 'ajouter', component: AjouterPersonnelComponent },
+          { path: ':id', component: VuePersonnelComponent },
+        ]},
       { path: 'gererUE', component: GererUEComponent,
         children: [
           { path: '', component: SelectUEComponent },

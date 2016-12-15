@@ -11,13 +11,10 @@ import { ConfirmationService } from 'primeng/primeng';
 })
 
 export class VuePersonnelComponent {
-  id: any;
-  urlPersonnel = 'http://localhost:3000/gererPersonnel';
+  link = 'http://localhost:3000/gererPersonnel';
   personnel: any;
-  test: string;
-  urlIntervention = 'http://localhost:3000/interventions';
-  interventions: any;
-
+  id: any;
+  displayDial: boolean = false;
 
   constructor (private _httpService: HttpService,
                params: ActivatedRoute,
@@ -28,6 +25,18 @@ export class VuePersonnelComponent {
         this.id = params['id'];
     });
     this.display();
+  }
+
+  confirm() {
+    this.confirmationService.confirm({
+            message: 'Êtes vous sur de vouloir supprimer ce personnel ?',
+            header: 'Confirmer la suppression',
+            icon: ' 	glyphicon glyphicon-info-sign',
+            accept: () => {
+              this.communicateService.setDisplay();
+              this.deletePersonnel(this.id);
+            }
+        });
   }
 
   ngDoCheck() {
@@ -43,32 +52,34 @@ export class VuePersonnelComponent {
     }
   }
 
-   getInterventions() {
-    this._httpService.httpGet(this.urlIntervention)
-        .subscribe(
-          data => {
-            this.interventions = data;
-          },
-          error => alert(error),
-          () => console.log("Finished")
-        );
-  }
-
   getPersonnel(id) {
-    this._httpService.httpGet(this.urlPersonnel+"/"+id)
+    this._httpService.httpGet(this.link+"/"+id)
         .subscribe(
           data => {
             this.personnel = data;
           },
-          error => alert(error),
+          error => {
+            this.router.navigate(['./accueil']);
+          },
+          () => console.log("Finished")
+        );
+}
+
+  deletePersonnel(id) {
+    this._httpService.httpDelete(this.link+"/"+id)
+        .subscribe(
+          data => {
+            this.communicateService.setCheckParent();
+            this.router.navigate(['./gererPersonnel']);
+          },
+          error => {
+            this.router.navigate(['./accueil']);
+          },
           () => console.log("Finished")
         );
   }
 
-
-  change() {
-    if(this.id) {
-      this.getPersonnel(this.id);
-    }
+  showDialog() {
+        this.displayDial = true;
   }
 }

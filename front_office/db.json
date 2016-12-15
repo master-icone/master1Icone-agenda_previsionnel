@@ -245,7 +245,11 @@
       "id": 26
     },
     {
-      "{\"nom\":\"dupont\",\"prenom\":\"jean\",\"heures\":200}": "",
+      "nom": "Michaud",
+      "prenom": "Fabien",
+      "heures": "",
+      "Statut": "",
+      "email": "fabien.michaud0@orange.fr",
       "id": 27
     }
   ],
@@ -319,7 +323,7 @@
     {
       "nom": "Prigent",
       "prenom": "Armelle",
-      "statut": 2,
+      "statut": 1,
       "id": 3
     },
     {
