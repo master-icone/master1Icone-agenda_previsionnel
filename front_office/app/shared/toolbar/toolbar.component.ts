@@ -13,6 +13,10 @@ export class ToolbarComponent {
 
 	constructor (private _utilisateurService: UtilisateurService) { }	
 
+	onClick () {
+        this._utilisateurService.setValueToolBar(" ");
+    }
+
     ngDoCheck() {
       if(this._utilisateurService.getValueToolBar() != "") {
       this.utilisateur = this._utilisateurService.getValueToolBar() ;

@@ -241,13 +241,13 @@
   ],
   "gererUE": [
     {
-      "id": 2,
-      "numero": "UE1112",
       "label": "Base de données",
+      "numero": "UE1112",
       "responsable": "Demko",
-      "cm": 30,
-      "td": 60,
-      "tp": 60
+      "cm": "30",
+      "td": "60",
+      "tp": "60",
+      "id": 2
     },
     {
       "label": "English",
