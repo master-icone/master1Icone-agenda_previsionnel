@@ -38,7 +38,12 @@ catch (Exception $e)
 
 #il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
 	$app->get('/listeEnseignants', function () use($app,$entityManager){
-		$dql = 'SELECT p.id, p.nom, p.prenom, IDENTITY(pe.idstatut) as idstatut FROM personnel p, personnelEnseignant pe WHERE EXISTS (SELECT IDENTITY (ppe.id) FROM personnelEnseignant ppe WHERE ppe.id = p.id) AND pe.id = p.id';
+		$dql = 'SELECT p.id, p.login, p.nom, p.prenom, IDENTITY(pe.idstatut) as idstatut 
+		FROM personnel p, personnelEnseignant pe 
+		WHERE EXISTS (SELECT IDENTITY (ppe.id) 
+		FROM personnelEnseignant ppe 
+		WHERE ppe.id = p.id) 
+		AND pe.id = p.id';
 		$query = $entityManager->createQuery($dql);
 		try
 		{
@@ -49,6 +54,25 @@ catch (Exception $e)
 			die('Erreur : ' . $e->getMessage());
 		}
 		return $app->json($professeurs);
+	});
+
+	#il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
+	$app->get('/{login}/heure', function ($login) use($app,$entityManager){
+		$dql = "SELECT IDENTITY(i.idEnseignant) as id, i.nbHeures 
+		FROM interventions i, personnel p
+		WHERE i.idEnseignant = p.id
+		AND p.login = '".$login."'
+		GROUP BY i.idEnseignant";
+		$query = $entityManager->createQuery($dql);
+		try
+		{
+			$interventions = $query->getArrayResult();
+		}
+		catch(Exception $e)
+		{
+			die('Erreur : ' . $e->getMessage());
+		}
+		return $app->json($interventions);
 	});
 
 
@@ -88,32 +112,32 @@ catch (Exception $e)
 
 		return "Insertion REUSSIE";
 	});
-$app->delete('/supprimerTypeEnseignement/{id}', function ($id) use($app,$entityManager){
-	$dql = "DELETE FROM typesEnseignement te WHERE te.id = " . $id;
-	$query = $entityManager->createQuery($dql);
-	$types = $query->getArrayResult();
-	return $app->json($types);
-});
+	$app->delete('/supprimerTypeEnseignement/{id}', function ($id) use($app,$entityManager){
+		$dql = "DELETE FROM typesEnseignement te WHERE te.id = " . $id;
+		$query = $entityManager->createQuery($dql);
+		$types = $query->getArrayResult();
+		return $app->json($types);
+	});
 
 #il faut faire un appel à ça comme dans test.html situé dans le dossier précédent
-$app->post('/ajouterTypeEnseignement', function (Request $request) use($app,$entityManager){
+	$app->post('/ajouterTypeEnseignement', function (Request $request) use($app,$entityManager){
 	//var_dump($request);
-	echo $request;
-	$label = $request->get("label");
-	echo "label : " . $label . "\n";
-	$typesEnseignement = new TypesEnseignement();
-	echo "typeSDEnseignement";
-	var_dump($typesEnseignement);
-	$typesEnseignement->setlabel($label);
-	echo "test";
-	$entityManager->persist($typesEnseignement);
-	echo "test";
-	$entityManager->flush();
+		echo $request;
+		$label = $request->get("label");
+		echo "label : " . $label . "\n";
+		$typesEnseignement = new TypesEnseignement();
+		echo "typeSDEnseignement";
+		var_dump($typesEnseignement);
+		$typesEnseignement->setlabel($label);
+		echo "test";
+		$entityManager->persist($typesEnseignement);
+		echo "test";
+		$entityManager->flush();
 
-	echo "Le nouveau type d'enseignement ajouté à l'Id: ".$typesEnseignement->getId()." et le label: " . $typesEnseignement->getlabel() . "\n";
-	
-	return "Insertion REUSSIE";
-});
+		echo "Le nouveau type d'enseignement ajouté à l'Id: ".$typesEnseignement->getId()." et le label: " . $typesEnseignement->getlabel() . "\n";
+
+		return "Insertion REUSSIE";
+	});
 /*
 #
 $app->post('/{ue}/addResponsable', function (Request $request) use() {
