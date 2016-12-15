@@ -64,11 +64,11 @@
 		$query = $entityManager->createQuery($dql);
 		try
 		{
-			$interventions = $query->getArrayResult();
+			$autorisations = $query->getArrayResult();
 		}
 		catch(Exception $e)
 		{
 			die('Erreur : ' . $e->getMessage());
 		}
-		return $app->json($interventions);
+		return $app->json($autorisations);
 	});
