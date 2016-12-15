@@ -19,7 +19,6 @@
 					</tr>
 				</tbody>
 			</table>
-			<p-growl [value]="msgs"></p-growl>
 			<a routerLink="/gererUE/{{id}}/modifier" [routerLinkActive]="['router-link-active']" class="surligne">
 				<button type="button" pButton icon="glyphicon glyphicon-cog" label="Modifier l'UE"></button>
 			</a>
@@ -28,8 +27,32 @@
 			<button type="button" (click)="confirm()" pButton icon="glyphicon glyphicon-trash" label="Supprimer l'UE"></button>
 			<hr/>
 
-			<h4>Liste des personnes ayant cette UE :</h4>
-			<table class="table table-striped">
+			<div class="col-md-12">
+				<h4>Liste des personnes ayant cette UE :</h4>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Nom</th>
+						</tr>
+					</thead>
+					<tbody *ngIf="personnels">
+						<tr *ngFor="let personnel of personnels">
+							<td>{{personnel.nom}} {{personnel.prenom}}</td>
+						</tr>
+					</tbody>
+					<tbody *ngIf="personnels == ''">
+						<tr><td>Aucun professeur affecté</td></tr>
+					</tbody>
+				</table>
+				<select *ngIf="personnelsAdd" [(ngModel)]="personnelAdd">
+					<option *ngFor="let personnel of personnelsAdd" [value]="personnel.nom">{{personnel.nom}} {{personnel.prenom}}</option>
+				</select>
+				<button type="button" pButton label="Ajouter un professeur" (click)="updateUEPersonnel()"></button>
+				<!--  -->
+			</div>
+
+
+<!--			<table class="table table-striped">
 				<thead>
 					<tr>
 						<th>Nom</th>

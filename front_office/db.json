@@ -156,13 +156,12 @@
       "id": 2
     },
     {
-      "label": "Mathématique",
+      "label": "Mathématiques",
       "numero": "UE1122",
       "responsable": "Crotterau",
-      "idResponsable": 3,
-      "cm": 0,
-      "td": 16,
-      "tp": 0,
+      "cm": "0",
+      "td": "16",
+      "tp": "0",
       "id": 3
     },
     {
@@ -225,6 +224,32 @@
       "nom": "Durant",
       "prenom": "Jeanne",
       "statut": 3,
+      "id": 4
+    }
+  ],
+  "listePersonnelByUE": [
+    {
+      "nom": "Dupont",
+      "prenom": "Jean",
+      "ue": 2,
+      "id": 1
+    },
+    {
+      "nom": "Demko",
+      "prenom": "Christophe",
+      "statut": 5,
+      "id": 2
+    },
+    {
+      "nom": "Prigent",
+      "prenom": "Armelle",
+      "statut": 5,
+      "id": 3
+    },
+    {
+      "nom": "Durant",
+      "prenom": "Jeanne",
+      "ue": 3,
       "id": 4
     }
   ]
