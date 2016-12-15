@@ -22,7 +22,7 @@
 			<a routerLink="/gererUE/{{id}}/modifier" [routerLinkActive]="['router-link-active']" class="surligne">
 				<button type="button" pButton icon="glyphicon glyphicon-cog" label="Modifier l'UE"></button>
 			</a>
-			<p-growl [value]="msgs"></p-growl>
+			<p-growl [value]="msgue"></p-growl>
 			<p-confirmDialog acceptIcon="glyphicon glyphicon-ok" acceptLabel="Supprimer" rejectIcon="glyphicon glyphicon-remove" rejectLabel="Annuler" width="425"></p-confirmDialog>
 			<button type="button" (click)="confirm()" pButton icon="glyphicon glyphicon-trash" label="Supprimer l'UE"></button>
 			<hr/>
