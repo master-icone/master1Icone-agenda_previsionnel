@@ -22,7 +22,7 @@ export class AjouterPersonnelComponent {
   constructor (private _httpService: HttpService, private router: Router, private communicateService: CommunicateService) { }
 
   ajouterPersonnel() {
-    this.data = 'nom='+this.nom+'&prenom='+this.prenom+'&heures='+this.heures+'&Statut='+this.Statut+'&email='+this.email;
+    this.data = 'nom='+this.nom+'&prenom='+this.prenom+'&heures='+this.heures+'&statut='+this.Statut+'&email='+this.email;
     this._httpService.httpPost(this.link, this.data)
         .subscribe(
           data => {

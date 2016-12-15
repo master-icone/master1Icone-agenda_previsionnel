@@ -15,7 +15,7 @@ export class ModifierPersonnelComponent {
   nom = "";
   prenom = "";
   heures = "";
-  Statut = "";
+  statut = "";
   email = "";
   json: string;
 
@@ -42,7 +42,7 @@ export class ModifierPersonnelComponent {
             this.nom = data.nom;
             this.prenom = data.prenom;
             this.heures = data.heures;
-            this.Statut = data.Statut;
+            this.statut = data.statut;
             this.email = data.email;
           },
           error => {
@@ -53,7 +53,7 @@ export class ModifierPersonnelComponent {
   }
 
   modifierPersonnel() {
-    this.json = '{"nom":"'+this.nom+'","prenom":"'+this.prenom+'","heures":"'+this.heures+'","Statut":"'+this.Statut+'","email":"'+this.email+'"}';
+    this.json = '{"nom":"'+this.nom+'","prenom":"'+this.prenom+'","heures":"'+this.heures+'","statut":"'+this.statut+'","email":"'+this.email+'"}';
     this._httpService.httpPut(this.link+'/'+this.id, this.json)
         .subscribe(
           data => {

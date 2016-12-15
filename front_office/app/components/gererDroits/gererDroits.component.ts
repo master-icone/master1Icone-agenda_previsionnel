@@ -33,6 +33,7 @@ export class GererDroitsComponent {
         .subscribe(
           data => {
             this.resultGet = JSON.stringify(data);
+            alert("Valider !");
           },
           error => alert(error),
           () => console.log("Finished")
@@ -44,7 +45,7 @@ export class GererDroitsComponent {
         .subscribe(
           data => {
             this.resultPost = JSON.stringify(data);
-            alert('pirouette kakaouette');
+            alert("Valider !");
           },
           error => alert(error),
           () => console.log("Finished")
@@ -56,6 +57,7 @@ export class GererDroitsComponent {
         .subscribe(
           data => {
             this.resultPut = JSON.stringify(data);
+            alert("Valider !");
           },
           error => alert(error),
           () => console.log("Finished")
@@ -63,11 +65,11 @@ export class GererDroitsComponent {
   }
 
   deleteData() {
-    this._httpService.httpDelete(this.urlDelete + '/' + this.idDelete)
+    this._httpService.httpDelete(this.urlDelete)
         .subscribe(
           data => {
             this.resultDelete = JSON.stringify(data);
-            alert("hooo");
+            alert("Valider !");
           },
           error => alert(error),
           () => console.log("Finished")

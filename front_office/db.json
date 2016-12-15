@@ -1,58 +1,64 @@
 {
   "interventions": [
     {
+      "idPerson": 1,
       "numUE": "UE3101",
       "intitule": "Mathématiques",
-      "responsableUE": "M. Adrien Macheur",
+      "responsableUE": "Adrien Macheur",
       "type": "CM",
       "heure": 8,
       "date": "08/12/2016",
-      "attribution": "Mme. Céla dmin"
+      "attribution": "Céla dmin"
     },
     {
+      "idPerson": 1,
       "numUE": "UE3102",
       "intitule": "Ingénieurie Logicielle",
-      "responsableUE": "Mme. Marcelle Ravier",
+      "responsableUE": "Marcelle Ravier",
       "type": "TD",
       "heure": 4,
       "date": "07/12/2016",
-      "attribution": "Mme. Céla dmin"
+      "attribution": "Céla dmin"
     },
     {
+      "idPerson": 1,
       "numUE": "UE3103",
       "intitule": "Médias Numériques",
-      "responsableUE": "M. Christophe Facielli",
+      "responsableUE": "Christophe Facielli",
       "type": "TP",
       "heure": 2,
       "date": "06/12/2016",
-      "attribution": "Mme. Céla dmin"
+      "attribution": "Céla dmin"
     },
     {
+      "idPerson": 2,
       "numUE": "UE4101",
       "intitule": "Réseaux",
-      "responsableUE": "Mme. Christine Qwinz",
+      "responsableUE": "Christine Qwinz",
       "type": "Assistant",
       "heure": 5,
       "date": "05/12/2016",
-      "attribution": "Mme. Céla dmin"
+      "attribution": "Céla dmin"
     },
     {
+      "idPerson": 2,
       "numUE": "UE1112",
       "intitule": "Base de la programmation",
-      "responsableUE": "M. Christophe Facielli",
+      "responsableUE": "Christophe Facielli",
       "type": "TP",
       "heure": 2,
       "date": "04/12/2016",
-      "attribution": "Mme. Céla dmin"
+      "attribution": "Céla dmin"
     },
     {
+      "idPerson": 3,
       "numUE": "UE1111",
       "intitule": "Base de données",
-      "responsableUE": "M. Jean-Loup Guillaume",
+      "responsableUE": "Jean-Loup Guillaume",
       "type": "CM",
       "heure": 3,
       "date": "03/12/2016",
-      "attribution": "Mme. Céla dmin"
+      "attribution": "Céla dmin"
     }
   ],
   "tempsIntervention": {
@@ -104,12 +110,12 @@
   ],
   "gererPersonnel": [
     {
-      "nom": "dupont",
-      "prenom": "jean",
-      "heures": 200,
-      "id": 1,
-      "Statut": "Maitre de conference",
-      "email": "Jean.dupont@gmail.com"
+      "nom": "Prigent",
+      "prenom": "Armelle",
+      "heures": "350",
+      "statut": "Maitre de conference",
+      "email": "aprigent@univ-lr.fr",
+      "id": 1
     },
     {
       "id": 2,
@@ -120,137 +126,12 @@
       "email": "Hype.Hype@gmail.com"
     },
     {
-      "id": 3,
       "nom": "Gills",
-      "prenom": "Hunautl",
-      "heures": 192,
-      "Statut": "professeur chercheur",
-      "email": "gill.hunault@gmail.com"
-    },
-    {
-      "nom": "Assin",
-      "prenom": "Marc",
-      "heure": "200",
-      "id": 4
-    },
-    {
-      "nom": "Assin",
-      "prenom": "Marc",
-      "heure": "200",
-      "id": 8
-    },
-    {
-      "nom": "Assin",
-      "prenom": "Marc",
-      "heure": "200",
-      "id": 9
-    },
-    {
-      "nom": "Assin",
-      "prenom": "Marc",
-      "heure": "200",
-      "id": 10
-    },
-    {
-      "nom": "Assin",
-      "prenom": "Marc",
-      "heure": "200",
-      "id": 11
-    },
-    {
-      "nom": "Assin",
-      "prenom": "Marc",
-      "heure": "200",
-      "id": 12
-    },
-    {
-      "nom": "Assin",
-      "prenom": "Marc",
-      "heure": "200",
-      "id": 13
-    },
-    {
-      "nom": "Assin",
-      "prenom": "Marc",
-      "heure": "200",
-      "id": 14
-    },
-    {
-      "nom": "Assin",
-      "prenom": "Marc",
-      "heure": "200",
-      "id": 15
-    },
-    {
-      "nom": "Assin",
-      "prenom": "Marc",
-      "heure": "200",
-      "id": 16
-    },
-    {
-      "nom": "Assin",
-      "prenom": "Marc",
-      "heure": "200",
-      "id": 17
-    },
-    {
-      "nom": "Assin",
-      "prenom": "Marc",
-      "heure": "200",
-      "id": 18
-    },
-    {
-      "nom": "Assin",
-      "prenom": "Marc",
-      "heure": "200",
-      "id": 19
-    },
-    {
-      "nom": "Assin",
-      "prenom": "Marc",
-      "heure": "200",
-      "id": 20
-    },
-    {
-      "nom": "Assin",
-      "prenom": "Marc",
-      "heure": "200",
-      "id": 21
-    },
-    {
-      "nom": "dupont",
-      "prenom": "jean",
-      "heures": 200,
-      "id": 22
-    },
-    {
-      "username": "myusername",
-      "password": "mypassword",
-      "id": 23
-    },
-    {
-      "username": "myusername",
-      "password": "mypassword",
-      "id": 24
-    },
-    {
-      "username": "myusername",
-      "password": "mypassword",
-      "id": 25
-    },
-    {
-      "nom": "dupont",
-      "prenom": "jean",
-      "heures": 200,
-      "id": 26
-    },
-    {
-      "nom": "Michaud",
-      "prenom": "Fabien",
-      "heures": "",
-      "Statut": "",
-      "email": "fabien.michaud0@orange.fr",
-      "id": 27
+      "prenom": "Hunault",
+      "heures": "192",
+      "statut": "Maitre de conference",
+      "email": "gill.hunault@gmail.com",
+      "id": 3
     }
   ],
   "gererUE": [
@@ -270,20 +151,11 @@
       "cm": 0,
       "td": 16,
       "tp": 0
-    },
-    {
-      "label": "",
-      "numero": "eee",
-      "responsable": "",
-      "cm": "",
-      "td": "",
-      "tp": "",
-      "id": 4
     }
   ],
   "gererStatuts": [
     {
-      "label": "EnseignantC",
+      "label": "Enseignant",
       "heures": "180",
       "autorisation": "null",
       "id": 1
@@ -311,7 +183,7 @@
     {
       "nom": "Dupont",
       "prenom": "Jean",
-      "statut": 1,
+      "statut": 2,
       "id": 1
     },
     {
@@ -323,13 +195,13 @@
     {
       "nom": "Prigent",
       "prenom": "Armelle",
-      "statut": 1,
+      "statut": 4,
       "id": 3
     },
     {
       "nom": "Durant",
       "prenom": "Jeanne",
-      "statut": 1,
+      "statut": 3,
       "id": 4
     }
   ]

@@ -14,7 +14,8 @@ export class VuePersonnelComponent {
   link = 'http://localhost:3000/gererPersonnel';
   personnel: any;
   id: any;
-  displayDial: boolean = false;
+  urlInterventions = "http://localhost:3000/interventions?idPerson=";
+  interventions: any;
 
   constructor (private _httpService: HttpService,
                params: ActivatedRoute,
@@ -49,9 +50,11 @@ export class VuePersonnelComponent {
   display() {
     if(this.id) {
       this.getPersonnel(this.id);
+      this.getInterventions(this.id);
     }
   }
 
+  // Afficher la fiche personnel
   getPersonnel(id) {
     this._httpService.httpGet(this.link+"/"+id)
         .subscribe(
@@ -63,8 +66,9 @@ export class VuePersonnelComponent {
           },
           () => console.log("Finished")
         );
-}
+  }
 
+  // Suppression d'un personnel
   deletePersonnel(id) {
     this._httpService.httpDelete(this.link+"/"+id)
         .subscribe(
@@ -79,7 +83,16 @@ export class VuePersonnelComponent {
         );
   }
 
-  showDialog() {
-        this.displayDial = true;
+  getInterventions(id) {
+    this._httpService.httpGet(this.urlInterventions+id)
+        .subscribe(
+          data => {
+            this.interventions = data;
+          },
+          error => {
+            this.router.navigate(['./accueil']);
+          },
+          () => console.log("Finished")
+        );
   }
 }

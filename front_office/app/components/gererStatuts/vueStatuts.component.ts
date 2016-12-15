@@ -19,10 +19,10 @@ export class VueStatutsComponent {
   personnels: any;
   // Add personnel to statut
   urlPersonnelsAdd = 'http://localhost:3000/listePersonnelByStatut';
-  urlPersonnelsOpt = 'http://localhost:3000/listePersonnelByStatut?nom=';
+  urlSearchPersonnel = 'http://localhost:3000/listePersonnelByStatut?nom=';
   personnelsAdd: any;
   personnelAdd: any;
-  personnelAd: any;
+  personnelFind: any;
   resultAdd: any;
 
   constructor (private _httpService: HttpService,
@@ -123,11 +123,11 @@ export class VueStatutsComponent {
 
 
   updateStatutPersonnel() {
-    this._httpService.httpGet(this.urlPersonnelsOpt+this.personnelAdd)
+    this._httpService.httpGet(this.urlSearchPersonnel+this.personnelAdd)
         .subscribe(
           data => {
-            this.personnelAd = data[0];
-            this.resultAdd = '{"nom": "'+this.personnelAd.nom+'","prenom":"'+this.personnelAd.prenom+'","statut":'+this.id+'}';
+            this.personnelFind = data[0];
+            this.resultAdd = '{"nom": "'+this.personnelFind.nom+'","prenom":"'+this.personnelFind.prenom+'","statut":'+this.id+'}';
             this.putPersonnelInStatut();
           },
           error => {alert(error);
@@ -140,7 +140,7 @@ export class VueStatutsComponent {
   }
 
   putPersonnelInStatut() {
-    this._httpService.httpPut(this.urlPersonnelsAdd+'/'+this.personnelAd.id, this.resultAdd)
+    this._httpService.httpPut(this.urlPersonnelsAdd+'/'+this.personnelFind.id, this.resultAdd)
         .subscribe(
           data => {
             this.display();

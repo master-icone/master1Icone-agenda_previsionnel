@@ -34,21 +34,27 @@
 			<div class="col-md-6">
 				<h3> Ses interventions </h3>
 				<div class="table-responsive"style="width: 100%">
-				   <table class="well well-lg table table-striped">
-			<thead>
-				<tr>
-					<th>Nom</th>
-				</tr>
-			</thead>
-			<tbody *ngIf="personnels">
-				<tr *ngFor="let personnel of personnels">
-					<td>{{personnel.nom}} {{personnel.prenom}}</td>
-				</tr>
-			</tbody>
-			<tbody *ngIf="personnels == ''">
-				<tr><td>Aucun</td></tr>
-			</tbody>
-		</table>
+				  <table class="well well-lg table table-striped">
+						<thead>
+							<tr>
+								<th>NumUE</th>
+								<th>Matière</th>
+								<th>Type</th>
+								<th>Heure</th>
+							</tr>
+						</thead>
+						<tbody *ngIf="interventions">
+							<tr *ngFor="let intervention of interventions">
+								<td>{{intervention.numUE}}</td>
+								<td>{{intervention.intitule}}</td>
+								<td>{{intervention.type}}</td>
+								<td>{{intervention.heure}}</td>
+							</tr>
+						</tbody>
+						<tbody *ngIf="interventions == ''">
+							<tr><td>Aucun</td></tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
 			<div class="col-md-6">
