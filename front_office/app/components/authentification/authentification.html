@@ -8,10 +8,10 @@
           <form class="omb_loginForm" action="" autocomplete="off" method="POST">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-            <input type="text" class="form-control" name="username" placeholder="Login">
+            <input type="text" class="form-control" name="username" placeholder="Login" [(ngModel)]="utilisateur">
           </div>
           <span class="help-block"></span>
-          <button class="btn btn-lg btn-primary btn-block" type="submit" routerLink="/accueil" (click)="onClick()" [(ngModel)]="utilisateur">Login</button>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" routerLink="/accueil" (click)="onClick()">Login</button>
         </form>
       </div>
     </div>
