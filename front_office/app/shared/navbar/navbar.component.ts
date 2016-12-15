@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
+import { UtilisateurService } from '../../services/utilisateur.service';
 
 @Component({
   moduleId: module.id,
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['../../../app/shared/navbar/navbar.component.css']
 })
 
-export class NavbarComponent { }
+export class NavbarComponent { 
+	private utilisateur: string;
+
+	constructor (private _utilisateurService: UtilisateurService) { }
+
+	ngDoCheck() {
+      if(this._utilisateurService.getValueNavBar() != "") {
+      this.utilisateur = this._utilisateurService.getValueNavBar() ;
+    }
+      this._utilisateurService.setValueNavBar("");
+ 	}
+ }	
