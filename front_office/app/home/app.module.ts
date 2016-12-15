@@ -23,7 +23,7 @@ import { GererPersonnelComponent } from '../components/gererPersonnel/gererPerso
 import { AjouterPersonnelComponent } from '../components/gererPersonnel/ajouterPersonnel.component';
 import { SelectPersonnelComponent } from '../components/gererPersonnel/selectPersonnel.component';
 import { VuePersonnelComponent } from '../components/gererPersonnel/vuePersonnel.component';
-import { ModifierPersonnelComponent } from '../components/gererPersonnel/modifierPersonnel.component';
+//import { ModifierPersonnelComponent } from '../components/gererPersonnel/modifierPersonnel.component';
 
 import { GererUEComponent } from '../components/gererUE/gererUE.component';
 import { GererStatutsComponent } from '../components/gererStatuts/gererStatuts.component';
@@ -81,7 +81,6 @@ import {GrowlModule} from 'primeng/primeng';
           { path: '', component: SelectPersonnelComponent },
           { path: 'ajouter', component: AjouterPersonnelComponent },
           { path: ':id', component: VuePersonnelComponent },
-          { path: ':id/modifier', component: ModifierPersonnelComponent }
         ]},
       { path: 'gererUE', component: GererUEComponent,
         children: [
@@ -110,7 +109,7 @@ import {GrowlModule} from 'primeng/primeng';
    GererDroitsComponent, VueStatutsComponent, AjouterStatutsComponent,
    SelectStatutsComponent, ModifierStatutsComponent, VueUEComponent,
    AjouterUEComponent, SelectUEComponent, ModifierUEComponent, VuePersonnelComponent,
-   AjouterPersonnelComponent, SelectPersonnelComponent, ModifierPersonnelComponent ],
+   AjouterPersonnelComponent, SelectPersonnelComponent ],
 
   providers: [ CommunicateService, ConfirmationService, UtilisateurService ],
   bootstrap: [ AppComponent ]

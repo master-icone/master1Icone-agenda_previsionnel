@@ -11,6 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 export class ModifierPersonnelComponent {
   link = 'http://localhost:3000/gererPersonnel';
+  id: any;
   nom = "";
   prenom = "";
   heures = "";
@@ -38,9 +39,11 @@ export class ModifierPersonnelComponent {
     this._httpService.httpGet(this.link+"/"+id)
         .subscribe(
           data => {
-            this.label = data.label;
+            this.nom = data.nom;
+            this.prenom = data.prenom;
             this.heures = data.heures;
-            this.autorisation = data.autorisation;
+            this.Statut = data.Statut;
+            this.email = data.email;
           },
           error => {
             this.router.navigate(['./accueil']);
@@ -50,7 +53,7 @@ export class ModifierPersonnelComponent {
   }
 
   modifierPersonnel() {
-    this.json = '{"label":"'+this.label+'","heures":"'+this.heures+'","autorisation":"'+this.autorisation+'"}';
+    this.json = '{"nom":"'+this.nom+'","prenom":"'+this.prenom+'","heures":"'+this.heures+'","Statut":"'+this.Statut+'","email":"'+this.email+'"}';
     this._httpService.httpPut(this.link+'/'+this.id, this.json)
         .subscribe(
           data => {
