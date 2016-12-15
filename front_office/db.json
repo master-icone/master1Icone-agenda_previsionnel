@@ -237,20 +237,6 @@
       "username": "myusername",
       "password": "mypassword",
       "id": 25
-    },
-    {
-      "nom": "dupont",
-      "prenom": "jean",
-      "heures": 200,
-      "id": 26
-    },
-    {
-      "nom": "Michaud",
-      "prenom": "Fabien",
-      "heures": "",
-      "Statut": "",
-      "email": "fabien.michaud0@orange.fr",
-      "id": 27
     }
   ],
   "gererUE": [

@@ -7,11 +7,18 @@ export class UtilisateurService {
 
     constructor() {}
 
-    setValue(utilisateur) {
+    setValueToolBar(utilisateur) {
         this.utilisateur = utilisateur;
     }
 
-    getValue() {
+    getValueToolBar() {
+        return this.utilisateur;
+    }
+     setValueNavBar(utilisateur) {
+        this.utilisateur = utilisateur;
+    }
+
+    getValueNavBar() {
         return this.utilisateur;
     }
 }
