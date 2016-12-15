@@ -3,14 +3,25 @@
 	<router-outlet></router-outlet>
 </div>
 
-<div *ngIf="listeStatuts" class="col-md-2">
-	<h2>[_____________]</h2>
-    <ul *ngFor="let statuts of listeStatuts">
-			<a routerLink= "/gererStatuts/{{statuts.id}}" [routerLinkActive]="['router-link-active']" (click)="loadPage()" class="surligne">
-				<li class="list-group-item" >{{statuts.label}}</li>
-			</a>
-    </ul>
+
+
+<div class="col-md-2">
+	<div *ngIf="listeStatuts">
+		<div style="  width: 100%; " class="pull-right" >
+		  <div class="panel panel-primary">
+				    <div class="panel-heading">
+				      <span class="glyphicon glyphicon-pencil"></span>  <span style= "font-weight: bold;"> Statut: </span> 
+				        <ul *ngFor="let statuts of listeStatuts"  style=" height:15px; word-wrap: break-word;" >  
+								<li style = "list-style-type: none;" > 
+									<a style=" color: white;" routerLink= "/gererStatuts/{{statuts.id}}" [routerLinkActive]="['router-link-active']" (click)="loadPage()" class="surligne"> {{statuts.label}} </a>
+							    </li>
+				        </ul>
+				   </div>
+			</div>
+		</div>
+	</div>
 		<a routerLink= "/gererStatuts/ajouter" [routerLinkActive]="['router-link-active']" class="surligne">
 			<button>Ajouter</button>
 		</a>
 </div>
+
