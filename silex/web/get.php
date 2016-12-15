@@ -55,3 +55,20 @@
 		}
 		return $app->json($interventions);
 	});
+	
+	$app->get('/{login}/autorisations', function ($login) use($app,$entityManager){
+		$dql = "SELECT a 
+		FROM autorisations a, personnel p 
+		WHERE p.login = '".$login."' 
+		AND p.idAutorisation = a.id";
+		$query = $entityManager->createQuery($dql);
+		try
+		{
+			$interventions = $query->getArrayResult();
+		}
+		catch(Exception $e)
+		{
+			die('Erreur : ' . $e->getMessage());
+		}
+		return $app->json($interventions);
+	});
