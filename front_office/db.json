@@ -243,10 +243,6 @@
       "prenom": "jean",
       "heures": 200,
       "id": 26
-    },
-    {
-      "{\"nom\":\"dupont\",\"prenom\":\"jean\",\"heures\":200}": "",
-      "id": 27
     }
   ],
   "gererUE": [
@@ -307,19 +303,19 @@
     {
       "nom": "Dupont",
       "prenom": "Jean",
-      "statut": 3,
+      "statut": 1,
       "id": 1
     },
     {
       "nom": "Demko",
       "prenom": "Christophe",
-      "statut": 2,
+      "statut": 1,
       "id": 2
     },
     {
       "nom": "Prigent",
       "prenom": "Armelle",
-      "statut": 4,
+      "statut": 1,
       "id": 3
     },
     {

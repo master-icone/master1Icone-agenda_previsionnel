@@ -17,4 +17,3 @@ export class ToolbarComponent {
     this.utilisateur = this._utilisateurService.getValue();
   }
 }
-    
