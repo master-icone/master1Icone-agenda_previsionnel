@@ -1,0 +1,22 @@
+<div class="col-md-offset-1"><h2>Fiche des Droits :</h2></div>
+
+<div *ngIf="personnel">
+	<div class="col-md-1"></div>
+  <div class="col-md-4 well well-sm">
+    <h3> Fiche personnel </h3>
+    <p>Nom : {{personnel.nom}}</p>
+    <p>Prénom : {{personnel.prenom}}</p>
+    <p>Statut : {{personnel.statut}}</p>
+    <p>E-Mail : {{personnel.email}}</p>
+  </div>
+  <div class="col-md-1"></div>
+  <div class="col-md-5 well well-sm">
+    <h3> Droits </h3>
+    <p>Gerer UE : {{personnel.gererUE}}</p>
+    <p>Gerer Compte : {{personnel.gererCompte}}</p>
+    <p>Ajouter Décharge : {{personnel.ajouterDecharge}}</p>
+    <p>Lire tout : {{personnel.lireTout}}</p>
+    <p>Accorder droit : {{personnel.accorderDroit}}</p>
+    <button type="button" pButton icon="glyphicon glyphicon-cog" label="Modifier"></button>
+  </div>
+</div>

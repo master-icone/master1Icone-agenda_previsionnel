@@ -6,7 +6,6 @@
 				<p>Prénom : {{personnel.prenom}}</p>
 				<p>Statut : {{personnel.statut}}</p>
 				<p>E-Mail : {{personnel.email}}</p>
-				<p>Droits : Visible que par les administrateur ()</p>
 				<p-growl [value]="msgperso"></p-growl>
 				<p-confirmDialog acceptIcon="glyphicon glyphicon-ok" acceptLabel="Supprimer" rejectIcon="glyphicon glyphicon-remove" rejectLabel="Annuler" width="425"></p-confirmDialog>
 				<button type="button" (click)="confirm()" pButton icon="glyphicon glyphicon-trash" label="Supprimer"></button>

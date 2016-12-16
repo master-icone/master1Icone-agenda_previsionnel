@@ -39,6 +39,8 @@ import { VueUEComponent } from '../components/gererUE/vueUE.component';
 import { AjouterUEComponent } from '../components/gererUE/ajouterUE.component';
 import { ModifierUEComponent } from '../components/gererUE/modifierUE.component';
 
+import { VueDroitsComponent } from '../components/gererDroits/vueDroits.component';
+
 import { AjoutProfUEComponent } from '../components/ajoutProfUE/ajoutProfUE.component';
 
 // Service
@@ -89,7 +91,11 @@ import {GrowlModule} from 'primeng/primeng';
           { path: ':id', component: VueStatutsComponent },
           { path: ':id/modifier', component: ModifierStatutsComponent }
         ]},
-      { path: 'gererDroits', component: GererDroitsComponent }
+      { path: 'gererDroits', component: GererDroitsComponent,
+        children: [
+          { path: '', component: SelectUEComponent },
+          { path: ':id', component: VueDroitsComponent }
+        ]}
     ])
   ],
   declarations: [ AppComponent, ToolbarComponent, NavbarComponent,
@@ -99,7 +105,8 @@ import {GrowlModule} from 'primeng/primeng';
    GererDroitsComponent, VueStatutsComponent, AjouterStatutsComponent,
    SelectStatutsComponent, ModifierStatutsComponent, VueUEComponent,
    AjouterUEComponent, SelectUEComponent, ModifierUEComponent, VuePersonnelComponent,
-   AjouterPersonnelComponent, SelectPersonnelComponent, ModifierPersonnelComponent ],
+   AjouterPersonnelComponent, SelectPersonnelComponent, ModifierPersonnelComponent,
+   VueDroitsComponent ],
 
   providers: [ CommunicateService, ConfirmationService, UtilisateurService ],
   bootstrap: [ AppComponent ]
