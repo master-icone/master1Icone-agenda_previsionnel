@@ -173,15 +173,6 @@
       "td": 16,
       "tp": 0,
       "id": 4
-    },
-    {
-      "label": "NOMNOM",
-      "numero": "UETEST",
-      "responsable": "RESPO",
-      "cm": "15",
-      "td": "15",
-      "tp": "15",
-      "id": 5
     }
   ],
   "gererStatuts": [
