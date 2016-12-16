@@ -18,7 +18,7 @@ export class AccueilComponent implements OnInit {
 
   constructor (private _httpService: HttpService,
     private _utilisateurService: UtilisateurService) { 
-      this.utilisateur = this.utilisateur = this._utilisateurService.getValueToolBar() ; ;
+    this.utilisateur = this._utilisateurService.getUtilisateur();
 }
 
   ngOnInit() {

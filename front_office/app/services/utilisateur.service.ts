@@ -4,21 +4,37 @@ import { AuthentificationComponent } from '../components/authentification/authen
 @Injectable()
 export class UtilisateurService {
     private utilisateur:string;
+    checkNavBar = false;
+    checkToolBar = false; 
 
     constructor() {}
 
-    setValueToolBar(utilisateur) {
+    setUtilisateur(utilisateur) {
         this.utilisateur = utilisateur;
     }
 
-    getValueToolBar() {
+    getUtilisateur() {
         return this.utilisateur;
-    }
-     setValueNavBar(utilisateur) {
-        this.utilisateur = utilisateur;
     }
 
-    getValueNavBar() {
-        return this.utilisateur;
-    }
+    getNavBar(){
+        return this.checkNavBar;
+      }
+
+     getToolBar(){
+        return this.checkToolBar;
+      }
+
+      activeBar(){
+        this.checkNavBar = true;
+        this.checkToolBar = true;
+      }
+
+      resetNavBar(){
+        this.checkNavBar = false;
+      }
+      resetToolBar(){  
+        this.checkToolBar = false;
+      }
+
 }

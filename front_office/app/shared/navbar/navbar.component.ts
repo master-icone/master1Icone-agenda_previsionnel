@@ -14,9 +14,9 @@ export class NavbarComponent {
 	constructor (private _utilisateurService: UtilisateurService) { }
 
 	ngDoCheck() {
-      if(this._utilisateurService.getValueNavBar() != "") {
-      this.utilisateur = this._utilisateurService.getValueNavBar() ;
+      if(this._utilisateurService.getNavBar()) {
+      this.utilisateur = this._utilisateurService.getUtilisateur() ;
     }
-      this._utilisateurService.setValueNavBar("");
+      this._utilisateurService.resetNavBar();
  	}
  }	

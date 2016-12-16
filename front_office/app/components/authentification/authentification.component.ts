@@ -11,7 +11,7 @@ export class AuthentificationComponent {
 	 constructor (private _utilisateurService: UtilisateurService) { }
 
 	 onClick () {
-        this._utilisateurService.setValueToolBar(this.utilisateur);
-        this._utilisateurService.setValueNavBar(this.utilisateur);
+        this._utilisateurService.setUtilisateur(this.utilisateur);
+        this._utilisateurService.activeBar();
     }
 }
