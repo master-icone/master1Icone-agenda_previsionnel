@@ -115,7 +115,12 @@
       "heures": "350",
       "statut": "Maitre de conference",
       "email": "aprigent@univ-lr.fr",
-      "id": 1
+      "id": 1,
+      "gererUE": 1,
+      "gererCompte": 1,
+      "ajouterDecharge": 0,
+      "lireTout": 0,
+      "accorderDroit": 0
     },
     {
       "id": 2,
@@ -123,7 +128,13 @@
       "prenom": "Hype",
       "heures": 192,
       "statut": "Maitre de conference",
-      "email": "Hype.Hype@gmail.com"
+      "email": "Hype.Hype@gmail.com",
+      "id": 2,
+      "gererUE": 1,
+      "gererCompte": 1,
+      "ajouterDecharge": 0,
+      "lireTout": 0,
+      "accorderDroit": 1
     },
     {
       "nom": "Gills",
@@ -131,7 +142,12 @@
       "heures": "192",
       "statut": "Maitre de conference",
       "email": "gill.hunault@gmail.com",
-      "id": 3
+      "id": 3,
+      "gererUE": 1,
+      "gererCompte": 0,
+      "ajouterDecharge": 1,
+      "lireTout": 0,
+      "accorderDroit": 0
     }
   ],
   "gererUE": [
@@ -173,6 +189,15 @@
       "td": 16,
       "tp": 0,
       "id": 4
+    },
+    {
+      "label": "NOMNOM",
+      "numero": "UETEST",
+      "responsable": "RESPO",
+      "cm": "15",
+      "td": "15",
+      "tp": "15",
+      "id": 5
     }
   ],
   "gererStatuts": [
@@ -237,7 +262,7 @@
     {
       "nom": "Demko",
       "prenom": "Christophe",
-      "ue": 5,
+      "ue": 4,
       "id": 2
     },
     {

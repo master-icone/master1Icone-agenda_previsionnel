@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../services/http.service';
+import { CommunicateService } from '../../services/communicate.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'gererDroits',
@@ -9,69 +11,30 @@ import { HttpService } from '../../services/http.service';
 
 export class GererDroitsComponent {
 
-  // Url des méthodes GET, POST, PUT et DELETE
-  urlGet = 'http://ip.jsontest.com/';
-  urlPost = 'http://localhost:3000/gererPersonnel';
-  urlPut = 'http://localhost:3000/gererPersonnel/1';
-  urlDelete = 'http://localhost:3000/gererPersonnel';
+  link = 'http://localhost:3000/gererPersonnel';
+  listePersonnel: any;
 
-  // Parametre des méthodes GET, POST, PUT et DELETE
-  dataPost = 'nom=Dupont&prenom=Jean';
-  dataPut = '{"nom":"dupont","prenom":"jean","heures":200}';
-  idDelete = 5;
+  constructor (private _httpService: HttpService,
+               private router: Router,
+               private communicateService: CommunicateService) { }
 
-  //Resultat des méthodes GET, POST, PUT et DELETE
-  resultGet: string;
-  resultPost: string;
-  resultPut: string;
-  resultDelete: string;
-
-  constructor (private _httpService: HttpService) { }
-
-  getData() {
-    this._httpService.httpGet(this.urlGet)
-        .subscribe(
-          data => {
-            this.resultGet = JSON.stringify(data);
-            alert("Valider !");
-          },
-          error => alert(error),
-          () => console.log("Finished")
-        );
+  ngOnInit() {
+    this.getListePersonnel();
   }
 
-  postData() {
-    this._httpService.httpPost(this.urlPost, this.dataPost)
-        .subscribe(
-          data => {
-            this.resultPost = JSON.stringify(data);
-            alert("Valider !");
-          },
-          error => alert(error),
-          () => console.log("Finished")
-        );
+  loadPage() {
+    this.communicateService.setCheckchild();
   }
 
-  putData() {
-    this._httpService.httpPut(this.urlPut, this.dataPut)
+  getListePersonnel() {
+    this._httpService.httpGet(this.link)
         .subscribe(
           data => {
-            this.resultPut = JSON.stringify(data);
-            alert("Valider !");
+            this.listePersonnel = data;
           },
-          error => alert(error),
-          () => console.log("Finished")
-        );
-  }
-
-  deleteData() {
-    this._httpService.httpDelete(this.urlDelete)
-        .subscribe(
-          data => {
-            this.resultDelete = JSON.stringify(data);
-            alert("Valider !");
+          error => {
+            this.router.navigate(['./accueil']);
           },
-          error => alert(error),
           () => console.log("Finished")
         );
   }
